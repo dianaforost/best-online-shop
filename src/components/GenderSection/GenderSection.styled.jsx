@@ -45,6 +45,7 @@ export const ForHer = styled.div`
   background-image: url("${forHerFirst}");
   cursor: pointer;
   background-position: center;
+  background-repeat: no-repeat;
   &:hover {
     background-image: url("${forHerSec}");
   }
@@ -60,6 +61,7 @@ export const ForHim = styled.div`
   background-image: url("${forHimFirst}");
   cursor: pointer;
   background-position: center;
+  background-repeat: no-repeat;
   &:hover {
     background-image: url("${forHimSec}");
   }
