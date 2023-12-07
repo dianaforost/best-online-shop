@@ -32,6 +32,10 @@ export const Title = styled.h2`
 export const List = styled.div`
   display: flex;
   gap: 24px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 export const ForHer = styled.div`
   width: 588px;
@@ -40,8 +44,12 @@ export const ForHer = styled.div`
   position: relative;
   background-image: url("${forHerFirst}");
   cursor: pointer;
+  background-position: center;
   &:hover {
     background-image: url("${forHerSec}");
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 export const ForHim = styled.div`
@@ -51,8 +59,12 @@ export const ForHim = styled.div`
   position: relative;
   background-image: url("${forHimFirst}");
   cursor: pointer;
+  background-position: center;
   &:hover {
     background-image: url("${forHimSec}");
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
