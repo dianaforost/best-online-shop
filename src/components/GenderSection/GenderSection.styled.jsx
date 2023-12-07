@@ -37,36 +37,30 @@ export const List = styled.div`
     align-items: center;
   }
 `;
-export const ForHer = styled.div`
+const GenderContainer = styled.div`
   width: 588px;
   height: 500px;
   transition: all 0.7s ease-out;
   position: relative;
-  background-image: url("${forHerFirst}");
   cursor: pointer;
   background-position: center;
   background-repeat: no-repeat;
-  &:hover {
-    background-image: url("${forHerSec}");
-  }
   @media (max-width: 768px) {
     width: 100%;
   }
 `;
-export const ForHim = styled.div`
-  width: 588px;
-  height: 500px;
-  transition: all 0.7s ease-out;
-  position: relative;
+
+export const ForHer = styled(GenderContainer)`
+  background-image: url("${forHerFirst}");
+  &:hover {
+    background-image: url("${forHerSec}");
+  }
+`;
+
+export const ForHim = styled(GenderContainer)`
   background-image: url("${forHimFirst}");
-  cursor: pointer;
-  background-position: center;
-  background-repeat: no-repeat;
   &:hover {
     background-image: url("${forHimSec}");
-  }
-  @media (max-width: 768px) {
-    width: 100%;
   }
 `;
 
