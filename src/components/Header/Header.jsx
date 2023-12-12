@@ -5,28 +5,29 @@ import {
   IconShoppingCart,
   IconUser,
 } from 'components';
+import { Container } from './Header.styled';
 
 export const Header = () => {
   return (
-    <>
+    <Container>
       <div>SportSvit</div>
       <div>
         <nav>
           <ul>
             <li>
-              <a href="">НОВИНКИ</a>
+              <a href="/">НОВИНКИ</a>
             </li>
             <li>
-              <a href="">КАТАЛОГ</a>
+              <a href="/">КАТАЛОГ</a>
             </li>
             <li>
-              <a href="">ЖІНКИ</a>
+              <a href="/">ЖІНКИ</a>
             </li>
             <li>
-              <a href="">ЧОЛОВІКИ</a>
+              <a href="/">ЧОЛОВІКИ</a>
             </li>
             <li>
-              <a href="">ЗНИЖКИ</a>
+              <a href="/">ЗНИЖКИ</a>
             </li>
           </ul>
         </nav>
@@ -60,6 +61,6 @@ export const Header = () => {
           </li>
         </ul>
       </div>
-    </>
+    </Container>
   );
 };
