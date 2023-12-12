@@ -1,23 +1,63 @@
+import {
+  IconFavorite,
+  IconLanguage,
+  IconSearch,
+  IconShoppingCart,
+  IconUser,
+} from 'components';
+
 export const Header = () => {
   return (
     <>
       <div>SportSvit</div>
       <div>
-        <ul>
-          <li>НОВИНКИ</li>
-          <li>КАТАЛОГ</li>
-          <li>ЖІНКИ</li>
-          <li>ЧОЛОВІКИ</li>
-          <li>ЗНИЖКИ</li>
-        </ul>
+        <nav>
+          <ul>
+            <li>
+              <a href="">НОВИНКИ</a>
+            </li>
+            <li>
+              <a href="">КАТАЛОГ</a>
+            </li>
+            <li>
+              <a href="">ЖІНКИ</a>
+            </li>
+            <li>
+              <a href="">ЧОЛОВІКИ</a>
+            </li>
+            <li>
+              <a href="">ЗНИЖКИ</a>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div>
         <ul>
-          <li>search</li>
-          <li>user</li>
-          <li>favorite</li>
-          <li>cart</li>
-          <li>language</li>
+          <li>
+            <a href="/">
+              <IconSearch />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <IconUser />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <IconFavorite />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <IconShoppingCart />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <IconLanguage />
+            </a>
+          </li>
         </ul>
       </div>
     </>
