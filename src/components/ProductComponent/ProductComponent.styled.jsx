@@ -5,9 +5,16 @@ export const ProductContainer = styled.div`
   flex-direction: column;
   gap: 16px;
 `;
-export const ProductImage = styled.div`
-  width: 282px;
-  height: 300px;
+export const ProductImageWrapper = styled.div`
+  position: relative;
+  padding-top: 56.25%;
+`;
+export const ProductImage = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
   background: gray;
 `;
 export const ProductContent = styled.div`
