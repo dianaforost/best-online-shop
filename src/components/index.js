@@ -1,17 +1,17 @@
 // Icons
-export { IconEnvelope } from './IconEnvelope/IconEnvelope';
-export { IconFacebook } from './IconFacebook/IconFacebook';
-export { IconFavorite } from './IconFavorite/IconFavorite';
-export { IconInstagram } from './IconInstagram/IconInstagram';
-export { IconLanguage } from './IconLanguage/IconLanguage';
-export { IconPhone } from './IconPhone/IconPhone';
-export { IconSearch } from './IconSearch/IconSearch';
-export { IconShoppingCart } from './IconShoppingCart/IconShoppingCart';
-export { IconUser } from './IconUser/IconUser';
+export * from './IconEnvelope/IconEnvelope';
+export * from './IconFacebook/IconFacebook';
+export * from './IconFavorite/IconFavorite';
+export * from './IconInstagram/IconInstagram';
+export * from './IconLanguage/IconLanguage';
+export * from './IconPhone/IconPhone';
+export * from './IconSearch/IconSearch';
+export * from './IconShoppingCart/IconShoppingCart';
+export * from './IconUser/IconUser';
 
 // Components
 
-// export { SharedLayout } from './SharedLayout/SharedLayout';
-// export { Header } from './Header/Header';
-// export { GenderSection } from './GenderSection/GenderSection';
-// export { Footer } from './Footer/Footer';
+// export * from './SharedLayout/SharedLayout';
+// export * from './Header/Header';
+// export * from './GenderSection/GenderSection';
+// export * from './Footer/Footer';
