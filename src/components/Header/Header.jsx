@@ -5,31 +5,38 @@ import {
   IconShoppingCart,
   IconUser,
 } from 'components';
-import { Container } from './Header.styled';
+import {
+  Container,
+  HeaderStoreNavItem,
+  HeaderStoreNavMenu,
+  LogoText,
+} from './Header.styled';
 
 export const Header = () => {
   return (
     <Container>
-      <div>SportSvit</div>
+      <LogoText>
+        <a href="/">SportSvit</a>
+      </LogoText>
       <div>
         <nav>
-          <ul>
-            <li>
+          <HeaderStoreNavMenu>
+            <HeaderStoreNavItem>
               <a href="/">НОВИНКИ</a>
-            </li>
-            <li>
+            </HeaderStoreNavItem>
+            <HeaderStoreNavItem>
               <a href="/">КАТАЛОГ</a>
-            </li>
-            <li>
+            </HeaderStoreNavItem>
+            <HeaderStoreNavItem>
               <a href="/">ЖІНКИ</a>
-            </li>
-            <li>
+            </HeaderStoreNavItem>
+            <HeaderStoreNavItem>
               <a href="/">ЧОЛОВІКИ</a>
-            </li>
-            <li>
+            </HeaderStoreNavItem>
+            <HeaderStoreNavItem>
               <a href="/">ЗНИЖКИ</a>
-            </li>
-          </ul>
+            </HeaderStoreNavItem>
+          </HeaderStoreNavMenu>
         </nav>
       </div>
       <div>
