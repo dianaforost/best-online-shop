@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.header`
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   max-height: 100px;
   padding: 38px 120px;
   background-color: rgba(27, 82, 100, 0.8);
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const LogoText = styled.div`
   margin-right: 210px;
   color: #f9f9f9;
+  text-decoration: capitalize;
 `;
 
 export const HeaderStoreNavMenu = styled.ul`
@@ -31,4 +34,8 @@ export const HeaderIconMenuNav = styled.ul`
 
 export const HeaderIconMenuItem = styled.li`
   margin-right: 24px;
+`;
+
+export const CapitalizeText = styled.span`
+  text-decoration: capitalize;
 `;

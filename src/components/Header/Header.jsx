@@ -18,7 +18,7 @@ export const Header = () => {
   return (
     <Container>
       <LogoText>
-        <a href="/">SportSvit</a>
+        <a href="/">SPORTSVIT</a>
       </LogoText>
       <div>
         <nav>
