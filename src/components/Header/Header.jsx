@@ -7,6 +7,8 @@ import {
 } from 'components';
 import {
   Container,
+  HeaderIconMenuItem,
+  HeaderIconMenuNav,
   HeaderStoreNavItem,
   HeaderStoreNavMenu,
   LogoText,
@@ -40,33 +42,33 @@ export const Header = () => {
         </nav>
       </div>
       <div>
-        <ul>
-          <li>
+        <HeaderIconMenuNav>
+          <HeaderIconMenuItem>
             <a href="/">
               <IconSearch />
             </a>
-          </li>
-          <li>
+          </HeaderIconMenuItem>
+          <HeaderIconMenuItem>
             <a href="/">
               <IconUser />
             </a>
-          </li>
-          <li>
+          </HeaderIconMenuItem>
+          <HeaderIconMenuItem>
             <a href="/">
               <IconFavorite />
             </a>
-          </li>
-          <li>
+          </HeaderIconMenuItem>
+          <HeaderIconMenuItem>
             <a href="/">
               <IconShoppingCart />
             </a>
-          </li>
-          <li>
+          </HeaderIconMenuItem>
+          <HeaderIconMenuItem>
             <a href="/">
               <IconLanguage />
             </a>
-          </li>
-        </ul>
+          </HeaderIconMenuItem>
+        </HeaderIconMenuNav>
       </div>
     </Container>
   );

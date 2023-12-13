@@ -24,3 +24,11 @@ export const HeaderStoreNavItem = styled.li`
   text-transform: uppercase;
   color: #f9f9f9;
 `;
+
+export const HeaderIconMenuNav = styled.ul`
+  display: flex;
+`;
+
+export const HeaderIconMenuItem = styled.li`
+  margin-right: 24px;
+`;
