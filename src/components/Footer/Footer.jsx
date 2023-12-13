@@ -14,6 +14,7 @@ import {
   StoreMenu,
   ContactsMenu,
   ContactsMenuIcon,
+  CapitalizeText,
 } from './Footer.styled';
 
 export const Footer = () => {
@@ -27,21 +28,41 @@ export const Footer = () => {
           <FooterNavigation>
             <InformationMenu>
               <ul>
-                <CategoryHeaderText>інформація</CategoryHeaderText>
-                <CategoryItemText>Доставка та оплата</CategoryItemText>
-                <CategoryItemText>Повернення та обмін</CategoryItemText>
-                <CategoryItemText>Угода користувача</CategoryItemText>
-                <CategoryItemText>Питання та відповіді</CategoryItemText>
+                <CategoryHeaderText>
+                  <a href="/">інформація</a>
+                </CategoryHeaderText>
+                <CategoryItemText>
+                  <a href="/">Доставка та оплата</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">
+                    <CapitalizeText>Повернення</CapitalizeText> та обмін
+                  </a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">Угода користувача</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">Питання та відповіді</a>
+                </CategoryItemText>
               </ul>
             </InformationMenu>
             <StoreMenu>
               <ul>
                 <CategoryHeaderText>магазин</CategoryHeaderText>
 
-                <CategoryItemText>Новинки</CategoryItemText>
-                <CategoryItemText>Жінки</CategoryItemText>
-                <CategoryItemText>Чоловіки</CategoryItemText>
-                <CategoryItemText>Знижки</CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">Новинки</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">Жінки</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">Чоловіки</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <a href="/">Знижки</a>
+                </CategoryItemText>
               </ul>
             </StoreMenu>
             <ContactsMenu>
@@ -63,13 +84,17 @@ export const Footer = () => {
                   <ContactsMenuIcon>
                     <IconFacebook />
                   </ContactsMenuIcon>
-                  <a href="/">facebook</a>
+                  <CapitalizeText>
+                    <a href="/">Facebook</a>
+                  </CapitalizeText>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
                     <IconInstagram />
                   </ContactsMenuIcon>
-                  <a href="/">instagram</a>
+                  <CapitalizeText>
+                    <a href="/">Instagram</a>
+                  </CapitalizeText>
                 </CategoryItemText>
               </ul>
             </ContactsMenu>

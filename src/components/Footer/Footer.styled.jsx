@@ -50,5 +50,9 @@ export const StoreMenu = styled.div`
 export const ContactsMenu = styled.div``;
 
 export const ContactsMenuIcon = styled.span`
-  margin-right: 2px;
+  margin-right: 8px;
+`;
+
+export const CapitalizeText = styled.span`
+  text-decoration: capitalize;
 `;
