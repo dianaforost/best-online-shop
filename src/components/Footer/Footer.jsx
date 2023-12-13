@@ -4,55 +4,76 @@ import {
   IconInstagram,
   IconPhone,
 } from 'components';
-import { Container } from './Footer.styled';
+import {
+  Container,
+  LogoText,
+  CategoryHeaderText,
+  CategoryItemText,
+  FooterNavigation,
+  InformationMenu,
+  StoreMenu,
+  ContactsMenu,
+  ContactsMenuIcon,
+} from './Footer.styled';
 
 export const Footer = () => {
   return (
     <>
       <footer>
         <Container>
-          <div>SPORTSVIT</div>
           <div>
-            <div>
-              <ul>
-                <li>інформація</li>
-                <li>Доставка та оплата</li>
-                <li>Повернення та обмін</li>
-                <li>Угода користувача</li>
-                <li>Питання та відповіді</li>
-              </ul>
-            </div>
-            <div>
-              <ul>
-                <li>магазин</li>
-                <li>Новинки</li>
-                <li>Жінки</li>
-                <li>Чоловіки</li>
-                <li>Знижки</li>
-              </ul>
-            </div>
-            <div>
-              <ul>
-                <li>контакти</li>
-                <li>
-                  <IconPhone />
-                  <a href="tel:+380994567895">+38(099)4567895</a>
-                </li>
-                <li>
-                  <IconEnvelope />
-                  <a href="email:sportsvit@gmail.com">sportsvit@gmail.com</a>
-                </li>
-                <li>
-                  <IconFacebook />
-                  <a href="/">facebook</a>
-                </li>
-                <li>
-                  <IconInstagram />
-                  <a href="/">instagram</a>
-                </li>
-              </ul>
-            </div>
+            <LogoText>sportsvit</LogoText>
           </div>
+          <FooterNavigation>
+            <InformationMenu>
+              <ul>
+                <CategoryHeaderText>інформація</CategoryHeaderText>
+                <CategoryItemText>Доставка та оплата</CategoryItemText>
+                <CategoryItemText>Повернення та обмін</CategoryItemText>
+                <CategoryItemText>Угода користувача</CategoryItemText>
+                <CategoryItemText>Питання та відповіді</CategoryItemText>
+              </ul>
+            </InformationMenu>
+            <StoreMenu>
+              <ul>
+                <CategoryHeaderText>магазин</CategoryHeaderText>
+
+                <CategoryItemText>Новинки</CategoryItemText>
+                <CategoryItemText>Жінки</CategoryItemText>
+                <CategoryItemText>Чоловіки</CategoryItemText>
+                <CategoryItemText>Знижки</CategoryItemText>
+              </ul>
+            </StoreMenu>
+            <ContactsMenu>
+              <ul>
+                <CategoryHeaderText>контакти</CategoryHeaderText>
+                <CategoryItemText>
+                  <ContactsMenuIcon>
+                    <IconPhone />
+                  </ContactsMenuIcon>
+                  <a href="tel:+380994567895">+38(099)4567895</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <ContactsMenuIcon>
+                    <IconEnvelope />
+                  </ContactsMenuIcon>
+                  <a href="email:sportsvit@gmail.com">sportsvit@gmail.com</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <ContactsMenuIcon>
+                    <IconFacebook />
+                  </ContactsMenuIcon>
+                  <a href="/">facebook</a>
+                </CategoryItemText>
+                <CategoryItemText>
+                  <ContactsMenuIcon>
+                    <IconInstagram />
+                  </ContactsMenuIcon>
+                  <a href="/">instagram</a>
+                </CategoryItemText>
+              </ul>
+            </ContactsMenu>
+          </FooterNavigation>
         </Container>
       </footer>
     </>
