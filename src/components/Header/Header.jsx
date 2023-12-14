@@ -12,13 +12,16 @@ import {
   HeaderStoreNavItem,
   HeaderStoreNavMenu,
   LogoText,
+  UppercaseText,
 } from './Header.styled';
 
 export const Header = () => {
   return (
     <Container>
       <LogoText>
-        <a href="/">SPORTSVIT</a>
+        <a href="/">
+          <UppercaseText>SPORTSVIT</UppercaseText>
+        </a>
       </LogoText>
       <div>
         <nav>
