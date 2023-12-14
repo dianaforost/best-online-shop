@@ -18,7 +18,7 @@ export const ProductComponent = ({ item }) => {
         </ProductImageWrapper>
 
         <ProductContent>
-          <ProductTitle>{item.title.slice(0, 25)}...</ProductTitle>
+          <ProductTitle>{item.title}</ProductTitle>
           <ProductPrice>{item.description}</ProductPrice>
         </ProductContent>
       </ProductContainer>

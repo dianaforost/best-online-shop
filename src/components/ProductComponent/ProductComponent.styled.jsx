@@ -4,10 +4,12 @@ export const ProductContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 282px;
 `;
 export const ProductImageWrapper = styled.div`
   position: relative;
-  padding-top: 56.25%;
+  padding-top: 100%;
+  overflow: hidden;
 `;
 export const ProductImage = styled.img`
   position: absolute;
