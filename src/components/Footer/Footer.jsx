@@ -23,13 +23,13 @@ export const Footer = () => {
       <footer>
         <Container>
           <div>
-            <LogoText>sportsvit</LogoText>
+            <LogoText>SportSvit</LogoText>
           </div>
           <FooterNavigation>
             <InformationMenu>
               <ul>
                 <CategoryHeaderText>
-                  <a href="/">інформація</a>
+                  <a href="/">Інформація</a>
                 </CategoryHeaderText>
                 <CategoryItemText>
                   <a href="/">Доставка та оплата</a>
