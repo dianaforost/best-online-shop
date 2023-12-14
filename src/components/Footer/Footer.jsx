@@ -23,13 +23,13 @@ export const Footer = () => {
       <footer>
         <Container>
           <div>
-            <LogoText>SportSvit</LogoText>
+            <LogoText>sportsvit</LogoText>
           </div>
           <FooterNavigation>
             <InformationMenu>
               <ul>
                 <CategoryHeaderText>
-                  <a href="/">Інформація</a>
+                  <a href="/">інформація</a>
                 </CategoryHeaderText>
                 <CategoryItemText>
                   <a href="/">Доставка та оплата</a>
@@ -67,7 +67,7 @@ export const Footer = () => {
             </StoreMenu>
             <ContactsMenu>
               <ul>
-                <CategoryHeaderText>Контакти</CategoryHeaderText>
+                <CategoryHeaderText>контакти</CategoryHeaderText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
                     <IconPhone />

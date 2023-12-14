@@ -18,25 +18,25 @@ export const Header = () => {
   return (
     <Container>
       <LogoText>
-        <a href="/">SportSvit</a>
+        <a href="/">SPORTSVIt</a>
       </LogoText>
       <div>
         <nav>
           <HeaderStoreNavMenu>
             <HeaderStoreNavItem>
-              <a href="/">Новинки</a>
+              <a href="/">НОВИНКИ</a>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Каталог</a>
+              <a href="/">КАТАЛОГ</a>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Жінки</a>
+              <a href="/">ЖІНКИ</a>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Чоловіки</a>
+              <a href="/">ЧОЛОВІКИ</a>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Знижки</a>
+              <a href="/">ЗНИЖКИ</a>
             </HeaderStoreNavItem>
           </HeaderStoreNavMenu>
         </nav>
