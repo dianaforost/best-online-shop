@@ -1,10 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ProductContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 282px;
+  font-family: 'Mulish';
 `;
 export const ProductImageWrapper = styled.div`
   position: relative;

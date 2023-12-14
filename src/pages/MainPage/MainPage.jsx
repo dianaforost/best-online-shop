@@ -1,4 +1,4 @@
-import { GenderSection } from "components/GenderSection/GenderSection";
+import { GenderSection } from 'components/GenderSection/GenderSection';
 
 export const MainPage = () => {
   return (
