@@ -9,11 +9,11 @@ export const Container = styled.div`
 `;
 
 export const LogoText = styled.span`
-  text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Mulish';
   color: #f9f9f9;
-  font-family: Mulish;
+  text-transform: uppercase;
   margin-right: 480px;
 `;
 
@@ -22,7 +22,7 @@ export const CategoryHeaderText = styled.li`
   font-size: 16px;
   font-weight: 500;
   color: #f9f9f9;
-  font-family: Mulish;
+  font-family: 'Mulish';
   margin-bottom: 16px;
 `;
 
@@ -32,7 +32,7 @@ export const CategoryItemText = styled.li`
   text-transform: full-width;
   font-size: 16px;
   font-weight: 400;
-  font-family: Mulish;
+  font-family: 'Mulish';
   margin-bottom: 16px;
 `;
 
