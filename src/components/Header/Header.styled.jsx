@@ -2,12 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   display: flex;
-  /* width: 100%; */
+  justify-content: center;
   max-height: 100px;
   padding: 38px 120px;
   background-color: rgba(27, 82, 100, 0.8);
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 export const LogoText = styled.div`
