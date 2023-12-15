@@ -16,6 +16,17 @@ export const Container = styled.div`
     padding-right: 40px;
   }
 `;
+export const Title = styled.h2`
+  font-family: Mulish;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+`;
 export const NextBtn = styled.button`
   top: auto;
   bottom: -50px;
@@ -24,6 +35,8 @@ export const NextBtn = styled.button`
   border: none;
   max-width: 60px;
   right: 40px;
+  position: absolute;
+  max-height: 24px;
   &:after {
     content: none;
   }
@@ -36,6 +49,8 @@ export const PrevBtn = styled.button`
   border: none;
   max-width: 60px;
   left: 40px;
+  position: absolute;
+  max-height: 24px;
   &:after {
     content: none;
   }
