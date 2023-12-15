@@ -1,6 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
+import { ProductComponent } from 'components/ProductComponent/ProductComponent';
+import { IconSwiperLeft } from 'components/IconSwiperLeft/IconSwiperLeft';
+import { IconSwiperRight } from 'components/IconSwiperRight/IconSwiperRight';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {
@@ -10,8 +14,6 @@ import {
   PrevBtn,
   Title,
 } from './ProductsSlider.styled';
-import { ProductComponent } from 'components/ProductComponent/ProductComponent';
-import Sprite from '../../images/icons/sprint.svg';
 
 export const ProductsSlider = ({ type }) => {
   const item = {
@@ -59,14 +61,10 @@ export const ProductsSlider = ({ type }) => {
           ))}
         </Swiper>
         <NextBtn className={`${navigationClass}-next`}>
-          <svg style={{ width: '100%', maxHeight: '24' }}>
-            <use href={`${Sprite}#icon-right`}></use>
-          </svg>
+          <IconSwiperRight />
         </NextBtn>
         <PrevBtn className={`${navigationClass}-prev`}>
-          <svg style={{ width: '100%', maxHeight: '24' }}>
-            <use href={`${Sprite}#icon-left`}></use>
-          </svg>
+          <IconSwiperLeft />
         </PrevBtn>
       </Container>
     </Section>
