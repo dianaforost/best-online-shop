@@ -1,13 +1,14 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import forHerFirst from "../../images/for-her-first.png";
-import forHerSec from "../../images/for-her-second.png";
-import forHimFirst from "../../images/for-him-first.png";
-import forHimSec from "../../images/for-him-second.png";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import forHerFirst from '../../images/for-her-first.png';
+import forHerSec from '../../images/for-her-second.png';
+import forHimFirst from '../../images/for-him-first.png';
+import forHimSec from '../../images/for-him-second.png';
 
 export const Section = styled.section`
   width: 100%;
   padding: 100px 0;
+  font-family: 'Mulish';
 `;
 
 export const Container = styled.div`
@@ -52,16 +53,16 @@ const GenderContainer = styled.div`
 `;
 
 export const ForHer = styled(GenderContainer)`
-  background-image: url("${forHerFirst}");
+  background-image: url('${forHerFirst}');
   &:hover {
-    background-image: url("${forHerSec}");
+    background-image: url('${forHerSec}');
   }
 `;
 
 export const ForHim = styled(GenderContainer)`
-  background-image: url("${forHimFirst}");
+  background-image: url('${forHimFirst}');
   &:hover {
-    background-image: url("${forHimSec}");
+    background-image: url('${forHimSec}');
   }
 `;
 
