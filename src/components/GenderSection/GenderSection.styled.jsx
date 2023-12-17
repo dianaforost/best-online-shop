@@ -4,6 +4,8 @@ import forHerFirst from '../../images/for-her-first.png';
 import forHerSec from '../../images/for-her-second.png';
 import forHimFirst from '../../images/for-him-first.png';
 import forHimSec from '../../images/for-him-second.png';
+import winterForHer from '../../images/winter-for-her.png';
+import winterForHim from '../../images/winter-for-him.png';
 
 export const Section = styled.section`
   width: 100%;
@@ -22,7 +24,7 @@ export const Container = styled.div`
     padding-right: 40px;
   }
 `;
-export const Title = styled.h2`
+export const HiddenTitle = styled.h2`
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -30,6 +32,17 @@ export const Title = styled.h2`
   position: absolute;
   white-space: nowrap;
   width: 1px;
+`;
+export const Title = styled.h2`
+  font-family: Mulish;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
 `;
 export const List = styled.div`
   display: flex;
@@ -65,7 +78,13 @@ export const ForHim = styled(GenderContainer)`
     background-image: url('${forHimSec}');
   }
 `;
+export const WinterForHer = styled(GenderContainer)`
+  background-image: url('${winterForHer}');
+`;
 
+export const WinterForHim = styled(GenderContainer)`
+  background-image: url('${winterForHim}');
+`;
 export const Btn = styled(Link)`
   width: 48%;
   padding: 20px 0;
