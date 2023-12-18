@@ -1,3 +1,5 @@
+import { CatalogPageContent } from 'components/CatalogPageContent/CatalogPageContent';
+
 export const CatalogPage = () => {
-  return <h2>CatalogPage</h2>;
+  return <CatalogPageContent />;
 };

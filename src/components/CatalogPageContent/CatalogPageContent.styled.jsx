@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import forHerFirst from '../../images/for-her-first.png';
-import forHerSec from '../../images/for-her-second.png';
-import forHimFirst from '../../images/for-him-first.png';
-import forHimSec from '../../images/for-him-second.png';
-import winterForHer from '../../images/winter-for-her.png';
-import winterForHim from '../../images/winter-for-him.png';
+import forHer from '../../images/for-her.png';
+import forHim from '../../images/for-him.png';
+import novelties from '../../images/novelties.png';
+import all from '../../images/all.png';
 
 export const Section = styled.section`
   width: 100%;
@@ -24,15 +22,6 @@ export const Container = styled.div`
     padding-right: 40px;
   }
 `;
-export const HiddenTitle = styled.h2`
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-`;
 export const Title = styled.h2`
   font-family: Mulish;
   font-size: 32px;
@@ -45,15 +34,16 @@ export const Title = styled.h2`
   }
 `;
 export const List = styled.div`
-  display: flex;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 24px;
   @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
-const GenderContainer = styled.div`
-  width: 588px;
+const ImageContainer = styled.div`
+  max-width: 588px;
   height: 500px;
   transition: all 0.7s ease-out;
   position: relative;
@@ -65,25 +55,18 @@ const GenderContainer = styled.div`
   }
 `;
 
-export const ForHer = styled(GenderContainer)`
-  background-image: url('${forHerFirst}');
-  &:hover {
-    background-image: url('${forHerSec}');
-  }
+export const ForHer = styled(ImageContainer)`
+  background-image: url('${forHer}');
 `;
 
-export const ForHim = styled(GenderContainer)`
-  background-image: url('${forHimFirst}');
-  &:hover {
-    background-image: url('${forHimSec}');
-  }
+export const ForHim = styled(ImageContainer)`
+  background-image: url('${forHim}');
 `;
-export const WinterForHer = styled(GenderContainer)`
-  background-image: url('${winterForHer}');
+export const Novelties = styled(ImageContainer)`
+  background-image: url('${novelties}');
 `;
-
-export const WinterForHim = styled(GenderContainer)`
-  background-image: url('${winterForHim}');
+export const All = styled(ImageContainer)`
+  background-image: url('${all}');
 `;
 export const Btn = styled(Link)`
   width: 48%;
