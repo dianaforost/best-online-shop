@@ -14,13 +14,24 @@ import {
   PrevBtn,
   Title,
 } from './ProductsSlider.styled';
+import { useEffect } from 'react';
+import { getProducts } from '../../redux/products/operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNewProducts } from '../../redux/products/selectors';
 
 export const ProductsSlider = ({ type }) => {
+  const dispatch = useDispatch();
+  const product = useSelector(selectNewProducts) || [];
+  console.log(product);
   const item = {
     id: 12,
     title: 'Жіночі спортивні штани джогери-фіолетовий',
     description: '940 ₴',
   };
+  console.log(useSelector(state => state.products.products));
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
   const products = [item, item, item, item, item, item, item];
   const navigationClass = `${
     type === 'new' ? 'new' : 'discount'
