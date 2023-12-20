@@ -22,13 +22,11 @@ import { selectNewProducts } from '../../redux/products/selectors';
 export const ProductsSlider = ({ type }) => {
   const dispatch = useDispatch();
   const product = useSelector(selectNewProducts) || [];
-  console.log(product);
   const item = {
     id: 12,
     title: 'Жіночі спортивні штани джогери-фіолетовий',
     description: '940 ₴',
   };
-  console.log(useSelector(state => state.products.products));
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
