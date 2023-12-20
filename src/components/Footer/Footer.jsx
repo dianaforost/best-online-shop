@@ -25,7 +25,7 @@ export const Footer = () => {
         <Container>
           <div>
             <LogoText>
-              <NavLink to="/">SportSvit</NavLink>
+              <NavLink to={'/'}>SportSvit</NavLink>
             </LogoText>
           </div>
           <FooterNavigation>
@@ -33,18 +33,18 @@ export const Footer = () => {
               <ul>
                 <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
-                  <NavLink to="/information">Доставка та оплата</NavLink>
+                  <NavLink to={'/information'}>Доставка та оплата</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to="/information">
+                  <NavLink to={'/information'}>
                     <CapitalizeText>Повернення</CapitalizeText> та обмін
                   </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to="/information">Угода користувача</NavLink>
+                  <NavLink to={'/information'}>Угода користувача</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to="/information">Питання та відповіді</NavLink>
+                  <NavLink to={'/information'}>Питання та відповіді</NavLink>
                 </CategoryItemText>
               </ul>
             </InformationMenu>
@@ -53,16 +53,16 @@ export const Footer = () => {
                 <CategoryHeaderText>Магазин</CategoryHeaderText>
 
                 <CategoryItemText>
-                  <NavLink to="/income">Новинки</NavLink>
+                  <NavLink to={'/income'}>Новинки</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to="/women_catalog">Жінки</NavLink>
+                  <NavLink to={'/women_catalog'}>Жінки</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to="/men_catalog">Чоловіки</NavLink>
+                  <NavLink to={'/men_catalog'}>Чоловіки</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to="/deals">Знижки</NavLink>
+                  <NavLink to={'/deals'}>Знижки</NavLink>
                 </CategoryItemText>
               </ul>
             </StoreMenu>

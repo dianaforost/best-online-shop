@@ -19,25 +19,25 @@ export const Header = () => {
   return (
     <Container>
       <LogoText>
-        <NavLink to="/">SportSvit</NavLink>
+        <NavLink to={'/'}>SportSvit</NavLink>
       </LogoText>
       <div>
         <nav>
           <HeaderStoreNavMenu>
             <HeaderStoreNavItem>
-              <NavLink to="/income">Новинки</NavLink>
+              <NavLink to={'/income'}>Новинки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <NavLink to="/catalog">Каталог</NavLink>
+              <NavLink to={'/catalog'}>Каталог</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <NavLink to="/women_catalog">Жінки</NavLink>
+              <NavLink to={'/women_catalog'}>Жінки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <NavLink to="/men_catalog">Чоловіки</NavLink>
+              <NavLink to={'/men_catalog'}>Чоловіки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <NavLink to="/deals">Знижки</NavLink>
+              <NavLink to={'/deals'}>Знижки</NavLink>
             </HeaderStoreNavItem>
           </HeaderStoreNavMenu>
         </nav>
