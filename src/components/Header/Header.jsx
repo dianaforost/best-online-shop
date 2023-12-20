@@ -13,30 +13,31 @@ import {
   HeaderStoreNavMenu,
   LogoText,
 } from './Header.styled';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
     <Container>
       <LogoText>
-        <a href="/">SportSvit</a>
+        <NavLink to="/">SportSvit</NavLink>
       </LogoText>
       <div>
         <nav>
           <HeaderStoreNavMenu>
             <HeaderStoreNavItem>
-              <a href="/">Новинки</a>
+              <NavLink to="/income">Новинки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Каталог</a>
+              <NavLink to="/catalog">Каталог</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Жінки</a>
+              <NavLink to="/women_catalog">Жінки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Чоловіки</a>
+              <NavLink to="/men_catalog">Чоловіки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Знижки</a>
+              <NavLink to="/deals">Знижки</NavLink>
             </HeaderStoreNavItem>
           </HeaderStoreNavMenu>
         </nav>
