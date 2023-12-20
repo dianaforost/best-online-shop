@@ -9,7 +9,17 @@ import { SharedLayout } from "components/SharedLayout/SharedLayout";
 // import { ProductMenPage } from 'pages/ProductMenPage/ProductMenPage';
 // import { DealsPage } from 'pages/DealsPage/DealsPage';
 // import {Information} from './Information/Information'
-import { DealsPage, ProductMenPage, ProductWomenPage, ProductDetailsPage, CatalogPage, NotFoundPage, MainPage, InformationPage } from 'pages';
+import {
+  DealsPage,
+  ProductMenPage,
+  ProductWomenPage,
+  ProductDetailsPage,
+  CatalogPage,
+  NotFoundPage,
+  MainPage,
+  InformationPage,
+  IncomePage,
+} from 'pages';
 
 function App() {
   return (
@@ -17,10 +27,11 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<MainPage />} />
+          <Route path="income" element={<IncomePage />} />
           <Route path="catalog" element={<CatalogPage />} />
           <Route path="catalog/:productsId" element={<ProductDetailsPage />} />
-          <Route path="women" element={<ProductWomenPage />} />
-          <Route path="men" element={<ProductMenPage />} />
+          <Route path="women_catalog" element={<ProductWomenPage />} />
+          <Route path="men_catalog" element={<ProductMenPage />} />
           <Route path="deals" element={<DealsPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="*" element={<NotFoundPage />} />

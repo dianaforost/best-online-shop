@@ -6,3 +6,4 @@ export * from './ProductMenPage/ProductMenPage';
 export * from './ProductWomenPage/ProductWomenPage';
 export * from './DealsPage/DealsPage';
 export * from './InformationPage/InformationPage';
+export * from './IncomePage/IncomePage';
