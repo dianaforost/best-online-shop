@@ -16,6 +16,7 @@ import {
   ContactsMenuIcon,
   CapitalizeText,
 } from './Footer.styled';
+import { NavLink } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -23,51 +24,51 @@ export const Footer = () => {
       <footer>
         <Container>
           <div>
-            <LogoText>SportSvit</LogoText>
+            <LogoText>
+              <NavLink to={'/'}>SportSvit</NavLink>
+            </LogoText>
           </div>
           <FooterNavigation>
             <InformationMenu>
               <ul>
-                <CategoryHeaderText>
-                  <a href="/">Інформація</a>
-                </CategoryHeaderText>
+                <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
-                  <a href="/">Доставка та оплата</a>
+                  <NavLink to={'/information'}>Доставка та оплата</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">
+                  <NavLink to={'/information'}>
                     <CapitalizeText>Повернення</CapitalizeText> та обмін
-                  </a>
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Угода користувача</a>
+                  <NavLink to={'/information'}>Угода користувача</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Питання та відповіді</a>
+                  <NavLink to={'/information'}>Питання та відповіді</NavLink>
                 </CategoryItemText>
               </ul>
             </InformationMenu>
             <StoreMenu>
               <ul>
-                <CategoryHeaderText>магазин</CategoryHeaderText>
+                <CategoryHeaderText>Магазин</CategoryHeaderText>
 
                 <CategoryItemText>
-                  <a href="/">Новинки</a>
+                  <NavLink to={'/income'}>Новинки</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Жінки</a>
+                  <NavLink to={'/women_catalog'}>Жінки</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Чоловіки</a>
+                  <NavLink to={'/men_catalog'}>Чоловіки</NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Знижки</a>
+                  <NavLink to={'/deals'}>Знижки</NavLink>
                 </CategoryItemText>
               </ul>
             </StoreMenu>
             <ContactsMenu>
               <ul>
-                <CategoryHeaderText>контакти</CategoryHeaderText>
+                <CategoryHeaderText>Контакти</CategoryHeaderText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
                     <IconPhone />
@@ -78,14 +79,20 @@ export const Footer = () => {
                   <ContactsMenuIcon>
                     <IconEnvelope />
                   </ContactsMenuIcon>
-                  <a href="email:sportsvit@gmail.com">sportsvit@gmail.com</a>
+                  <a href="mailto:sportsvit@gmail.com">sportsvit@gmail.com</a>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
                     <IconFacebook />
                   </ContactsMenuIcon>
                   <CapitalizeText>
-                    <a href="/">Facebook</a>
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Facebook
+                    </a>
                   </CapitalizeText>
                 </CategoryItemText>
                 <CategoryItemText>
@@ -93,7 +100,13 @@ export const Footer = () => {
                     <IconInstagram />
                   </ContactsMenuIcon>
                   <CapitalizeText>
-                    <a href="/">Instagram</a>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Instagram
+                    </a>
                   </CapitalizeText>
                 </CategoryItemText>
               </ul>
