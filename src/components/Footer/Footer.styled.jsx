@@ -29,7 +29,7 @@ export const CategoryHeaderText = styled.li`
 export const CategoryItemText = styled.li`
   display: flex;
   color: #f9f9f9;
-  text-transform: full-width;
+  /* text-transform: full-width; */
   font-size: 16px;
   font-weight: 400;
   font-family: 'Mulish';
