@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
   display: flex;
   justify-content: center;
   max-height: 100px;
   padding: 38px 120px;
-  background-color: rgba(27, 82, 100, 0.8);
+  background: rgba(27, 82, 100, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(27, 82, 100, 0.19);
 `;
 
 export const LogoText = styled.div`
