@@ -9,20 +9,20 @@ import { Autoplay, EffectFade, Pagination, Mousewheel } from 'swiper/modules';
 
 export const Hero = () => {
   return (
-    <>
+    <div className="swiper-wripper">
       <Swiper
         slidesPerView={1}
         effect={'fade'}
-        mousewheel={true}
+        mousewheel={false}
         loop={true}
         centeredSlides={true}
         direction={'vertical'}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
-          dynamicBullets: true,
+          dynamicBullets: false,
           clickable: true,
 
           renderBullet: function (index, className) {
@@ -68,6 +68,6 @@ export const Hero = () => {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
