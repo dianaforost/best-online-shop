@@ -17,16 +17,16 @@ export const CatalogPageContent = () => {
         <Title>Каталог</Title>
         <List>
           <ForHer>
-            <Btn to={'/women_catalog'}>Для неї</Btn>
+            <Btn to={'women'}>Для неї</Btn>
           </ForHer>
           <ForHim>
-            <Btn to={'/men_catalog'}>Для нього</Btn>
+            <Btn to={'men'}>Для нього</Btn>
           </ForHim>
           <Novelties>
-            <Btn to={'/men_catalog'}>Для нього</Btn>
+            <Btn to={'novelty'}>Новинки</Btn>
           </Novelties>
           <All>
-            <Btn to={'/men_catalog'}>Для нього</Btn>
+            <Btn to={'all'}>Весь товар</Btn>
           </All>
         </List>
       </Container>

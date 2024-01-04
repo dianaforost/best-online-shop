@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
-import { SharedLayout } from "components/SharedLayout/SharedLayout";
+import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 // import { MainPage } from "pages/MainPage/MainPage";
 // import { NotFoundPage } from "pages/NotFoundPage/NotFoundPage";
 // import { CatalogPage } from "pages/CatalogPage/CatalogPage";
@@ -11,8 +11,7 @@ import { SharedLayout } from "components/SharedLayout/SharedLayout";
 // import {Information} from './Information/Information'
 import {
   DealsPage,
-  ProductMenPage,
-  ProductWomenPage,
+  ProductsCatalogPage,
   ProductDetailsPage,
   CatalogPage,
   NotFoundPage,
@@ -29,9 +28,11 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="income" element={<IncomePage />} />
           <Route path="catalog" element={<CatalogPage />} />
-          <Route path="catalog/:productsId" element={<ProductDetailsPage />} />
-          <Route path="women_catalog" element={<ProductWomenPage />} />
-          <Route path="men_catalog" element={<ProductMenPage />} />
+          <Route path="catalog/:category" element={<ProductsCatalogPage />} />
+          <Route
+            path="catalog/:category/:productsId"
+            element={<ProductDetailsPage />}
+          />
           <Route path="deals" element={<DealsPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="*" element={<NotFoundPage />} />
