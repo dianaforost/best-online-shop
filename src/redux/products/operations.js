@@ -16,7 +16,7 @@ export const getProducts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const res = await axios.get(
-        `/products?page=0&size=1&sort=string`,
+        `/products?page=0&size=12&sort=string`,
         '',
         config.headers
       );
