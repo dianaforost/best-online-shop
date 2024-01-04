@@ -1,4 +1,9 @@
-import { Container, Section, Title } from './FilteredCatalogPage.styled';
+import {
+  ButtonList,
+  Container,
+  Section,
+  Title,
+} from './FilteredCatalogPage.styled';
 
 export const FilteredCatalogPage = ({ category }) => {
   const categoryTitles = {
@@ -7,12 +12,14 @@ export const FilteredCatalogPage = ({ category }) => {
     novelty: 'Новинки',
     all: 'Весь одяг',
   };
+  const categories = ['Футболки', 'Топи', 'Шорти', 'Штани', 'Костюми'];
   const title = categoryTitles[category];
 
   return (
     <Section>
       <Container>
         <Title>{title}</Title>
+        <ButtonList>Категорії</ButtonList>
       </Container>
     </Section>
   );

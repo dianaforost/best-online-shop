@@ -28,3 +28,14 @@ export const Title = styled.h2`
     margin-bottom: 80px;
   }
 `;
+export const ButtonList = styled.button`
+  max-width: 180px;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  line-height: 33px;
+  @media (min-width: 768px) {
+  }
+`;
