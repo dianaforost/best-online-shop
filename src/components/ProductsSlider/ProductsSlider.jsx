@@ -19,7 +19,7 @@ export const ProductsSlider = ({ type }) => {
   const item = {
     id: 12,
     title: 'Жіночі спортивні штани джогери-фіолетовий',
-    description: '940 ₴',
+    price: '940 ₴',
   };
   const products = [item, item, item, item, item, item, item];
   const navigationClass = `${

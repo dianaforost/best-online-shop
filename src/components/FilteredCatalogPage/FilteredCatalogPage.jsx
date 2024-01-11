@@ -1,20 +1,27 @@
 import { useState } from 'react';
 import {
   ButtonList,
+  CatalogContent,
   CategoriesList,
   Container,
-  ProductsItem,
+  FilterItemSquare,
+  FilterList,
   ProductsList,
-  ProductsTitle,
   Section,
   Title,
 } from './FilteredCatalogPage.styled';
+import { ProductComponent } from 'components/ProductComponent/ProductComponent';
+import { Icon } from 'components/Icon';
 
 export const FilteredCatalogPage = ({ category }) => {
-  const [isShown, setIsShown] = useState(false);
+  const [isCategoriesShown, setIsCategoriesShown] = useState(false);
+  const [isSizesShown, setIsSizesShown] = useState(false);
 
-  const toggleShowSearch = () => {
-    setIsShown(!isShown);
+  const toggleCategoriesSearch = () => {
+    setIsCategoriesShown(!isCategoriesShown);
+  };
+  const toggleSizesSearch = () => {
+    setIsSizesShown(!isSizesShown);
   };
 
   const categoryTitles = {
@@ -24,17 +31,36 @@ export const FilteredCatalogPage = ({ category }) => {
     all: 'Весь одяг',
   };
   const categories = ['Футболки', 'Топи', 'Шорти', 'Штани', 'Костюми'];
+  const sizes = ['XS', 'S', 'M', 'L', 'XL'];
   const title = categoryTitles[category];
   const products = [
     {
+      id: 1,
       title: 'Жіночі спортивні штани джогери-фіолетовий',
       price: '940 ₴',
     },
     {
+      id: 2,
       title: 'Жіночі спортивні штани джогери-фіолетовий',
       price: '940 ₴',
     },
     {
+      id: 3,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 4,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 5,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 6,
       title: 'Жіночі спортивні штани джогери-фіолетовий',
       price: '940 ₴',
     },
@@ -44,39 +70,58 @@ export const FilteredCatalogPage = ({ category }) => {
     <Section>
       <Container>
         <Title>{title}</Title>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <ButtonList onClick={toggleShowSearch}>Категорії</ButtonList>
-            <CategoriesList $isVisible={isShown}>
-              {categories.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </CategoriesList>
-          </div>
+        <CatalogContent>
+          <FilterList>
+            <div>
+              <ButtonList onClick={toggleCategoriesSearch}>
+                Категорії
+                {!isCategoriesShown ? (
+                  <Icon id={'angle-down'} width={24} height={24} />
+                ) : (
+                  <Icon id={'angle-up'} width={24} height={24} />
+                )}
+              </ButtonList>
+
+              <CategoriesList $isVisible={isCategoriesShown}>
+                {categories.map((item, index) => (
+                  <li
+                    key={index}
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <p>{item}</p>
+                    <FilterItemSquare />
+                  </li>
+                ))}
+              </CategoriesList>
+            </div>
+            <div>
+              <ButtonList onClick={toggleSizesSearch}>
+                Розмір
+                {!isSizesShown ? (
+                  <Icon id={'angle-down'} width={24} height={24} />
+                ) : (
+                  <Icon id={'angle-up'} width={24} height={24} />
+                )}
+              </ButtonList>
+              <CategoriesList $isVisible={isSizesShown}>
+                {sizes.map((item, index) => (
+                  <li
+                    key={index}
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
+                  >
+                    <p>{item}</p>
+                    <FilterItemSquare />
+                  </li>
+                ))}
+              </CategoriesList>
+            </div>
+          </FilterList>
           <ProductsList>
             {products.map(item => (
-              <ProductsItem>
-                <div
-                  style={{
-                    width: '282px',
-                    height: '300px',
-                    backgroundColor: '#D9D9D9',
-                  }}
-                ></div>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '8px',
-                  }}
-                >
-                  <ProductsTitle>{item.title}</ProductsTitle>
-                  <p>{item.price}</p>
-                </div>
-              </ProductsItem>
+              <ProductComponent key={item.id} item={item} />
             ))}
           </ProductsList>
-        </div>
+        </CatalogContent>
       </Container>
     </Section>
   );

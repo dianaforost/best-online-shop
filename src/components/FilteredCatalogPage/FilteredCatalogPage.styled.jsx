@@ -28,10 +28,20 @@ export const Title = styled.h2`
     margin-bottom: 80px;
   }
 `;
-export const ButtonList = styled.button`
-  max-width: 180px;
+export const CatalogContent = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 20px;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
+export const ButtonList = styled.button`
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: transparent;
   border: none;
   font-size: 26px;
@@ -47,27 +57,26 @@ export const CategoriesList = styled.div`
   font-size: 26px;
   line-height: 33px;
 `;
-export const ProductsList = styled.ul`
+export const ProductsList = styled.div`
+  display: grid;
   gap: 24px;
-  display: flex;
+  grid-template-columns: repeat(2, 1fr);
   @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
-export const ProductsItem = styled.li`
-  max-width: 282px;
-  width: 100%;
+export const FilterList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   @media (min-width: 768px) {
   }
 `;
-export const ProductsTitle = styled.h3`
-  font-family: Mulish;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+export const FilterItemSquare = styled.div`
+  background: transparent;
+  border: 1px solid #000;
+  width: 30px;
+  height: 30px;
   @media (min-width: 768px) {
   }
 `;

@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
 import {
+  LinkTo,
   ProductContainer,
   ProductContent,
   ProductImage,
   ProductImageWrapper,
   ProductPrice,
   ProductTitle,
-} from "./ProductComponent.styled";
-import image from "../../images/Rectangle.jpg";
+} from './ProductComponent.styled';
+import image from '../../images/Rectangle.jpg';
 
 export const ProductComponent = ({ item }) => {
   return (
-    <Link to={`catalog/${item.id}`}>
+    <LinkTo to={`catalog/${item.id}`}>
       <ProductContainer>
         <ProductImageWrapper>
           <ProductImage src={image} />
@@ -19,9 +19,9 @@ export const ProductComponent = ({ item }) => {
 
         <ProductContent>
           <ProductTitle>{item.title}</ProductTitle>
-          <ProductPrice>{item.description}</ProductPrice>
+          <ProductPrice>{item.price}</ProductPrice>
         </ProductContent>
       </ProductContainer>
-    </Link>
+    </LinkTo>
   );
 };
