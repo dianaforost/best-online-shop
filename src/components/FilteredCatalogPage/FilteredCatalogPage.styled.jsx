@@ -5,7 +5,6 @@ export const Section = styled.section`
   padding: 100px 0;
   font-family: 'Mulish';
 `;
-
 export const Container = styled.div`
   padding-left: 28px;
   padding-right: 28px;
@@ -17,15 +16,21 @@ export const Container = styled.div`
     padding-right: 40px;
   }
 `;
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  media (min-width: 768px) {
+    margin-bottom: 80px;
+  }
+`;
 export const Title = styled.h2`
   font-family: Mulish;
   font-size: 32px;
   font-weight: 500;
   line-height: normal;
   text-transform: uppercase;
-  margin-bottom: 40px;
   @media (min-width: 768px) {
-    margin-bottom: 80px;
   }
 `;
 export const CatalogContent = styled.div`
@@ -52,4 +57,9 @@ export const FilterList = styled.div`
   gap: 20px;
   @media (min-width: 768px) {
   }
+`;
+export const Results = styled.p`
+  font-size: 18px;
+  line-height: normal;
+  text-align: end;
 `;

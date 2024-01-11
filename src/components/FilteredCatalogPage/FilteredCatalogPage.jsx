@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   CatalogContent,
   Container,
   FilterList,
   ProductsList,
+  Results,
   Section,
   Title,
+  Wrapper,
 } from './FilteredCatalogPage.styled';
 import { ProductComponent } from 'components/ProductComponent/ProductComponent';
 import { FilterItem } from './FilterItem/FilterItem';
 import { categoryTitles } from 'data/categoryTitles';
+import { FilterPagination } from './FilterPagination/FilterPagination';
+import { Icon } from 'components/Icon';
+import { Button } from './FilterPagination/FilterPagination.styled';
 
 export const FilteredCatalogPage = ({ category }) => {
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
@@ -70,11 +75,42 @@ export const FilteredCatalogPage = ({ category }) => {
       price: '940 ₴',
     },
   ];
-
+  const response = { products, total: 98 };
+  const [page, setCurrentPage] = useState(0);
+  const handlePageChange = useCallback(page => {
+    setCurrentPage(page);
+  }, []);
+  const handleNextPage = () => {
+    if (page < response.total - 1) {
+      handlePageChange(page + 1);
+    }
+  };
   return (
     <Section>
       <Container>
-        <Title>{title}</Title>
+        <Wrapper>
+          <Title>{title}</Title>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
+          >
+            <Results>Результати({response.total})</Results>
+            <div style={{ display: 'flex' }}>
+              <ul style={{ display: 'flex', gap: '3px' }}>
+                <FilterPagination
+                  total={response.total}
+                  page={page}
+                  handlePageChange={handlePageChange}
+                />
+              </ul>
+              <button
+                onClick={handleNextPage}
+                disabled={response.total === 1 ? true : false}
+              >
+                <Icon id={'angle-right'} width={8} height={15} />
+              </button>
+            </div>
+          </div>
+        </Wrapper>
         <CatalogContent>
           <FilterList>
             <FilterItem
