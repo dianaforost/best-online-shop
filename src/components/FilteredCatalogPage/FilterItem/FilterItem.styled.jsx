@@ -25,6 +25,21 @@ export const FilterItemSquare = styled.div`
   border: 1px solid #000;
   width: 30px;
   height: 30px;
+  background: ${props => (props.checked ? 'gray' : 'transparent')};
   @media (min-width: 768px) {
   }
+`;
+export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  appearance: none;
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
 `;

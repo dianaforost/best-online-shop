@@ -14,6 +14,19 @@ import { categoryTitles } from 'data/categoryTitles';
 export const FilteredCatalogPage = ({ category }) => {
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
   const [isSizesShown, setIsSizesShown] = useState(false);
+  const initialCheckedStates = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
 
   const toggleCategoriesSearch = () => {
     setIsCategoriesShown(!isCategoriesShown);
@@ -69,12 +82,14 @@ export const FilteredCatalogPage = ({ category }) => {
               items={categories}
               isShown={isCategoriesShown}
               toggleSearch={toggleCategoriesSearch}
+              initialChecked={initialCheckedStates}
             />
             <FilterItem
               label="Розмір"
               items={sizes}
               isShown={isSizesShown}
               toggleSearch={toggleSizesSearch}
+              initialChecked={initialCheckedStates}
             />
           </FilterList>
           <ProductsList>

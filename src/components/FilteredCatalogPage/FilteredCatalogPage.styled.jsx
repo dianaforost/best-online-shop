@@ -53,17 +53,3 @@ export const FilterList = styled.div`
   @media (min-width: 768px) {
   }
 `;
-export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
-  border: 0;
-  clip: rect(0 0 0 0);
-  clippath: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  width: 1px;
-`;
