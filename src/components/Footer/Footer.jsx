@@ -59,17 +59,17 @@ export const Footer = () => {
                 <CategoryHeaderText>Магазин</CategoryHeaderText>
 
                 <CategoryItemText>
-                  <NavLink to={'/income'}>
+                  <NavLink to={'/catalog/novelty'}>
                     <CapitalizeText>Новинки</CapitalizeText>
                   </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/women_catalog'}>
+                  <NavLink to={'/catalog/women'}>
                     <CapitalizeText>Жінки</CapitalizeText>
                   </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/men_catalog'}>
+                  <NavLink to={'/catalog/man'}>
                     <CapitalizeText>Чоловіки</CapitalizeText>
                   </NavLink>
                 </CategoryItemText>

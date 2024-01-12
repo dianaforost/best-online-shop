@@ -2,8 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 import { ProductComponent } from 'components/ProductComponent/ProductComponent';
-import { IconSwiperLeft } from 'components/IconSwiperLeft/IconSwiperLeft';
-import { IconSwiperRight } from 'components/IconSwiperRight/IconSwiperRight';
+import { Icon } from 'components/Icon/Icon';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,7 +18,7 @@ export const ProductsSlider = ({ type }) => {
   const item = {
     id: 12,
     title: 'Жіночі спортивні штани джогери-фіолетовий',
-    description: '940 ₴',
+    price: '940 ₴',
   };
   const products = [item, item, item, item, item, item, item];
   const navigationClass = `${
@@ -61,10 +60,10 @@ export const ProductsSlider = ({ type }) => {
           ))}
         </Swiper>
         <NextBtn className={`${navigationClass}-next`}>
-          <IconSwiperRight />
+          <Icon id={'arrow-right'} width="60" height="24" />
         </NextBtn>
         <PrevBtn className={`${navigationClass}-prev`}>
-          <IconSwiperLeft />
+          <Icon id={'arrow-left'} width="60" height="24" />
         </PrevBtn>
       </Container>
     </Section>
