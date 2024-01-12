@@ -130,7 +130,11 @@ export const FilteredCatalogPage = ({ category }) => {
           </FilterList>
           <ProductsList>
             {products.map(item => (
-              <ProductComponent key={item.id} item={item} />
+              <ProductComponent
+                key={item.id}
+                item={item}
+                isCatalogPage={true}
+              />
             ))}
           </ProductsList>
         </CatalogContent>

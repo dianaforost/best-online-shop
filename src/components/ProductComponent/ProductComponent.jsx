@@ -9,9 +9,9 @@ import {
 } from './ProductComponent.styled';
 import image from '../../images/Rectangle.jpg';
 
-export const ProductComponent = ({ item }) => {
+export const ProductComponent = ({ item, isCatalogPage }) => {
   return (
-    <LinkTo to={`catalog/${item.id}`}>
+    <LinkTo to={`catalog/${item.id}`} isCatalogPage={isCatalogPage}>
       <ProductContainer>
         <ProductImageWrapper>
           <ProductImage src={image} />
