@@ -17,7 +17,6 @@ import {
   NotFoundPage,
   MainPage,
   InformationPage,
-  IncomePage,
 } from 'pages';
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<MainPage />} />
-          <Route path="income" element={<IncomePage />} />
           <Route path="catalog" element={<CatalogPage />} />
           <Route path="catalog/:category" element={<ProductsCatalogPage />} />
           <Route
