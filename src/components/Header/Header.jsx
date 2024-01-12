@@ -25,7 +25,7 @@ export const Header = () => {
         <nav>
           <HeaderStoreNavMenu>
             <HeaderStoreNavItem>
-              <NavLink to={'/income'}>Новинки</NavLink>
+              <NavLink to={'/catalog/novelty'}>Новинки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
               <NavLink to={'/catalog'}>Каталог</NavLink>
