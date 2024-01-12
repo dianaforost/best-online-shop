@@ -20,7 +20,7 @@ export const CatalogPageContent = () => {
             <Btn to={'women'}>Для неї</Btn>
           </ForHer>
           <ForHim>
-            <Btn to={'men'}>Для нього</Btn>
+            <Btn to={'man'}>Для нього</Btn>
           </ForHim>
           <Novelties>
             <Btn to={'novelty'}>Новинки</Btn>

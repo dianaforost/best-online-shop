@@ -31,10 +31,10 @@ export const Header = () => {
               <NavLink to={'/catalog'}>Каталог</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <NavLink to={'/women_catalog'}>Жінки</NavLink>
+              <NavLink to={'/catalog/women'}>Жінки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <NavLink to={'/men_catalog'}>Чоловіки</NavLink>
+              <NavLink to={'/catalog/man'}>Чоловіки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
               <NavLink to={'/deals'}>Знижки</NavLink>
