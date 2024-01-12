@@ -3,6 +3,7 @@ import {
   CatalogContent,
   Container,
   FilterList,
+  NextButton,
   ProductsList,
   Results,
   Section,
@@ -14,7 +15,6 @@ import { FilterItem } from './FilterItem/FilterItem';
 import { categoryTitles } from 'data/categoryTitles';
 import { FilterPagination } from './FilterPagination/FilterPagination';
 import { Icon } from 'components/Icon';
-import { Button } from './FilterPagination/FilterPagination.styled';
 
 export const FilteredCatalogPage = ({ category }) => {
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
@@ -102,12 +102,12 @@ export const FilteredCatalogPage = ({ category }) => {
                   handlePageChange={handlePageChange}
                 />
               </ul>
-              <button
+              <NextButton
                 onClick={handleNextPage}
                 disabled={response.total === 1 ? true : false}
               >
                 <Icon id={'angle-right'} width={8} height={15} />
-              </button>
+              </NextButton>
             </div>
           </div>
         </Wrapper>

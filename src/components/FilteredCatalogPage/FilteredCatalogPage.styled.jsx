@@ -63,3 +63,7 @@ export const Results = styled.p`
   line-height: normal;
   text-align: end;
 `;
+export const NextButton = styled.button`
+  background-color: transparent;
+  border: none;
+`;
