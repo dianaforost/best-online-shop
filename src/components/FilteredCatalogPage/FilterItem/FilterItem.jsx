@@ -1,4 +1,4 @@
-import { Icon } from 'components/Icon';
+import { Icon } from 'components/Icon/Icon';
 import {
   ButtonList,
   CategoriesList,
@@ -46,7 +46,14 @@ export const FilterItem = ({
                 checked={checkedItems[index]}
                 onChange={() => handleCheckboxChange(index, item)}
               />
-              <FilterItemSquare checked={checkedItems[index]} />
+              <FilterItemSquare>
+                <Icon
+                  id={'check'}
+                  width={24}
+                  height={24}
+                  style={{ display: checkedItems[index] ? 'block' : 'none' }}
+                />
+              </FilterItemSquare>
             </div>
           </li>
         ))}

@@ -14,7 +14,7 @@ import { ProductComponent } from 'components/ProductComponent/ProductComponent';
 import { FilterItem } from './FilterItem/FilterItem';
 import { categoryTitles } from 'data/categoryTitles';
 import { FilterPagination } from './FilterPagination/FilterPagination';
-import { Icon } from 'components/Icon';
+import { Icon } from 'components/Icon/Icon';
 
 export const FilteredCatalogPage = ({ category }) => {
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);

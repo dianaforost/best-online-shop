@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 import { ProductComponent } from 'components/ProductComponent/ProductComponent';
-import { Icon } from 'components/Icon';
+import { Icon } from 'components/Icon/Icon';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

@@ -21,7 +21,9 @@ export const CategoriesList = styled.div`
   line-height: 33px;
 `;
 export const FilterItemSquare = styled.div`
-  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #000;
   width: 30px;
   height: 30px;
@@ -42,4 +44,5 @@ export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   top: 0;
   left: 0;
   white-space: nowrap;
+  cursor: pointer;
 `;
