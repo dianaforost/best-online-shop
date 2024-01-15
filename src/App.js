@@ -19,6 +19,7 @@ import {
   InformationPage,
 } from 'pages';
 import { useEffect } from 'react';
+import GlobalStyles from 'GlobalStyle';
 
 function App() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <GlobalStyles />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<MainPage />} />

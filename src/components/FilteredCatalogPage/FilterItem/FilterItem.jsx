@@ -44,6 +44,7 @@ export const FilterItem = ({
             <Item $type={type}>{item}</Item>
             <div style={{ position: 'relative' }}>
               <HiddenCheckbox
+                name={item}
                 checked={checkedItems[index]}
                 onChange={() => handleCheckboxChange(index, item)}
               />

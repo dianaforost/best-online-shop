@@ -15,22 +15,34 @@ import {
   TitleContainer,
   Wrapper,
 } from './ProductDetails.styled';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { FilterItem } from 'components/FilteredCatalogPage/FilterItem/FilterItem';
 import { useState } from 'react';
 import { Icon } from 'components/Icon/Icon';
+import { Pagination } from 'swiper/modules';
+import { ProductDescription } from './ProductDescription/ProductDescription';
 
 export const ProductDetails = () => {
   const categories = ['білий', 'рожевий', 'сірий', 'чорний'];
   const sizes = ['XS', 'S', 'M', 'L', 'XL'];
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
   const [isSizesShown, setIsSizesShown] = useState(false);
+  const [isDescrShown, setIsDescrShown] = useState(false);
+  const [isDeliveryShown, setIsDeliveryShown] = useState(false);
   const toggleCategoriesSearch = () => {
     setIsCategoriesShown(!isCategoriesShown);
   };
   const toggleSizesSearch = () => {
     setIsSizesShown(!isSizesShown);
+  };
+  const toggleDescrSearch = () => {
+    setIsDescrShown(!isDescrShown);
+  };
+  const toggleDeliverySearch = () => {
+    setIsDeliveryShown(!isDeliveryShown);
   };
   const initialCheckedStates = [
     false,
@@ -53,6 +65,13 @@ export const ProductDetails = () => {
             direction={'vertical'}
             spaceBetween={12}
             slidesPerView={3}
+            pagination={{
+              clickable: true,
+              renderBullet: function (index, className) {
+                return `<span key=${index} class="${className}" style="background:#0D0C0B;"></span>`;
+              },
+            }}
+            modules={[Pagination]}
             style={{ height: 444, margin: 0 }}
           >
             {[1, 2, 3, 4, 5, 6].map(number => (
@@ -103,8 +122,16 @@ export const ProductDetails = () => {
             <ButtonToFav>Додати до улюбленого</ButtonToFav>
           </FlexContainer>
           <div>
-            <div>опис товару</div>
-            <div>доставка та повернення</div>
+            <ProductDescription
+              label={'Опис товару'}
+              toggleDescrSearch={toggleDescrSearch}
+              isDescrShown={isDescrShown}
+            />
+            <ProductDescription
+              label={'Доставка та повернення'}
+              toggleDeliverySearch={toggleDeliverySearch}
+              isDeliveryShown={isDeliveryShown}
+            />
           </div>
         </InfoContainer>
       </Container>
