@@ -105,7 +105,7 @@ export const Btn = styled(Link)`
   bottom: 40px;
   left: 25%;
   &:hover {
-    color: #000;
+    color: #0d0c0b;
     background: #fff;
   }
 `;
