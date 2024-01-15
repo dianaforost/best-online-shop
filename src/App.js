@@ -39,6 +39,7 @@ function App() {
             element={<ProductDetailsPage />}
           />
           <Route path="deals" element={<DealsPage />} />
+          <Route path="deals/:productsId" element={<ProductDetailsPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

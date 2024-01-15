@@ -55,7 +55,10 @@ export const ProductsSlider = ({ type }) => {
         >
           {products.map((item, index) => (
             <SwiperSlide key={index}>
-              <ProductComponent item={item} />
+              <ProductComponent
+                item={item}
+                sectionType={type === 'new' ? 'new' : 'discount'}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
