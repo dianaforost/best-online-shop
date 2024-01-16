@@ -8,7 +8,7 @@ export const MainPage = () => {
         <GenderSection />
         <ProductsSlider type={'new'} />
         <GenderSection type={'winter'} />
-        <ProductsSlider type={'discounts'} />
+        <ProductsSlider type={'discount'} />
       </main>
     </>
   );

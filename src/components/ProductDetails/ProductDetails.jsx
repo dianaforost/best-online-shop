@@ -25,7 +25,7 @@ import { Icon } from 'components/Icon/Icon';
 import { Pagination } from 'swiper/modules';
 import { ProductDescription } from './ProductDescription/ProductDescription';
 
-export const ProductDetails = () => {
+export const ProductDetails = ({ productsId }) => {
   const categories = ['білий', 'рожевий', 'сірий', 'чорний'];
   const sizes = ['XS', 'S', 'M', 'L', 'XL'];
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
@@ -87,7 +87,7 @@ export const ProductDetails = () => {
             <ProductContent>
               <TitleContainer>
                 <ProductTitle>Спортивний топ</ProductTitle>
-                <ProductId>129894</ProductId>
+                <ProductId>{productsId}</ProductId>
               </TitleContainer>
               <ProductPrice>940 ₴</ProductPrice>
             </ProductContent>
