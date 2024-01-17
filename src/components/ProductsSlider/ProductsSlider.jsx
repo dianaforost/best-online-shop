@@ -15,20 +15,57 @@ import {
 } from './ProductsSlider.styled';
 
 export const ProductsSlider = ({ type }) => {
-  const item = {
-    id: 12,
-    title: 'Жіночі спортивні штани джогери-фіолетовий',
-    price: '940 ₴',
-  };
-  const products = [item, item, item, item, item, item, item];
+  const products = [
+    {
+      id: 1,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 2,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 3,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 4,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 5,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 6,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+    {
+      id: 7,
+      title: 'Жіночі спортивні штани джогери-фіолетовий',
+      price: '940 ₴',
+    },
+  ];
   const navigationClass = `${
-    type === 'new' ? 'new' : 'discount'
+    type === 'new' ? 'new' : type === 'discount' ? 'discount' : 'recently'
   }-swiper-navigation`;
 
   return (
     <Section>
       <Container>
-        <Title>{type === 'new' ? 'Новинки' : 'Знижки'}</Title>
+        <Title>
+          {type === 'new'
+            ? 'Новинки'
+            : type === 'discount'
+            ? 'Знижки'
+            : 'Нещодавно переглянуті'}
+        </Title>
         <Swiper
           slidesPerView={1}
           spaceBetween={24}
@@ -55,7 +92,16 @@ export const ProductsSlider = ({ type }) => {
         >
           {products.map((item, index) => (
             <SwiperSlide key={index}>
-              <ProductComponent item={item} />
+              <ProductComponent
+                item={item}
+                sectionType={
+                  type === 'new'
+                    ? 'new'
+                    : type === 'discount'
+                    ? 'discount'
+                    : 'recently'
+                }
+              />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 // import { MainPage } from "pages/MainPage/MainPage";
@@ -18,10 +18,19 @@ import {
   MainPage,
   InformationPage,
 } from 'pages';
+import { useEffect } from 'react';
+import GlobalStyles from 'GlobalStyle';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="App">
+      <GlobalStyles />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<MainPage />} />
@@ -32,6 +41,7 @@ function App() {
             element={<ProductDetailsPage />}
           />
           <Route path="deals" element={<DealsPage />} />
+          <Route path="deals/:productsId" element={<ProductDetailsPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 
+export const List = styled.div`
+  width: ${({ $type }) => ($type ? '50%' : '')};
+`;
 export const ButtonList = styled.button`
-  width: 180px;
+  width: ${({ $type }) => ($type ? '100%' : '180px')};
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: transparent;
   border: none;
-  font-size: 26px;
-  line-height: 33px;
+  font-size: ${({ $type }) => ($type ? '16px' : '26px')};
+  line-height: ${({ $type }) => ($type ? '20px' : '33px')};
+  border: ${({ $type }) => ($type ? '1px solid #000' : 'none')};
+  padding: ${({ $type }) => ($type ? '10px' : 'none')};
+  text-transform: ${({ $type }) => ($type ? 'uppercase' : 'capitalize')};
   @media (min-width: 768px) {
   }
 `;
@@ -25,11 +31,22 @@ export const FilterItemSquare = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid #000;
-  width: 30px;
-  height: 30px;
+  width: ${({ $type }) => ($type ? '24px' : '30px')};
+  height: ${({ $type }) => ($type ? '24px' : '30px')};
   background: ${props => (props.checked ? 'gray' : 'transparent')};
   @media (min-width: 768px) {
   }
+`;
+export const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  border: ${({ $type }) => ($type ? '1px solid #000' : 'none')};
+  padding: ${({ $type }) => ($type ? '10px' : 'none')};
+`;
+export const Item = styled.p`
+  font-size: ${({ $type }) => ($type ? '16px' : '26px')};
+  line-height: ${({ $type }) => ($type ? '20px' : '33px')};
+  text-transform: ${({ $type }) => ($type ? 'uppercase' : 'capitalize')};
 `;
 export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   appearance: none;

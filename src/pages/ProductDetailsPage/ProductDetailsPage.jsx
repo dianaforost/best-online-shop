@@ -1,3 +1,13 @@
+import { ProductDetails } from 'components/ProductDetails/ProductDetails';
+import { ProductsSlider } from 'components/ProductsSlider/ProductsSlider';
+import { useParams } from 'react-router-dom';
+
 export const ProductDetailsPage = () => {
-  return <h2>ProductDetailsPage</h2>;
+  const { productsId } = useParams();
+  return (
+    <>
+      <ProductDetails productsId={productsId} />
+      <ProductsSlider type={'recently'} />
+    </>
+  );
 };
