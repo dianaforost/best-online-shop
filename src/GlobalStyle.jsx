@@ -1,12 +1,12 @@
-@import-normalize;
-@import url(./fonts.css);
+import { createGlobalStyle } from 'styled-components';
+import 'normalize.css';
 
+const GlobalStyles = createGlobalStyle`
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -65,3 +65,7 @@ a {
 a:visited {
   color: none;
 }
+
+`;
+
+export default GlobalStyles;

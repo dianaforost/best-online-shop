@@ -4,6 +4,9 @@ import {
   CategoriesList,
   FilterItemSquare,
   HiddenCheckbox,
+  Item,
+  List,
+  ListItem,
 } from './FilterItem.styled';
 import { useState } from 'react';
 
@@ -13,6 +16,7 @@ export const FilterItem = ({
   isShown,
   toggleSearch,
   initialChecked,
+  type,
 }) => {
   const [checkedItems, setCheckedItems] = useState(
     initialChecked.map(() => false)
@@ -25,8 +29,8 @@ export const FilterItem = ({
   };
 
   return (
-    <div>
-      <ButtonList onClick={toggleSearch}>
+    <List $type={type}>
+      <ButtonList onClick={toggleSearch} $type={type}>
         {label}
         {!isShown ? (
           <Icon id={'angle-down'} width={24} height={24} />
@@ -36,17 +40,15 @@ export const FilterItem = ({
       </ButtonList>
       <CategoriesList $isVisible={isShown}>
         {items.map((item, index) => (
-          <li
-            key={index}
-            style={{ display: 'flex', justifyContent: 'space-between' }}
-          >
-            <p>{item}</p>
+          <ListItem $type={type} key={index}>
+            <Item $type={type}>{item}</Item>
             <div style={{ position: 'relative' }}>
               <HiddenCheckbox
+                name={item}
                 checked={checkedItems[index]}
                 onChange={() => handleCheckboxChange(index, item)}
               />
-              <FilterItemSquare>
+              <FilterItemSquare $type={type}>
                 <Icon
                   id={'check'}
                   width={24}
@@ -55,9 +57,9 @@ export const FilterItem = ({
                 />
               </FilterItemSquare>
             </div>
-          </li>
+          </ListItem>
         ))}
       </CategoriesList>
-    </div>
+    </List>
   );
 };
