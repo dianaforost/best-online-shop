@@ -30,38 +30,16 @@ export const CategoryHeaderText = styled.li`
 `;
 
 export const CategoryItemText = styled.li`
-  display: block;
   color: #f9f9f9;
   font-size: 16px;
   font-weight: 400;
   font-family: 'Mulish';
   margin-bottom: 16px;
-  /* Link effect */
-  background-image: linear-gradient(to right, #000, #000 50%, #f9f9f9 50%);
-  background-size: 200% 100%;
-  background-position: -100%;
-  position: relative;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
-  &:before {
-    content: '';
-    background: #ff0000;
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: all 0.3s ease-in-out;
-  }
-
+  cursor: pointer;
   &:hover {
-    background-position: 0;
-  }
-
-  &:hover:before {
-    width: 100%;
+    color: #fff;
+    text-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+      0 0 100px #03e9f4;
   }
 
   @media screen and (min-width: 1200px) {
