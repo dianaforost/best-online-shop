@@ -11,6 +11,14 @@ export const Container = styled.div`
   }
 `;
 
+export const Logo = styled.div`
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
 export const LogoText = styled.span`
   font-size: 16px;
   font-weight: 500;
@@ -40,6 +48,7 @@ export const CategoryItemText = styled.li`
     color: #fff;
     text-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
       0 0 100px #03e9f4;
+    transform: scale(1.1);
   }
 
   @media screen and (min-width: 1200px) {
