@@ -3,9 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: block;
   background-color: rgba(27, 82, 100, 0.8);
+
+  @media screen and (min-width: 768px) {
+  }
+
   @media screen and (min-width: 1200px) {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     max-height: 276px;
     padding: 50px 120px 50px 120px;
   }
@@ -13,7 +17,6 @@ export const Container = styled.div`
 
 export const Logo = styled.div`
   transform: scale(1);
-
   &:hover {
     transform: scale(1.1);
   }
@@ -25,7 +28,6 @@ export const LogoText = styled.span`
   font-family: 'Mulish';
   color: #f9f9f9;
   text-transform: uppercase;
-  margin-right: 480px;
 `;
 
 export const CategoryHeaderText = styled.li`
