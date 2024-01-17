@@ -1,5 +1,6 @@
 import {
   Container,
+  Logo,
   LogoText,
   CategoryHeaderText,
   CategoryItemText,
@@ -18,11 +19,11 @@ export const Footer = () => {
     <>
       <footer>
         <Container>
-          <div>
+          <Logo>
             <LogoText>
               <NavLink to={'/'}>SportSvit</NavLink>
             </LogoText>
-          </div>
+          </Logo>
           <FooterNavigation>
             <InformationMenu>
               <ul>
