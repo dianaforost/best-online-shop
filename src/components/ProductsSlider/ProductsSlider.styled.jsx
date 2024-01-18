@@ -34,7 +34,7 @@ export const NextBtn = styled.button`
   background-color: transparent;
   border: none;
   max-width: 60px;
-  right: 40px;
+  right: 0;
   position: absolute;
   max-height: 24px;
   &:after {
@@ -48,7 +48,7 @@ export const PrevBtn = styled.button`
   background-color: transparent;
   border: none;
   max-width: 60px;
-  left: 40px;
+  left: 0;
   position: absolute;
   max-height: 24px;
   &:after {
