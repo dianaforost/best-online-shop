@@ -1,14 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
-// import { MainPage } from "pages/MainPage/MainPage";
-// import { NotFoundPage } from "pages/NotFoundPage/NotFoundPage";
-// import { CatalogPage } from "pages/CatalogPage/CatalogPage";
-// import { ProductDetailsPage } from "pages/ProductDetailsPage/ProductDetailsPage";
-// import { ProductWomenPage } from 'pages/ProductWomenPage/ProductWomenPage';
-// import { ProductMenPage } from 'pages/ProductMenPage/ProductMenPage';
-// import { DealsPage } from 'pages/DealsPage/DealsPage';
-// import {Information} from './Information/Information'
 import {
   DealsPage,
   ProductsCatalogPage,

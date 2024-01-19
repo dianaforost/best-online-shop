@@ -1,6 +1,5 @@
 import {
   IconFavorite,
-  IconLanguage,
   IconSearch,
   IconShoppingCart,
   IconUser,
@@ -62,11 +61,6 @@ export const Header = () => {
           <HeaderIconMenuItem>
             <a href="/">
               <IconShoppingCart />
-            </a>
-          </HeaderIconMenuItem>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <IconLanguage />
             </a>
           </HeaderIconMenuItem>
         </HeaderIconMenuNav>
