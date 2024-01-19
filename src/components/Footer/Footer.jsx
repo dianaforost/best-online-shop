@@ -10,6 +10,7 @@ import {
   ContactsMenu,
   ContactsMenuIcon,
   CapitalizeText,
+  CategoryBlock,
 } from './Footer.styled';
 import { Icon } from 'components/Icon/Icon';
 import { NavLink } from 'react-router-dom';
@@ -26,7 +27,7 @@ export const Footer = () => {
           </Logo>
           <FooterNavigation>
             <InformationMenu>
-              <ul>
+              <CategoryBlock>
                 <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
                   <NavLink to={'/information'}>
@@ -48,10 +49,10 @@ export const Footer = () => {
                     <CapitalizeText>Питання</CapitalizeText> та відповіді
                   </NavLink>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </InformationMenu>
             <StoreMenu>
-              <ul>
+              <CategoryBlock>
                 <CategoryHeaderText>Магазин</CategoryHeaderText>
 
                 <CategoryItemText>
@@ -74,10 +75,10 @@ export const Footer = () => {
                     <CapitalizeText>Знижки</CapitalizeText>
                   </NavLink>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </StoreMenu>
             <ContactsMenu>
-              <ul>
+              <CategoryBlock>
                 <CategoryHeaderText>Контакти</CategoryHeaderText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
@@ -119,7 +120,7 @@ export const Footer = () => {
                     </a>
                   </CapitalizeText>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </ContactsMenu>
           </FooterNavigation>
         </Container>

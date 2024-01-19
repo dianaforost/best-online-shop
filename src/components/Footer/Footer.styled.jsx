@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: block;
   background-color: rgba(27, 82, 100, 0.8);
+  padding: 20px 28px 20px 28px;
 
   @media screen and (min-width: 768px) {
   }
@@ -10,15 +11,16 @@ export const Container = styled.div`
   @media screen and (min-width: 1200px) {
     display: flex;
     justify-content: space-between;
-    max-height: 276px;
+    /* max-height: 276px; */
     padding: 50px 120px 50px 120px;
   }
 `;
 
 export const Logo = styled.div`
-  transform: scale(1);
-  &:hover {
-    transform: scale(1.1);
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -28,6 +30,13 @@ export const LogoText = styled.span`
   font-family: 'Mulish';
   color: #f9f9f9;
   text-transform: uppercase;
+`;
+
+export const CategoryBlock = styled.ul`
+  margin-bottom: 40px;
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const CategoryHeaderText = styled.li`
