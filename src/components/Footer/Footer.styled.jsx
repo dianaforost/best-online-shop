@@ -69,6 +69,11 @@ export const CategoryItemText = styled.li`
 
 export const FooterNavigation = styled.div`
   display: block;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   @media screen and (min-width: 1200px) {
     display: flex;
   }
