@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-  media (min-width: 768px) {
+  @media (min-width: 768px) {
     margin-bottom: 80px;
   }
 `;

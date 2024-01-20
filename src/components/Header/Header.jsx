@@ -1,11 +1,4 @@
 import {
-  IconFavorite,
-  IconLanguage,
-  IconSearch,
-  IconShoppingCart,
-  IconUser,
-} from 'components';
-import {
   Container,
   HeaderIconMenuItem,
   HeaderIconMenuNav,
@@ -14,6 +7,7 @@ import {
   LogoText,
 } from './Header.styled';
 import { NavLink } from 'react-router-dom';
+import { Icon } from 'components/Icon/Icon';
 
 export const Header = () => {
   return (
@@ -46,27 +40,22 @@ export const Header = () => {
         <HeaderIconMenuNav>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconSearch />
+              <Icon id={'search'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconUser />
+              <Icon id={'user'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconFavorite />
+              <Icon id={'heart'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconShoppingCart />
-            </a>
-          </HeaderIconMenuItem>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <IconLanguage />
+              <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
         </HeaderIconMenuNav>

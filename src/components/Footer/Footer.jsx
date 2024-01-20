@@ -1,11 +1,6 @@
 import {
-  IconEnvelope,
-  IconFacebook,
-  IconInstagram,
-  IconPhone,
-} from 'components';
-import {
   Container,
+  Logo,
   LogoText,
   CategoryHeaderText,
   CategoryItemText,
@@ -15,7 +10,9 @@ import {
   ContactsMenu,
   ContactsMenuIcon,
   CapitalizeText,
+  CategoryBlock,
 } from './Footer.styled';
+import { Icon } from 'components/Icon/Icon';
 import { NavLink } from 'react-router-dom';
 
 export const Footer = () => {
@@ -23,14 +20,14 @@ export const Footer = () => {
     <>
       <footer>
         <Container>
-          <div>
+          <Logo>
             <LogoText>
               <NavLink to={'/'}>SportSvit</NavLink>
             </LogoText>
-          </div>
+          </Logo>
           <FooterNavigation>
             <InformationMenu>
-              <ul>
+              <CategoryBlock>
                 <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
                   <NavLink to={'/information'}>
@@ -52,10 +49,10 @@ export const Footer = () => {
                     <CapitalizeText>Питання</CapitalizeText> та відповіді
                   </NavLink>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </InformationMenu>
             <StoreMenu>
-              <ul>
+              <CategoryBlock>
                 <CategoryHeaderText>Магазин</CategoryHeaderText>
 
                 <CategoryItemText>
@@ -78,26 +75,26 @@ export const Footer = () => {
                     <CapitalizeText>Знижки</CapitalizeText>
                   </NavLink>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </StoreMenu>
             <ContactsMenu>
-              <ul>
+              <CategoryBlock>
                 <CategoryHeaderText>Контакти</CategoryHeaderText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconPhone />
+                    <Icon id={'phone'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <a href="tel:+380994567895">+38(099)4567895</a>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconEnvelope />
+                    <Icon id={'envelope'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <a href="mailto:sportsvit@gmail.com">sportsvit@gmail.com</a>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconFacebook />
+                    <Icon id={'facebook-f'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <CapitalizeText>
                     <a
@@ -111,7 +108,7 @@ export const Footer = () => {
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconInstagram />
+                    <Icon id={'instagram'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <CapitalizeText>
                     <a
@@ -123,7 +120,7 @@ export const Footer = () => {
                     </a>
                   </CapitalizeText>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </ContactsMenu>
           </FooterNavigation>
         </Container>
