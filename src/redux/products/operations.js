@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL =
-  'https://virtserver.swaggerhub.com/VLADYSLAVCHERNIAVSKY/team/1.0.0';
+  'http://version-002-env.eba-8ipf2vai.eu-west-2.elasticbeanstalk.com';
 
 const config = {
   headers: {
@@ -15,11 +15,8 @@ export const getProducts = createAsyncThunk(
   'products/getAll',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get(
-        `/products?page=0&size=12&sort=string`,
-        '',
-        config.headers
-      );
+      const res = await axios.get(`/products/1`, '', config.headers);
+      console.log(res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
