@@ -3,7 +3,9 @@ const DefaultTheme = {
     firstFontFamily: 'Mulish',
     secondFontFamily: 'Mulish',
   },
-  header: {},
+  header: {
+    header_bg_color: 'rgba(27, 82, 100, 0.8)',
+  },
   main: {
     textColor: '#f9f9f9',
     colorWhite: '#ffffff',
