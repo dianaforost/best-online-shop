@@ -1,11 +1,4 @@
 import {
-  IconFavorite,
-  IconLanguage,
-  IconSearch,
-  IconShoppingCart,
-  IconUser,
-} from 'components';
-import {
   Container,
   HeaderIconMenuItem,
   HeaderIconMenuNav,
@@ -13,30 +6,32 @@ import {
   HeaderStoreNavMenu,
   LogoText,
 } from './Header.styled';
+import { NavLink } from 'react-router-dom';
+import { Icon } from 'components/Icon/Icon';
 
 export const Header = () => {
   return (
     <Container>
       <LogoText>
-        <a href="/">SportSvit</a>
+        <NavLink to={'/'}>SportSvit</NavLink>
       </LogoText>
       <div>
         <nav>
           <HeaderStoreNavMenu>
             <HeaderStoreNavItem>
-              <a href="/">Новинки</a>
+              <NavLink to={'/catalog/novelty'}>Новинки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Каталог</a>
+              <NavLink to={'/catalog'}>Каталог</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Жінки</a>
+              <NavLink to={'/catalog/women'}>Жінки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Чоловіки</a>
+              <NavLink to={'/catalog/man'}>Чоловіки</NavLink>
             </HeaderStoreNavItem>
             <HeaderStoreNavItem>
-              <a href="/">Знижки</a>
+              <NavLink to={'/deals'}>Знижки</NavLink>
             </HeaderStoreNavItem>
           </HeaderStoreNavMenu>
         </nav>
@@ -45,27 +40,22 @@ export const Header = () => {
         <HeaderIconMenuNav>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconSearch />
+              <Icon id={'search'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconUser />
+              <Icon id={'user'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconFavorite />
+              <Icon id={'heart'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
-              <IconShoppingCart />
-            </a>
-          </HeaderIconMenuItem>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <IconLanguage />
+              <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
             </a>
           </HeaderIconMenuItem>
         </HeaderIconMenuNav>

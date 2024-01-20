@@ -1,11 +1,6 @@
 import {
-  IconEnvelope,
-  IconFacebook,
-  IconInstagram,
-  IconPhone,
-} from 'components';
-import {
   Container,
+  Logo,
   LogoText,
   CategoryHeaderText,
   CategoryItemText,
@@ -15,88 +10,117 @@ import {
   ContactsMenu,
   ContactsMenuIcon,
   CapitalizeText,
+  CategoryBlock,
 } from './Footer.styled';
+import { Icon } from 'components/Icon/Icon';
+import { NavLink } from 'react-router-dom';
 
 export const Footer = () => {
   return (
     <>
       <footer>
         <Container>
-          <div>
-            <LogoText>SportSvit</LogoText>
-          </div>
+          <Logo>
+            <LogoText>
+              <NavLink to={'/'}>SportSvit</NavLink>
+            </LogoText>
+          </Logo>
           <FooterNavigation>
             <InformationMenu>
-              <ul>
-                <CategoryHeaderText>
-                  <a href="/">Інформація</a>
-                </CategoryHeaderText>
+              <CategoryBlock>
+                <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
-                  <a href="/">Доставка та оплата</a>
+                  <NavLink to={'/information'}>
+                    <CapitalizeText>Доставка</CapitalizeText> та оплата
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">
+                  <NavLink to={'/information'}>
                     <CapitalizeText>Повернення</CapitalizeText> та обмін
-                  </a>
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Угода користувача</a>
+                  <NavLink to={'/information'}>
+                    <CapitalizeText>Угода</CapitalizeText> користувача
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Питання та відповіді</a>
+                  <NavLink to={'/information'}>
+                    <CapitalizeText>Питання</CapitalizeText> та відповіді
+                  </NavLink>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </InformationMenu>
             <StoreMenu>
-              <ul>
-                <CategoryHeaderText>магазин</CategoryHeaderText>
+              <CategoryBlock>
+                <CategoryHeaderText>Магазин</CategoryHeaderText>
 
                 <CategoryItemText>
-                  <a href="/">Новинки</a>
+                  <NavLink to={'/catalog/novelty'}>
+                    <CapitalizeText>Новинки</CapitalizeText>
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Жінки</a>
+                  <NavLink to={'/catalog/women'}>
+                    <CapitalizeText>Жінки</CapitalizeText>
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Чоловіки</a>
+                  <NavLink to={'/catalog/man'}>
+                    <CapitalizeText>Чоловіки</CapitalizeText>
+                  </NavLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <a href="/">Знижки</a>
+                  <NavLink to={'/deals'}>
+                    <CapitalizeText>Знижки</CapitalizeText>
+                  </NavLink>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </StoreMenu>
             <ContactsMenu>
-              <ul>
-                <CategoryHeaderText>контакти</CategoryHeaderText>
+              <CategoryBlock>
+                <CategoryHeaderText>Контакти</CategoryHeaderText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconPhone />
+                    <Icon id={'phone'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <a href="tel:+380994567895">+38(099)4567895</a>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconEnvelope />
+                    <Icon id={'envelope'} width={24} height={24} />
                   </ContactsMenuIcon>
-                  <a href="email:sportsvit@gmail.com">sportsvit@gmail.com</a>
+                  <a href="mailto:sportsvit@gmail.com">sportsvit@gmail.com</a>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconFacebook />
+                    <Icon id={'facebook-f'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <CapitalizeText>
-                    <a href="/">Facebook</a>
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Facebook
+                    </a>
                   </CapitalizeText>
                 </CategoryItemText>
                 <CategoryItemText>
                   <ContactsMenuIcon>
-                    <IconInstagram />
+                    <Icon id={'instagram'} width={24} height={24} />
                   </ContactsMenuIcon>
                   <CapitalizeText>
-                    <a href="/">Instagram</a>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      Instagram
+                    </a>
                   </CapitalizeText>
                 </CategoryItemText>
-              </ul>
+              </CategoryBlock>
             </ContactsMenu>
           </FooterNavigation>
         </Container>

@@ -20,10 +20,10 @@ export const GenderSection = ({ type }) => {
             <Title>Зимова колекція</Title>
             <List>
               <WinterForHer>
-                <Btn to={'/catalog'}>Для неї</Btn>
+                <Btn to={'/catalog/women'}>Для неї</Btn>
               </WinterForHer>
               <WinterForHim>
-                <Btn to={'/catalog'}>Для нього</Btn>
+                <Btn to={'/catalog/man'}>Для нього</Btn>
               </WinterForHim>
             </List>
           </>
@@ -32,10 +32,10 @@ export const GenderSection = ({ type }) => {
             <HiddenTitle>Для неї / Для нього</HiddenTitle>
             <List>
               <ForHer>
-                <Btn to={'/catalog'}>Для неї</Btn>
+                <Btn to={'/catalog/women'}>Для неї</Btn>
               </ForHer>
               <ForHim>
-                <Btn to={'/catalog'}>Для нього</Btn>
+                <Btn to={'/catalog/man'}>Для нього</Btn>
               </ForHim>
             </List>
           </>

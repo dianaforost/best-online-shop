@@ -1,27 +1,42 @@
-import { Link } from "react-router-dom";
 import {
+  LinkTo,
   ProductContainer,
   ProductContent,
   ProductImage,
   ProductImageWrapper,
   ProductPrice,
   ProductTitle,
-} from "./ProductComponent.styled";
-import image from "../../images/Rectangle.jpg";
+} from './ProductComponent.styled';
+import image from '../../images/Rectangle.jpg';
+import { useLocation } from 'react-router-dom';
 
-export const ProductComponent = ({ item }) => {
+export const ProductComponent = ({ item, isCatalogPage, sectionType }) => {
+  const location = useLocation();
   return (
-    <Link to={`catalog/${item.id}`}>
-      <ProductContainer>
-        <ProductImageWrapper>
-          <ProductImage src={image} />
-        </ProductImageWrapper>
+    <>
+      <LinkTo
+        to={
+          sectionType === 'new'
+            ? `catalog/novelty/${item.id}`
+            : sectionType === 'discount'
+            ? `deals/${item.id}`
+            : sectionType === 'recently'
+            ? `/catalog/all/${item.id}`
+            : `${location.pathname}/${item.id}`
+        }
+        $isCatalogPage={isCatalogPage}
+      >
+        <ProductContainer>
+          <ProductImageWrapper>
+            <ProductImage src={image} />
+          </ProductImageWrapper>
 
-        <ProductContent>
-          <ProductTitle>{item.title}</ProductTitle>
-          <ProductPrice>{item.description}</ProductPrice>
-        </ProductContent>
-      </ProductContainer>
-    </Link>
+          <ProductContent>
+            <ProductTitle>{item.title}</ProductTitle>
+            <ProductPrice>{item.price}</ProductPrice>
+          </ProductContent>
+        </ProductContainer>
+      </LinkTo>
+    </>
   );
 };

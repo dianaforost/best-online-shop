@@ -5,14 +5,14 @@ export const Container = styled.header`
   justify-content: center;
   max-height: 100px;
   padding: 38px 120px;
-  background-color: rgba(27, 82, 100, 0.8);
+  background-color: ${props => props.theme.header.header_bg_color};
 `;
 
 export const LogoText = styled.div`
   font-size: 16px;
   font-weight: 500;
-  font-family: 'Mulish';
-  color: #f9f9f9;
+  font-family: ${props => props.theme.fonts.firstFontFamily};
+  color: ${props => props.theme.main.textColor};
   text-transform: uppercase;
   margin-right: 210px;
 `;
@@ -20,16 +20,16 @@ export const LogoText = styled.div`
 export const HeaderStoreNavMenu = styled.ul`
   display: flex;
   margin-right: 160px;
-  color: #f9f9f9;
+  color: ${props => props.theme.main.textColor};
 `;
 
 export const HeaderStoreNavItem = styled.li`
   font-size: 16px;
-  font-family: 'Mulish';
+  font-family: ${props => props.theme.fonts.firstFontFamily};
   font-weight: 500;
   margin-right: 30px;
   text-transform: uppercase;
-  color: #f9f9f9;
+  color: ${props => props.theme.main.textColor};
 `;
 
 export const HeaderIconMenuNav = styled.ul`
