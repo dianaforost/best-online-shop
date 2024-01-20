@@ -8,7 +8,7 @@ import {
   List,
   ListItem,
 } from './FilterItem.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const FilterItem = ({
   label,
@@ -21,11 +21,27 @@ export const FilterItem = ({
   const [checkedItems, setCheckedItems] = useState(
     initialChecked.map(() => false)
   );
+  const [activeFilters, setActiveFilters] = useState([]);
+
+  useEffect(() => {
+    console.log(activeFilters);
+    // Здесь вызывайте функцию для передачи activeFilters в бэкенд
+  }, [activeFilters]);
+
   const handleCheckboxChange = (index, item) => {
-    console.log(item);
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
     setCheckedItems(newCheckedItems);
+
+    if (newCheckedItems[index]) {
+      // Если чекбокс стал активным, добавляем фильтр в массив активных фильтров
+      setActiveFilters(prevFilters => [...prevFilters, item]);
+    } else {
+      // Если чекбокс стал неактивным, удаляем фильтр из массива активных фильтров
+      setActiveFilters(prevFilters =>
+        prevFilters.filter(filterItem => filterItem !== item)
+      );
+    }
   };
 
   return (

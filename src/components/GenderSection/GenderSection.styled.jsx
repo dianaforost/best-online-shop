@@ -14,14 +14,12 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 28px;
   margin: 0 auto;
   @media (min-width: 768px) {
     gap: 82px;
     max-width: 1200px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
   }
 `;
 export const HiddenTitle = styled.h2`
@@ -55,7 +53,7 @@ export const List = styled.div`
 const GenderContainer = styled.div`
   width: 588px;
   height: 500px;
-  transition: all 0.7s ease-out;
+  transition: ${props => props.theme.main.transition};
   position: relative;
   cursor: pointer;
   background-position: center;
@@ -88,12 +86,12 @@ export const WinterForHim = styled(GenderContainer)`
 export const Btn = styled(Link)`
   width: 48%;
   padding: 20px 0;
-  background: #000;
+  background: ${props => props.theme.main.colorBlack};
   border: none;
   border-radius: 4px;
-  transition: all 0.7s ease-out;
+  transition: ${props => props.theme.main.transition};
 
-  color: #fff;
+  color: ${props => props.theme.main.textColor};
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -105,7 +103,7 @@ export const Btn = styled(Link)`
   bottom: 40px;
   left: 25%;
   &:hover {
-    color: #0d0c0b;
-    background: #fff;
+    color: ${props => props.theme.main.colorBlack};
+    background: ${props => props.theme.main.textColor};
   }
 `;

@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const List = styled.div`
-  width: ${({ $type }) => ($type ? '50%' : '')};
+  width: ${({ $type }) => ($type ? '100%' : '')};
+  @media (min-width: 768px) {
+    width: ${({ $type }) => ($type ? '50%' : '')};
+  }
 `;
 export const ButtonList = styled.button`
   width: ${({ $type }) => ($type ? '100%' : '180px')};
@@ -12,11 +15,10 @@ export const ButtonList = styled.button`
   border: none;
   font-size: ${({ $type }) => ($type ? '16px' : '26px')};
   line-height: ${({ $type }) => ($type ? '20px' : '33px')};
-  border: ${({ $type }) => ($type ? '1px solid #000' : 'none')};
+  border: ${({ $type, theme }) =>
+    $type ? `1px solid ${theme.main.colorBlack}` : 'none'};
   padding: ${({ $type }) => ($type ? '10px' : 'none')};
   text-transform: ${({ $type }) => ($type ? 'uppercase' : 'capitalize')};
-  @media (min-width: 768px) {
-  }
 `;
 export const CategoriesList = styled.div`
   display: ${({ $isVisible }) => ($isVisible ? 'flex' : 'none')};
@@ -30,7 +32,7 @@ export const FilterItemSquare = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #000;
+  border: 1px solid ${props => props.theme.main.colorBlack};
   width: ${({ $type }) => ($type ? '24px' : '30px')};
   height: ${({ $type }) => ($type ? '24px' : '30px')};
   background: ${props => (props.checked ? 'gray' : 'transparent')};
@@ -40,7 +42,8 @@ export const FilterItemSquare = styled.div`
 export const ListItem = styled.li`
   display: flex;
   justify-content: space-between;
-  border: ${({ $type }) => ($type ? '1px solid #000' : 'none')};
+  border: ${({ $type, theme }) =>
+    $type ? `1px solid ${theme.main.colorBlack}` : 'none'};
   padding: ${({ $type }) => ($type ? '10px' : 'none')};
 `;
 export const Item = styled.p`

@@ -12,12 +12,13 @@ import {
   ProductTitle,
   Section,
   Stars,
+  SwiperStyled,
   TitleContainer,
   Wrapper,
 } from './ProductDetails.styled';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { FilterItem } from 'components/FilteredCatalogPage/FilterItem/FilterItem';
 import { useState } from 'react';
@@ -61,25 +62,32 @@ export const ProductDetails = ({ productsId }) => {
     <Section>
       <Container>
         <FlexContainer>
-          <Swiper
-            direction={'vertical'}
+          <SwiperStyled
             spaceBetween={12}
-            slidesPerView={3}
+            slidesPerView={2}
             pagination={{
               clickable: true,
               renderBullet: function (index, className) {
                 return `<span key=${index} class="${className}" style="background:#0D0C0B;"></span>`;
               },
             }}
+            breakpoints={{
+              530: {
+                slidesPerView: 3,
+              },
+              900: {
+                slidesPerView: 3,
+                direction: 'vertical',
+              },
+            }}
             modules={[Pagination]}
-            style={{ height: 444, margin: 0 }}
           >
             {[1, 2, 3, 4, 5, 6].map(number => (
               <SwiperSlide key={number}>
                 <ImageContainer></ImageContainer>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </SwiperStyled>
           <Image />
         </FlexContainer>
         <InfoContainer>

@@ -3,21 +3,22 @@ import styled from 'styled-components';
 export const Section = styled.section`
   width: 100%;
   padding: 100px 0;
-  font-family: 'Mulish';
+  padding: 50px 0 100px;
+  @media (min-width: 768px) {
+    padding: 100px 0;
+  }
 `;
 export const Container = styled.div`
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 28px;
   margin: 0 auto;
   position: relative;
   @media (min-width: 768px) {
     gap: 82px;
     max-width: 1200px;
-    padding: 0;
+    padding: 0 40px;
   }
 `;
 export const Title = styled.h2`
-  font-family: Mulish;
   font-size: 32px;
   font-weight: 500;
   line-height: normal;
@@ -34,11 +35,14 @@ export const NextBtn = styled.button`
   background-color: transparent;
   border: none;
   max-width: 60px;
-  right: 0;
+  right: 28px;
   position: absolute;
   max-height: 24px;
   &:after {
     content: none;
+  }
+  @media (min-width: 768px) {
+    right: 40px;
   }
 `;
 export const PrevBtn = styled.button`
@@ -48,10 +52,13 @@ export const PrevBtn = styled.button`
   background-color: transparent;
   border: none;
   max-width: 60px;
-  left: 0;
+  left: 28px;
   position: absolute;
   max-height: 24px;
   &:after {
     content: none;
+  }
+  @media (min-width: 768px) {
+    left: 40px;
   }
 `;
