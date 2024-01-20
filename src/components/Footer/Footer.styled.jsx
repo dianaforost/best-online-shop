@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: block;
-  background-color: rgba(27, 82, 100, 0.8);
+  /* background-color: rgba(27, 82, 100, 0.8); */
+  background-color: ${props => props.theme.footer.footer_bg_color};
   padding: 20px 28px 20px 28px;
 
   @media screen and (min-width: 768px) {
@@ -27,8 +28,8 @@ export const Logo = styled.div`
 export const LogoText = styled.span`
   font-size: 16px;
   font-weight: 500;
-  font-family: 'Mulish';
-  color: #f9f9f9;
+  font-family: ${props => props.theme.fonts.firstFontFamily};
+  color: ${props => props.theme.main.textColor};
   text-transform: uppercase;
 `;
 
@@ -43,16 +44,16 @@ export const CategoryHeaderText = styled.li`
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
-  color: #f9f9f9;
-  font-family: 'Mulish';
+  color: ${props => props.theme.main.textColor};
+  font-family: ${props => props.theme.fonts.firstFontFamily};
   margin-bottom: 16px;
 `;
 
 export const CategoryItemText = styled.li`
-  color: #f9f9f9;
+  color: ${props => props.theme.main.textColor};
   font-size: 16px;
   font-weight: 400;
-  font-family: 'Mulish';
+  font-family: ${props => props.theme.fonts.firstFontFamily};
   margin-bottom: 16px;
   cursor: pointer;
   &:hover {
