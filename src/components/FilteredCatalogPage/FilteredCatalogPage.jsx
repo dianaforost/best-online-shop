@@ -86,10 +86,8 @@ export const FilteredCatalogPage = ({ category }) => {
     }
   };
   const [selectedFilters, setSelectedFilters] = useState([]);
-  console.log(selectedFilters);
 
   const handleFilterChange = filter => {
-    console.log(filter);
     if (!selectedFilters.includes(filter)) {
       setSelectedFilters([...selectedFilters, filter]);
     }
