@@ -20,7 +20,7 @@ export const ButtonList = styled.button`
   padding: ${({ $type }) => ($type ? '10px' : 'none')};
   text-transform: ${({ $type }) => ($type ? 'uppercase' : 'capitalize')};
 `;
-export const CategoriesList = styled.div`
+export const CategoriesList = styled.ul`
   display: ${({ $isVisible }) => ($isVisible ? 'flex' : 'none')};
   margin-top: ${({ $isVisible }) => ($isVisible ? '20px' : '0')};
   flex-direction: column;
@@ -33,6 +33,7 @@ export const FilterItemSquare = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid ${props => props.theme.main.colorBlack};
+  border-radius: ${({ $type }) => ($type ? '50%' : '0')};
   width: ${({ $type }) => ($type ? '24px' : '30px')};
   height: ${({ $type }) => ($type ? '24px' : '30px')};
   background: ${props => (props.checked ? 'gray' : 'transparent')};
@@ -52,6 +53,21 @@ export const Item = styled.p`
   text-transform: ${({ $type }) => ($type ? 'uppercase' : 'capitalize')};
 `;
 export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  appearance: none;
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  cursor: pointer;
+`;
+export const HiddenRadio = styled.input.attrs({ type: 'radio' })`
   appearance: none;
   -webkit-appearance: none;
   width: 30px;

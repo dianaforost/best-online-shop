@@ -85,6 +85,15 @@ export const FilteredCatalogPage = ({ category }) => {
       handlePageChange(page + 1);
     }
   };
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  console.log(selectedFilters);
+
+  const handleFilterChange = filter => {
+    console.log(filter);
+    if (!selectedFilters.includes(filter)) {
+      setSelectedFilters([...selectedFilters, filter]);
+    }
+  };
   return (
     <Section>
       <Container>
@@ -119,6 +128,7 @@ export const FilteredCatalogPage = ({ category }) => {
               isShown={isCategoriesShown}
               toggleSearch={toggleCategoriesSearch}
               initialChecked={initialCheckedStates}
+              onFilterChange={handleFilterChange}
             />
             <FilterItem
               label="Розмір"
@@ -126,6 +136,7 @@ export const FilteredCatalogPage = ({ category }) => {
               isShown={isSizesShown}
               toggleSearch={toggleSizesSearch}
               initialChecked={initialCheckedStates}
+              onFilterChange={handleFilterChange}
             />
           </FilterList>
           <ProductsList>

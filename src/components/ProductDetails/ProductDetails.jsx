@@ -58,6 +58,16 @@ export const ProductDetails = ({ productsId }) => {
     false,
     false,
   ];
+  const [selectedColor, setSelectedColor] = useState({});
+  const [selectedSize, setSelectedSize] = useState({});
+
+  const handleFilterChange = (type, item) => {
+    if (type === 'color') {
+      setSelectedColor({ color: item });
+    } else if (type === 'size') {
+      setSelectedSize({ size: item });
+    }
+  };
   return (
     <Section>
       <Container>
@@ -114,7 +124,9 @@ export const ProductDetails = ({ productsId }) => {
               isShown={isCategoriesShown}
               toggleSearch={toggleCategoriesSearch}
               initialChecked={initialCheckedStates}
-              type={'product'}
+              type={'color'}
+              onFilterChange={handleFilterChange}
+              selectedColor={selectedColor}
             />
             <FilterItem
               label="Розмір"
@@ -122,11 +134,17 @@ export const ProductDetails = ({ productsId }) => {
               isShown={isSizesShown}
               toggleSearch={toggleSizesSearch}
               initialChecked={initialCheckedStates}
-              type={'product'}
+              type={'size'}
+              onFilterChange={handleFilterChange}
+              selectedSize={selectedSize}
             />
           </FlexContainer>
           <FlexContainer>
-            <ButtonToCart>Додати до кошика</ButtonToCart>
+            <ButtonToCart
+              onClick={() => console.log(selectedColor, selectedSize)}
+            >
+              Додати до кошика
+            </ButtonToCart>
             <ButtonToFav>Додати до улюбленого</ButtonToFav>
           </FlexContainer>
           <div>

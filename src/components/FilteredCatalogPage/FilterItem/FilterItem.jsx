@@ -4,11 +4,12 @@ import {
   CategoriesList,
   FilterItemSquare,
   HiddenCheckbox,
+  HiddenRadio,
   Item,
   List,
   ListItem,
 } from './FilterItem.styled';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export const FilterItem = ({
   label,
@@ -17,16 +18,13 @@ export const FilterItem = ({
   toggleSearch,
   initialChecked,
   type,
+  onFilterChange,
+  selectedColor,
+  selectedSize,
 }) => {
   const [checkedItems, setCheckedItems] = useState(
     initialChecked.map(() => false)
   );
-  const [activeFilters, setActiveFilters] = useState([]);
-
-  useEffect(() => {
-    console.log(activeFilters);
-    // Здесь вызывайте функцию для передачи activeFilters в бэкенд
-  }, [activeFilters]);
 
   const handleCheckboxChange = (index, item) => {
     const newCheckedItems = [...checkedItems];
@@ -34,16 +32,9 @@ export const FilterItem = ({
     setCheckedItems(newCheckedItems);
 
     if (newCheckedItems[index]) {
-      // Если чекбокс стал активным, добавляем фильтр в массив активных фильтров
-      setActiveFilters(prevFilters => [...prevFilters, item]);
-    } else {
-      // Если чекбокс стал неактивным, удаляем фильтр из массива активных фильтров
-      setActiveFilters(prevFilters =>
-        prevFilters.filter(filterItem => filterItem !== item)
-      );
+      onFilterChange(item);
     }
   };
-
   return (
     <List $type={type}>
       <ButtonList onClick={toggleSearch} $type={type}>
@@ -59,19 +50,52 @@ export const FilterItem = ({
           <ListItem $type={type} key={index}>
             <Item $type={type}>{item}</Item>
             <div style={{ position: 'relative' }}>
-              <HiddenCheckbox
-                name={item}
-                checked={checkedItems[index]}
-                onChange={() => handleCheckboxChange(index, item)}
-              />
-              <FilterItemSquare $type={type}>
-                <Icon
-                  id={'check'}
-                  width={24}
-                  height={24}
-                  style={{ display: checkedItems[index] ? 'block' : 'none' }}
-                />
-              </FilterItemSquare>
+              {type ? (
+                <>
+                  <HiddenRadio
+                    type="radio"
+                    name={`filterItemRadio_${type}`}
+                    value={item}
+                    checked={
+                      selectedColor?.color === item ||
+                      selectedSize?.size === item
+                    }
+                    onChange={() => onFilterChange(type, item)}
+                  />
+                  <FilterItemSquare $type={type}>
+                    <Icon
+                      id={'check'}
+                      width={18}
+                      height={18}
+                      style={{
+                        display:
+                          selectedColor?.color === item ||
+                          selectedSize?.size === item
+                            ? 'block'
+                            : 'none',
+                      }}
+                    />
+                  </FilterItemSquare>
+                </>
+              ) : (
+                <>
+                  <HiddenCheckbox
+                    name={item}
+                    checked={checkedItems[index]}
+                    onChange={() => handleCheckboxChange(index, item)}
+                  />
+                  <FilterItemSquare $type={type}>
+                    <Icon
+                      id={'check'}
+                      width={24}
+                      height={24}
+                      style={{
+                        display: checkedItems[index] ? 'block' : 'none',
+                      }}
+                    />
+                  </FilterItemSquare>
+                </>
+              )}
             </div>
           </ListItem>
         ))}
