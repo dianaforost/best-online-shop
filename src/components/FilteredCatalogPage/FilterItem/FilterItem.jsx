@@ -9,7 +9,7 @@ import {
   List,
   ListItem,
 } from './FilterItem.styled';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 
 export const FilterItem = ({
   label,
@@ -47,11 +47,15 @@ export const FilterItem = ({
       </ButtonList>
       <CategoriesList $isVisible={isShown}>
         {items.map((item, index) => (
-          <ListItem $type={type} key={index}>
-            <Item $type={type}>{item}</Item>
-            <div style={{ position: 'relative' }}>
-              {type ? (
-                <>
+          <Fragment key={index}>
+            {type ? (
+              <ListItem
+                $type={type}
+                key={index}
+                onClick={() => onFilterChange(type, item)}
+              >
+                <Item $type={type}>{item}</Item>
+                <div style={{ position: 'relative' }}>
                   <HiddenRadio
                     type="radio"
                     name={`filterItemRadio_${type}`}
@@ -76,9 +80,16 @@ export const FilterItem = ({
                       }}
                     />
                   </FilterItemSquare>
-                </>
-              ) : (
-                <>
+                </div>
+              </ListItem>
+            ) : (
+              <ListItem
+                $type={type}
+                key={index}
+                onClick={() => handleCheckboxChange(index, item)}
+              >
+                <Item $type={type}>{item}</Item>
+                <div style={{ position: 'relative' }}>
                   <HiddenCheckbox
                     name={item}
                     checked={checkedItems[index]}
@@ -94,10 +105,10 @@ export const FilterItem = ({
                       }}
                     />
                   </FilterItemSquare>
-                </>
-              )}
-            </div>
-          </ListItem>
+                </div>
+              </ListItem>
+            )}
+          </Fragment>
         ))}
       </CategoriesList>
     </List>

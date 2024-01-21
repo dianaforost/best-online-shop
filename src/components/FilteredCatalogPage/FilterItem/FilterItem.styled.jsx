@@ -45,7 +45,8 @@ export const ListItem = styled.li`
   justify-content: space-between;
   border: ${({ $type, theme }) =>
     $type ? `1px solid ${theme.main.colorBlack}` : 'none'};
-  padding: ${({ $type }) => ($type ? '10px' : 'none')};
+  padding: ${({ $type }) => ($type ? '10px' : '0')};
+  cursor: pointer;
 `;
 export const Item = styled.p`
   font-size: ${({ $type }) => ($type ? '16px' : '26px')};
