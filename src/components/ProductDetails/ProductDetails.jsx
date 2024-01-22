@@ -12,12 +12,13 @@ import {
   ProductTitle,
   Section,
   Stars,
+  SwiperStyled,
   TitleContainer,
   Wrapper,
 } from './ProductDetails.styled';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { FilterItem } from 'components/FilteredCatalogPage/FilterItem/FilterItem';
 import { useState } from 'react';
@@ -57,29 +58,46 @@ export const ProductDetails = ({ productsId }) => {
     false,
     false,
   ];
+  const [selectedColor, setSelectedColor] = useState({});
+  const [selectedSize, setSelectedSize] = useState({});
+
+  const handleFilterChange = (type, item) => {
+    if (type === 'color') {
+      setSelectedColor({ color: item });
+    } else if (type === 'size') {
+      setSelectedSize({ size: item });
+    }
+  };
   return (
     <Section>
       <Container>
         <FlexContainer>
-          <Swiper
-            direction={'vertical'}
+          <SwiperStyled
             spaceBetween={12}
-            slidesPerView={3}
+            slidesPerView={2}
             pagination={{
               clickable: true,
               renderBullet: function (index, className) {
                 return `<span key=${index} class="${className}" style="background:#0D0C0B;"></span>`;
               },
             }}
+            breakpoints={{
+              530: {
+                slidesPerView: 3,
+              },
+              900: {
+                slidesPerView: 3,
+                direction: 'vertical',
+              },
+            }}
             modules={[Pagination]}
-            style={{ height: 444, margin: 0 }}
           >
             {[1, 2, 3, 4, 5, 6].map(number => (
               <SwiperSlide key={number}>
                 <ImageContainer></ImageContainer>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </SwiperStyled>
           <Image />
         </FlexContainer>
         <InfoContainer>
@@ -106,7 +124,9 @@ export const ProductDetails = ({ productsId }) => {
               isShown={isCategoriesShown}
               toggleSearch={toggleCategoriesSearch}
               initialChecked={initialCheckedStates}
-              type={'product'}
+              type={'color'}
+              onFilterChange={handleFilterChange}
+              selectedColor={selectedColor}
             />
             <FilterItem
               label="Розмір"
@@ -114,11 +134,17 @@ export const ProductDetails = ({ productsId }) => {
               isShown={isSizesShown}
               toggleSearch={toggleSizesSearch}
               initialChecked={initialCheckedStates}
-              type={'product'}
+              type={'size'}
+              onFilterChange={handleFilterChange}
+              selectedSize={selectedSize}
             />
           </FlexContainer>
           <FlexContainer>
-            <ButtonToCart>Додати до кошика</ButtonToCart>
+            <ButtonToCart
+              onClick={() => console.log(selectedColor, selectedSize)}
+            >
+              Додати до кошика
+            </ButtonToCart>
             <ButtonToFav>Додати до улюбленого</ButtonToFav>
           </FlexContainer>
           <div>

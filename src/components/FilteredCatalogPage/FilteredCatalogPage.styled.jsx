@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Section = styled.section`
   width: 100%;
   padding: 100px 0;
-  font-family: 'Mulish';
 `;
 export const Container = styled.div`
   padding-left: 28px;
@@ -25,12 +24,13 @@ export const Wrapper = styled.div`
   }
 `;
 export const Title = styled.h2`
-  font-family: Mulish;
-  font-size: 32px;
+  font-size: 30px;
+  line-height: 38px;
   font-weight: 500;
-  line-height: normal;
   text-transform: uppercase;
   @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 40px;
   }
 `;
 export const CatalogContent = styled.div`
