@@ -12,14 +12,12 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 28px;
   margin: 0 auto;
   @media (min-width: 768px) {
     gap: 82px;
     max-width: 1200px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
   }
 `;
 export const Title = styled.h2`

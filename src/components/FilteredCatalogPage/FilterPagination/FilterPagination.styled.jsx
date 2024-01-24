@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const ButtonGray = styled.button`
-  font-family: Gill Sans;
   font-size: 14px;
   line-height: 16px;
-  color: #010101;
+  color: ${props => props.theme.filteredCatalog.paginationBlack};
 
   border: none;
   background-color: transparent;
@@ -12,21 +11,20 @@ export const ButtonGray = styled.button`
 
   @media (min-width: 768px) {
     font-size: 18px;
-    line-height: 21px;
+    line-height: 22px;
   }
 `;
 export const Button = styled.button`
-  font-family: Gill Sans;
   font-size: 14px;
   line-height: 16px;
-  color: #010101;
+  color: ${props => props.theme.filteredCatalog.paginationBlack};
 
   border: none;
-  background: #00000087;
+  background: ${props => props.theme.filteredCatalog.paginationGray};
   padding: 4px 12px;
 
   @media (min-width: 768px) {
     font-size: 18px;
-    line-height: 21px;
+    line-height: 22px;
   }
 `;
