@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: block;
-  /* background-color: rgba(27, 82, 100, 0.8); */
+export const FooterWrapper = styled.footer`
   background-color: ${props => props.theme.footer.footer_bg_color};
-  padding: 20px 28px 20px 28px;
+`;
 
+export const Container = styled.div`
+  padding: 20px 28px;
   @media screen and (min-width: 768px) {
   }
 
   @media screen and (min-width: 1200px) {
     display: flex;
     justify-content: space-between;
-    /* max-height: 276px; */
-    padding: 50px 120px 50px 120px;
+    padding: 50px 120px;
   }
 `;
 
