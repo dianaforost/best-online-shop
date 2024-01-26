@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import {
   Section,
   Title,
@@ -10,8 +11,11 @@ import {
   WinterForHer,
   WinterForHim,
 } from './GenderSection.styled';
+import { getProducts } from '../../redux/products/operations';
 
 export const GenderSection = ({ type }) => {
+  const dispatch = useDispatch();
+  dispatch(getProducts());
   return (
     <Section>
       <Container>
