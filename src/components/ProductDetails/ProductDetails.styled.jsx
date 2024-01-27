@@ -23,7 +23,7 @@ export const Container = styled.div`
   gap: 20px;
   flex-direction: column;
   @media (min-width: 768px) {
-    max-width: 1200px;
+    max-width: 1280px;
     padding: 0 2px;
     padding-left: 40px;
     padding-right: 40px;
