@@ -28,9 +28,9 @@ export const MainSection = () => {
     setCurrentSlideIndex(index);
   };
   const backgroundImages = [
-    `url(${heroBgFirst}),-webkit-image-set(url(${heroBgFirst}) 1x, url(${heroBgFirst2x}) 2x, url(${heroBgFirst}) 1x, url(${heroBgFirst2x}) 2x)`,
-    `url(${heroBgSec}),-webkit-image-set(url(${heroBgSec}) 1x, url(${heroBgSec2x}) 2x, url(${heroBgSec}) 1x, url(${heroBgSec2x}) 2x)`,
-    `url(${heroBgThird}),-webkit-image-set(url(${heroBgThird}) 1x, url(${heroBgThird2x}) 2x, url(${heroBgThird}) 1x, url(${heroBgThird2x}) 2x)`,
+    `url(${heroBgFirst}),-webkit-image-set(url(${heroBgFirst}) 1x, url(${heroBgFirst2x}) 2x`,
+    `url(${heroBgSec}),-webkit-image-set(url(${heroBgSec}) 1x, url(${heroBgSec2x}) 2x`,
+    `url(${heroBgThird}),-webkit-image-set(url(${heroBgThird}) 1x, url(${heroBgThird2x}) 2x`,
   ];
   return (
     <Section>
