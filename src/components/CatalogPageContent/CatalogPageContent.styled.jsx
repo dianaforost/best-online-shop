@@ -31,7 +31,7 @@ export const Title = styled.h2`
     margin-bottom: 80px;
   }
 `;
-export const List = styled.div`
+export const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px 24px;
@@ -40,7 +40,7 @@ export const List = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
-const ImageContainer = styled.div`
+const ImageContainer = styled.li`
   max-width: 588px;
   height: 500px;
   transition: all 0.7s ease-out;
