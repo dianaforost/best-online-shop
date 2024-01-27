@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  position: fixed;
+  position: absolute;
   z-index: 9;
   width: 100%;
   display: flex;
