@@ -7,7 +7,7 @@ import all from '../../images/all.png';
 
 export const Section = styled.section`
   width: 100%;
-  padding: 100px 0;
+  padding: 200px 0;
   font-family: 'Mulish';
 `;
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   width: 100%;
-  padding: 100px 0;
+  padding: 200px 0;
 `;
 export const Container = styled.div`
   padding-left: 28px;
