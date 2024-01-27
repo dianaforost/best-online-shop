@@ -1,3 +1,5 @@
+import { DealsContent } from 'components/DealsContent/DealsContent';
+
 export const DealsPage = () => {
-  return <h2>DealsPage</h2>;
+  return <DealsContent />;
 };

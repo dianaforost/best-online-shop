@@ -3,9 +3,9 @@ import { Swiper } from 'swiper/react';
 
 export const Section = styled.section`
   width: 100%;
-  padding: 28px 0 50px;
+  padding: 128px 0 50px;
   @media (min-width: 768px) {
-    padding: 56px 0 100px;
+    padding: 156px 0 100px;
   }
 `;
 export const SwiperStyled = styled(Swiper)`
@@ -23,7 +23,7 @@ export const Container = styled.div`
   gap: 20px;
   flex-direction: column;
   @media (min-width: 768px) {
-    max-width: 1200px;
+    max-width: 1280px;
     padding: 0 2px;
     padding-left: 40px;
     padding-right: 40px;

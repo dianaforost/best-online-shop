@@ -8,6 +8,7 @@ const DefaultTheme = {
   },
   main: {
     textColor: '#f9f9f9',
+    mainTitleColor: 'rgba(255, 255, 255, 0.8)',
     colorBlack: '#0D0C0B',
     colorGray: '#D9D9D9',
     colorDarkGray: '#757575',

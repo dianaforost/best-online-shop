@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: absolute;
+  z-index: 2;
+  width: 100%;
   display: flex;
   justify-content: center;
   max-height: 100px;

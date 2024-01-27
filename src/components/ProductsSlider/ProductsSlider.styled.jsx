@@ -14,7 +14,7 @@ export const Container = styled.div`
   position: relative;
   @media (min-width: 768px) {
     gap: 82px;
-    max-width: 1200px;
+    max-width: 1280px;
     padding: 0 40px;
   }
 `;

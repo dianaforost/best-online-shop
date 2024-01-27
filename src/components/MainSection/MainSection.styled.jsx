@@ -1,42 +1,43 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { SwiperSlide } from 'swiper/react';
 
 export const Section = styled.section`
   width: 100%;
-  padding: 28px 0 50px;
   @media (min-width: 768px) {
-    padding: 56px 0 100px;
   }
 `;
 export const Container = styled.div`
-  padding-left: 28px;
-  padding-right: 28px;
+  padding: 0 28px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
-  gap: 14px;
   @media (min-width: 768px) {
-    max-width: 1280px;
-    gap: 24px;
-    padding: 0 2px;
-    padding-left: 40px;
-    padding-right: 40px;
+    max-width: 676px;
+    padding: 0 40px;
   }
 `;
-export const Title = styled.h2`
-  font-size: 80px;
-  line-height: normal;
+export const Title = styled.h1`
+  color: ${props => props.theme.main.mainTitleColor};
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 121px;
+  text-transform: uppercase;
   @media (min-width: 768px) {
     font-size: 120px;
     line-height: 151px;
   }
 `;
 export const Text = styled.p`
-  font-size: 24px;
+  color: ${props => props.theme.main.textColor};
+  font-size: 28px;
   font-weight: 500;
   line-height: normal;
+  text-transform: uppercase;
   text-align: center;
+  margin-bottom: 5px;
   @media (min-width: 768px) {
     font-size: 32px;
   }
@@ -61,4 +62,11 @@ export const LinkTo = styled(Link)`
   @media (min-width: 768px) {
     width: 50%;
   }
+`;
+export const Slide = styled(SwiperSlide)`
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 372px 0;
+  background-position: center;
 `;
