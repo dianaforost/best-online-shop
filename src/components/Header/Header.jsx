@@ -8,6 +8,8 @@ import {
 } from './Header.styled';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'components/Icon/Icon';
+import { PopUp } from 'components/Modal/PopUp';
+import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
   return (
@@ -44,9 +46,9 @@ export const Header = () => {
             </a>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
-            <a href="/">
-              <Icon id={'user'} width={'24px'} height={'24px'} />
-            </a>
+            <PopUp data={<Icon id={'user'} width={'24px'} height={'24px'} />}>
+              <Auth />
+            </PopUp>
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">

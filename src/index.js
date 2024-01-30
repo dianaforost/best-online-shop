@@ -8,6 +8,8 @@ import { ThemeProvider } from 'styled-components';
 import DefaultTheme from './GlobalTheme';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
+import { ModalProvider } from 'styled-react-modal';
+import { FadingBackground } from 'components/Modal/PopUp.styled';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +17,9 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <ThemeProvider theme={DefaultTheme}>
-          <App />
+          <ModalProvider backgroundComponent={FadingBackground}>
+            <App />
+          </ModalProvider>
         </ThemeProvider>
       </Provider>
     </BrowserRouter>
