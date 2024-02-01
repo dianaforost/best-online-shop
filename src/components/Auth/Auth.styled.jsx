@@ -139,3 +139,69 @@ export const ErrorMessage = styled.p`
   line-height: 20px;
   color: #cd1106;
 `;
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  display: ${p => (p.$isCategoriesShown ? `flex` : `none`)};
+`;
+export const Item = styled.li`
+  padding: 10px 8px;
+  border: 1px solid var(--State-Gray, #757575);
+  @media (min-width: 768px) {
+    max-width: 387px;
+    padding: 10px 8px;
+  }
+`;
+export const SelectButton = styled.input`
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--State-Gray, #757575);
+  padding: 10px 8px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: start;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  }
+`;
+export const Option = styled.button`
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  line-height: 20px;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+`;
+export const Down = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 19px;
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+`;
+export const Up = styled.div`
+  position: absolute;
+  top: 17px;
+  right: 19px;
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+`;

@@ -34,6 +34,8 @@ export const SpecialModalBackground = styled.div`
   transition: opacity 0.3s ease-in-out;
 `;
 export const FadingBackground = styled(BaseModalBackground)`
-  opacity: ${props => props.opacity};
   transition: all 0.3s ease-in-out;
+  align-items: flex-start;
+  padding: 50px 0;
+  overflow: auto;
 `;

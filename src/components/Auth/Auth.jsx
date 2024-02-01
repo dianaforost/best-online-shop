@@ -15,12 +15,18 @@ import {
   Button,
   AuthButtons,
   ErrorMessage,
+  List,
+  Down,
+  Up,
+  Item,
+  Option,
+  SelectButton,
 } from './Auth.styled';
 import { Icon } from 'components/Icon/Icon';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from 'utils/yupSchema';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, registration } from '../../redux/auth/operations';
 import { selectUser } from '../../redux/auth/selectors';
@@ -32,6 +38,13 @@ export const Auth = props => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser) || [];
   const navigate = useNavigate();
+  const options = ['Жінка', 'Чоловік'];
+  const [selected, setIsSelected] = useState('Жінка');
+  const [isCategoriesShown, setIsCategoriesShown] = useState(false);
+
+  const toggleCategoriesSearch = () => {
+    setIsCategoriesShown(!isCategoriesShown);
+  };
   console.log(user);
 
   const {
@@ -46,6 +59,7 @@ export const Auth = props => {
   });
   const remember = watch('remember');
 
+  console.log(errors);
   const toggle = () => {
     console.log(isAuth);
     setIsAuth(!isAuth);
@@ -57,7 +71,16 @@ export const Auth = props => {
       if (remember) {
       }
       dispatch(
-        registration({ email: formData.email, password: formData.password })
+        registration({
+          address: formData.address,
+          firstname: formData.firstname,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+          repeatPassword: formData.repeatPassword,
+          phone: formData.phone,
+          gender: formData.gender === 'Чоловік' ? 'MALE' : 'FEMALE',
+        })
       );
 
       reset();
@@ -262,6 +285,36 @@ export const Auth = props => {
                 </InputWrapper>
               </FormItemWrapper>
               <FormItemWrapper>
+                <Label htmlFor="firstname">Ім’я </Label>
+                <InputWrapper>
+                  <SelectButton
+                    onClick={() => toggleCategoriesSearch()}
+                    $isCategoriesShown={isCategoriesShown}
+                    value={selected}
+                    {...register('gender')}
+                  ></SelectButton>
+                  {!isCategoriesShown ? <Down /> : <Up />}
+                  <List $isCategoriesShown={isCategoriesShown}>
+                    {options.map((option, index) => (
+                      <Fragment key={index}>
+                        {selected !== option && (
+                          <Item>
+                            <Option
+                              onClick={() => {
+                                setIsSelected(option);
+                                setIsCategoriesShown(false);
+                              }}
+                            >
+                              {option}
+                            </Option>
+                          </Item>
+                        )}
+                      </Fragment>
+                    ))}
+                  </List>
+                </InputWrapper>
+              </FormItemWrapper>
+              <FormItemWrapper>
                 <Label htmlFor="address">Адреса</Label>
                 <InputWrapper>
                   <Input
@@ -347,7 +400,7 @@ export const Auth = props => {
                     name="repeatPassword"
                     id="repeatPassword"
                     placeholder="************************"
-                    {...register('password')}
+                    {...register('repeatPassword')}
                   />
                   <Icon
                     id={'check-success'}
