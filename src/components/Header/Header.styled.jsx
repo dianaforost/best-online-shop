@@ -41,4 +41,5 @@ export const HeaderIconMenuNav = styled.ul`
 
 export const HeaderIconMenuItem = styled.li`
   margin-right: 24px;
+  cursor: pointer;
 `;
