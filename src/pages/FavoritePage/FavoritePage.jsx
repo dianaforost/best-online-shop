@@ -1,5 +1,10 @@
 import React from 'react';
+import { Container } from './FavoritePage.styled';
 
 export const FavoritePage = () => {
-  return <h1>This is a FAVORITE PAGE.</h1>;
+  return (
+    <Container>
+      <h1>This is a FAVORITE PAGE.</h1>
+    </Container>
+  );
 };
