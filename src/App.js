@@ -9,6 +9,9 @@ import {
   NotFoundPage,
   MainPage,
   InformationPage,
+  FavoritePage,
+  UserPage,
+  CartPage,
 } from 'pages';
 import { useEffect } from 'react';
 import GlobalStyles from 'GlobalStyle';
@@ -35,6 +38,9 @@ function App() {
           <Route path="deals" element={<DealsPage />} />
           <Route path="deals/:productsId" element={<ProductDetailsPage />} />
           <Route path="information" element={<InformationPage />} />
+          <Route path="user" element={<UserPage />} />
+          <Route path="favorite" element={<FavoritePage />} />
+          <Route path="cart" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

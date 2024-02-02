@@ -5,3 +5,6 @@ export * from './ProductDetailsPage/ProductDetailsPage';
 export * from './ProductsCatalogPage/ProductsCatalogPage';
 export * from './DealsPage/DealsPage';
 export * from './InformationPage/InformationPage';
+export * from './CartPage/CartPage';
+export * from './FavoritePage/FavoritePage';
+export * from './UserPage/UserPage';
