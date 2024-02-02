@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const Wrapper = styled.header`
+  position: absolute;
+  z-index: 2;
+  background-color: ${props => props.theme.header.header_bg_color};
+`;
+
+export const Container = styled.div`
   position: absolute;
   z-index: 2;
   width: 100%;
