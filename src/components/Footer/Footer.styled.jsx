@@ -11,8 +11,10 @@ export const Container = styled.div`
 
   @media screen and (min-width: 1200px) {
     display: flex;
+    max-width: 1440px;
     justify-content: space-between;
     padding: 50px 120px;
+    margin: 0 auto;
   }
 `;
 
