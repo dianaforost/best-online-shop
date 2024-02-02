@@ -8,8 +8,15 @@ import {
 } from './Header.styled';
 import { NavLink } from 'react-router-dom';
 import { Icon } from 'components/Icon/Icon';
+import { useState } from 'react';
 
 export const Header = () => {
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <Container>
       <LogoText>
@@ -38,10 +45,11 @@ export const Header = () => {
       </div>
       <div>
         <HeaderIconMenuNav>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <Icon id={'search'} width={'24px'} height={'24px'} />
-            </a>
+          <label>
+            <input type="text" />
+          </label>
+          <HeaderIconMenuItem onClick={handleToggle}>
+            <Icon id={'search'} width={'24px'} height={'24px'} />
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
             <a href="/">
