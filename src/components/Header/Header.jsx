@@ -12,9 +12,16 @@ import { useState } from 'react';
 
 export const Header = () => {
   const [isToggled, setIsToggled] = useState(false);
+  const [inputField, setInputField] = useState('');
 
   const handleToggle = () => {
+    console.log('Toggle: ', isToggled);
     setIsToggled(!isToggled);
+  };
+
+  const handleInput = e => {
+    console.log(inputField);
+    setInputField(e.target.value);
   };
 
   return (
@@ -45,10 +52,12 @@ export const Header = () => {
       </div>
       <div>
         <HeaderIconMenuNav>
-          <label>
-            <input type="text" />
-          </label>
-          <HeaderIconMenuItem onClick={handleToggle}>
+          {isToggled && (
+            <label>
+              <input type="text" value={inputField} onChange={handleInput} />
+            </label>
+          )}
+          <HeaderIconMenuItem onClick={handleToggle} type="button">
             <Icon id={'search'} width={'24px'} height={'24px'} />
           </HeaderIconMenuItem>
           <HeaderIconMenuItem>
