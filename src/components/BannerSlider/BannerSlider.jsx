@@ -1,11 +1,11 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 import banner1 from '../../images/banner/banner1.jpg';
 import banner1x2 from '../../images/banner/banner1.jpg';
 import banner2 from '../../images/banner/banner2.jpg';
 import banner2x2 from '../../images/banner/banner2@2x.jpg';
 import { Autoplay, EffectFade } from 'swiper/modules';
-import { Section } from './BannerSlider.styled';
+import { Section, Slide } from './BannerSlider.styled';
 
 export const BannerSlider = () => {
   const bgImages = [
@@ -27,12 +27,12 @@ export const BannerSlider = () => {
         }}
       >
         {bgImages.map((item, index) => (
-          <SwiperSlide
+          <Slide
             key={index}
             style={{
               backgroundImage: item,
             }}
-          ></SwiperSlide>
+          ></Slide>
         ))}
       </Swiper>
     </Section>
