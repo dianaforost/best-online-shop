@@ -49,6 +49,7 @@ export const HeaderStoreNavItem = styled.li`
 
 export const HeaderIconMenuNav = styled.ul`
   display: flex;
+  position: relative;
 `;
 
 export const HeaderIconMenuItem = styled.li`

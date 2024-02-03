@@ -7,6 +7,7 @@ import {
   HeaderStoreNavItem,
   HeaderStoreNavMenu,
   LogoText,
+  SearchBarPosition,
 } from './Header.styled';
 import { Icon } from 'components/Icon/Icon';
 import { useState } from 'react';
