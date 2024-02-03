@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { SearchInput } from './SearchBarComponent.styled';
+import { SearchInput, SearchLabel } from './SearchBarComponent.styled';
 
 export const SearchBarComponent = () => {
   const [inputField, setInputField] = useState('');
+
   const handleInput = e => {
-    console.log(inputField);
+    console.log(e);
     setInputField(e.target.value);
   };
   return (
-    <label>
+    <SearchLabel>
       <SearchInput
         type="text"
         placeholder="Search..."
         value={inputField}
         onChange={handleInput}
       />
-    </label>
+    </SearchLabel>
   );
 };
