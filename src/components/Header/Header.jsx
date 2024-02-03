@@ -1,80 +1,79 @@
+import React from 'react';
 import {
   Container,
   HeaderIconMenuItem,
   HeaderIconMenuNav,
+  HeaderMenuNavLink,
   HeaderStoreNavItem,
   HeaderStoreNavMenu,
   LogoText,
 } from './Header.styled';
-import { NavLink } from 'react-router-dom';
 import { Icon } from 'components/Icon/Icon';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
 
 export const Header = () => {
   const [isToggled, setIsToggled] = useState(false);
-  const [inputField, setInputField] = useState('');
 
   const handleToggle = () => {
     console.log('Toggle: ', isToggled);
     setIsToggled(!isToggled);
   };
 
-  const handleInput = e => {
-    console.log(inputField);
-    setInputField(e.target.value);
-  };
-
   return (
     <header>
       <Container>
         <LogoText>
-          <NavLink to={'/'}>SportSvit</NavLink>
+          <Link to={'/'}>SportSvit</Link>
         </LogoText>
         <div>
           <nav>
             <HeaderStoreNavMenu>
               <HeaderStoreNavItem>
-                <NavLink to={'/catalog/novelty'}>Новинки</NavLink>
+                <HeaderMenuNavLink to={'/catalog/novelty'}>
+                  Новинки
+                </HeaderMenuNavLink>
               </HeaderStoreNavItem>
               <HeaderStoreNavItem>
-                <NavLink to={'/catalog'}>Каталог</NavLink>
+                <HeaderMenuNavLink to={'/catalog'}>Каталог</HeaderMenuNavLink>
               </HeaderStoreNavItem>
               <HeaderStoreNavItem>
-                <NavLink to={'/catalog/women'}>Жінки</NavLink>
+                <HeaderMenuNavLink to={'/catalog/women'}>
+                  Жінки
+                </HeaderMenuNavLink>
               </HeaderStoreNavItem>
               <HeaderStoreNavItem>
-                <NavLink to={'/catalog/man'}>Чоловіки</NavLink>
+                <HeaderMenuNavLink to={'/catalog/man'}>
+                  Чоловіки
+                </HeaderMenuNavLink>
               </HeaderStoreNavItem>
               <HeaderStoreNavItem>
-                <NavLink to={'/deals'}>Знижки</NavLink>
+                <HeaderMenuNavLink to={'/deals'}>Знижки</HeaderMenuNavLink>
               </HeaderStoreNavItem>
             </HeaderStoreNavMenu>
           </nav>
         </div>
         <div>
           <HeaderIconMenuNav>
-            {isToggled && (
-              <label>
-                <input type="text" value={inputField} onChange={handleInput} />
-              </label>
-            )}
+            {isToggled && <SearchBarComponent />}
             <HeaderIconMenuItem onClick={handleToggle} type="button">
               <Icon id={'search'} width={'24px'} height={'24px'} />
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <a href="/">
+              <Link to={'/user'}>
                 <Icon id={'user'} width={'24px'} height={'24px'} />
-              </a>
+              </Link>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <a href="/">
+              <Link to={'/favorite'}>
                 <Icon id={'heart'} width={'24px'} height={'24px'} />
-              </a>
+              </Link>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <a href="/">
+              <Link to={'/cart'}>
                 <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
-              </a>
+              </Link>
             </HeaderIconMenuItem>
           </HeaderIconMenuNav>
         </div>
