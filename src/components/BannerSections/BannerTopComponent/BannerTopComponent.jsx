@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BannerWrapper } from 'components';
 
 export const BannerTopComponent = ({ bannerimg, bannerimg2x }) => {
