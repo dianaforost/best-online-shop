@@ -2,9 +2,10 @@ import React from 'react';
 
 import { Container } from './BannerWrapper.styled';
 
-export const BannerWrapper = ({ children, bannerimg, bannerimg2x, dpr }) => {
+export const BannerWrapper = ({ children, ...props }) => {
+  const dpr = window.devicePixelRatio;
   return (
-    <Container $bannerimg={bannerimg} $bannerimg2x={bannerimg2x} $dpr={dpr}>
+    <Container $dpr={dpr} {...props}>
       {children}
     </Container>
   );
