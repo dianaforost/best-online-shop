@@ -5,6 +5,6 @@ export const Container = styled.section`
   height: 543px;
   margin: 0 auto;
   border: none;
-  background-image: url((${props =>
-    props.$dpr < 2 ? props.$bannerimg : props.$bannerimg2x}));
+  background-image: url(${props =>
+    props.$dpr < 2 ? props.$bannerimg : props.$bannerimg2x});
 `;
