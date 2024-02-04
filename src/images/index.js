@@ -8,12 +8,12 @@ import heroBgThird from './Hero/hero-bg-third.jpg';
 import heroBgThird2x from './Hero/hero-bg-third@2x.jpg';
 
 // Top banner
-import bannerTop from './banner/bannerTop.jpg';
-import bannerTop2x from './banner/bannerTop@2x.jpg';
+import bannerTop from './banner/bannerTop.png';
+import bannerTop2x from './banner/bannerTop@2x.png';
 
 // Bottom banner
-import bannerBottom from './banner/bannerBottom.jpg';
-import bannerBottom2x from './banner/bannerBottom@2x.jpg';
+import bannerBottom from './banner/BannerBottom.png';
+import bannerBottom2x from './banner/bannerBottom@2x.png';
 
 //Catalog page
 
