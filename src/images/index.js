@@ -8,12 +8,12 @@ import heroBgThird from './Hero/hero-bg-third.jpg';
 import heroBgThird2x from './Hero/hero-bg-third@2x.jpg';
 
 // Top banner
-import banner1 from './banner/banner1.jpg';
-import banner1x2 from './banner/banner1@2x.jpg';
+import bannerTop from './banner/bannerTop.jpg';
+import bannerTop2x from './banner/bannerTop@2x.jpg';
 
 // Bottom banner
-import banner2 from './banner/banner2.jpg';
-import banner2x2 from './banner/banner2@2x.jpg';
+import bannerBottom from './banner/bannerBottom.jpg';
+import bannerBottom2x from './banner/bannerBottom@2x.jpg';
 
 //Catalog page
 
@@ -44,10 +44,10 @@ export {
   heroBgSec2x,
   heroBgThird,
   heroBgThird2x,
-  banner1,
-  banner1x2,
-  banner2,
-  banner2x2,
+  bannerTop,
+  bannerTop2x,
+  bannerBottom,
+  bannerBottom2x,
   all,
   forHer,
   forHim,
