@@ -4,11 +4,14 @@ export const Container = styled.section`
   max-width: 1440px;
   height: 543px;
   margin: 0 auto;
-  border: ${props => console.log(props)};
-  padding-top: ${props => props.style.paddingTop};
-  padding-right: ${props => props.style.paddingRight};
-  padding-bottom: ${props => props.style.paddingBottom};
-  padding-left: ${props => props.style.paddingLeft};
-  background-image: url(${props =>
-    props.$dpr < 2 ? props.$bannerimg : props.$bannerimg2x});
+  border: none;
+  ${props =>
+    props.$style
+      ? `padding: ${props.$style.paddingTop} ${props.$style.paddingRight} ${props.$style.paddingBottom} ${props.$style.paddingLeft};`
+      : `padding: 0px;`}
+
+  ${props =>
+    props.$dpr < 2
+      ? `background-image: url(${props.$bannerimg});`
+      : `background-image: url(${props.$bannerimg2x});`}
 `;
