@@ -1,13 +1,11 @@
 import React from 'react';
 import { Swiper } from 'swiper/react';
-import banner1 from '../../images/banner/banner1.jpg';
-import banner1x2 from '../../images/banner/banner1.jpg';
-import banner2 from '../../images/banner/banner2.jpg';
-import banner2x2 from '../../images/banner/banner2@2x.jpg';
 import { Autoplay, EffectFade } from 'swiper/modules';
-import { Section, Slide } from './BannerSlider.styled';
+import { Section, Slide } from './BannerImage.styled';
 
-export const BannerSlider = () => {
+import { banner1, banner1x2, banner2, banner2x2 } from 'images/';
+
+export const BannerImage = () => {
   const bgImages = [
     `url(${banner1}),-webkit-image-set(url(${banner1}) 1x, url(${banner1x2}) 2x`,
     `url(${banner2}),-webkit-image-set(url(${banner2}) 1x, url(${banner2x2}) 2x`,
