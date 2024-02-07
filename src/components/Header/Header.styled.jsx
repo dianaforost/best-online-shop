@@ -51,7 +51,7 @@ export const HeaderMenuNavLink = styled(Link)`
   text-transform: uppercase;
   color: ${props => props.theme.header.textColor};
 
-  transition: color 250ms ease-out;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus,
@@ -73,7 +73,7 @@ export const HeaderMenuNavLink = styled(Link)`
 
     transform: scaleX(0);
     transform-origin: center left;
-    transition: transform 250ms ease-out;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:hover::after,
