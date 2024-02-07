@@ -4,7 +4,10 @@ const DefaultTheme = {
     secondFontFamily: 'Mulish',
   },
   header: {
-    header_bg_color: 'rgba(27, 82, 100, 0.8)',
+    headerBgColor: 'rgba(27, 82, 100, 0.8)',
+    textColor: '#f9f9f9',
+    linkColor: '#17cf97',
+    transition: 'all 0.7s ease-out',
   },
   main: {
     textColor: '#f9f9f9',
