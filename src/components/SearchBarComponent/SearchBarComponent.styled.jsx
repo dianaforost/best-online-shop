@@ -8,8 +8,9 @@ export const SearchLabel = styled.label`
 `;
 
 export const SearchInput = styled.input`
-  border-color: transparent;
-  border-radius: 2px;
-  text-decoration: none;
-  width: 180px;
+  width: 458px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid ${props => props.theme.main.textColor};
+  padding: 0px 8px;
 `;
