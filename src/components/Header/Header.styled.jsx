@@ -43,7 +43,6 @@ export const HeaderStoreNavItem = styled.li`
   margin-right: 30px;
   text-transform: uppercase;
   color: ${props => props.theme.header.textColor};
-  transition: ${props => props.theme.header.transition};
   position: relative;
 `;
 
@@ -58,6 +57,7 @@ export const HeaderIconMenuItem = styled.li`
 `;
 
 export const HeaderMenuNavLink = styled(Link)`
+  transition: ${props => props.theme.header.transition};
   &:hover,
   &:focus,
   &.active {
