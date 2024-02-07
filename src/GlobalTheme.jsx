@@ -7,7 +7,6 @@ const DefaultTheme = {
     headerBgColor: 'rgba(27, 82, 100, 0.8)',
     textColor: '#f9f9f9',
     linkColor: '#17cf97',
-    transition: 'color 250ms ease-out',
   },
   main: {
     textColor: '#f9f9f9',
