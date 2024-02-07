@@ -9,9 +9,18 @@ export const Container = styled.div`
   height: 76px;
   text-align: center;
   background-color: ${props => props.theme.header.headerBgColor};
+  border-top: 2px solid ${props => props.theme.header.headerBorderColor};
 `;
 
-export const SearchLabel = styled.label``;
+export const SearchLabel = styled.label`
+  &::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+  }
+`;
 
 export const SearchInput = styled.input`
   width: 458px;
