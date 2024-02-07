@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 export const Sale = styled.h2`
   font-family: ${props => props.theme.fonts.first};
-  color: ${props => props.theme.main.textColor};
-  line-height: 1.17;
-  font-size: 64px;
   font-weight: 600;
+  font-size: 64px;
+  line-height: 1.17;
   text-transform: uppercase;
+  color: ${props => props.theme.main.textColor};
   margin-left: 96px;
   margin-bottom: 44px;
 `;
