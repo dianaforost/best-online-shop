@@ -56,7 +56,6 @@ export const Header = () => {
         </div>
         <div>
           <HeaderIconMenuNav>
-            {isToggled && <SearchBarComponent />}
             <HeaderIconMenuItem onClick={handleToggle} type="button">
               <Icon id={'search'} width={'24px'} height={'24px'} />
             </HeaderIconMenuItem>
@@ -78,6 +77,7 @@ export const Header = () => {
           </HeaderIconMenuNav>
         </div>
       </Container>
+      {isToggled && <SearchBarComponent />}
     </header>
   );
 };
