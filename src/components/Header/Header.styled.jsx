@@ -32,18 +32,55 @@ export const HeaderNavMenu = styled.nav``;
 export const HeaderStoreNavMenu = styled.ul`
   display: flex;
 
-  margin-right: 160px;
   color: ${props => props.theme.header.textColor};
+
+  margin-right: 160px;
 `;
 
 export const HeaderStoreNavItem = styled.li`
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+`;
+
+export const HeaderMenuNavLink = styled(Link)`
+  position: relative;
   font-size: 16px;
   font-family: ${props => props.theme.fonts.firstFontFamily};
   font-weight: 500;
-  margin-right: 30px;
   text-transform: uppercase;
   color: ${props => props.theme.header.textColor};
-  position: relative;
+
+  transition: color 250ms ease-out;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: ${props => props.theme.header.linkColor};
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+
+    display: block;
+    width: 50%;
+    height: 2px;
+
+    background: ${props => props.theme.header.linkColor};
+
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform 250ms ease-out;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &.active::after {
+    transform: scaleX(1);
+  }
 `;
 
 export const HeaderIconMenuNav = styled.ul`
@@ -54,24 +91,4 @@ export const HeaderIconMenuNav = styled.ul`
 export const HeaderIconMenuItem = styled.li`
   margin-right: 24px;
   cursor: pointer;
-`;
-
-export const HeaderMenuNavLink = styled(Link)`
-  transition: ${props => props.theme.header.transition};
-  &:hover,
-  &:focus,
-  &.active {
-    color: ${props => props.theme.header.linkColor};
-  }
-  &:hover::after,
-  &:focus::after,
-  &.active::after {
-    content: '';
-    width: 50%;
-    height: 2px;
-    background: ${props => props.theme.header.linkColor};
-    position: absolute;
-    bottom: -10px;
-    left: 0px;
-  }
 `;
