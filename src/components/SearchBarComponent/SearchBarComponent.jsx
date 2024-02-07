@@ -14,7 +14,7 @@ export const SearchBarComponent = () => {
   };
   return (
     <Container>
-      <SearchLabel>
+      <SearchLabel for="search">
         <SearchInput
           type="text"
           name="search"
