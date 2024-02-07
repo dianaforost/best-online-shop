@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.header`
   position: absolute;
   z-index: 2;
-  background-color: ${props => props.theme.header.header_bg_color};
+  background-color: ${props => props.theme.header.headerBgColor};
 `;
 
 export const Container = styled.div`
@@ -15,14 +15,14 @@ export const Container = styled.div`
   justify-content: space-evenly;
   max-height: 100px;
   padding: 38px 120px;
-  background-color: ${props => props.theme.header.header_bg_color};
+  background-color: ${props => props.theme.header.headerBgColor};
 `;
 
 export const LogoText = styled.div`
   font-size: 16px;
   font-weight: 500;
   font-family: ${props => props.theme.fonts.firstFontFamily};
-  color: ${props => props.theme.main.textColor};
+  color: ${props => props.theme.header.textColor};
   text-transform: uppercase;
   margin-right: 210px;
 `;
@@ -33,7 +33,7 @@ export const HeaderStoreNavMenu = styled.ul`
   display: flex;
 
   margin-right: 160px;
-  color: ${props => props.theme.main.textColor};
+  color: ${props => props.theme.header.textColor};
 `;
 
 export const HeaderStoreNavItem = styled.li`
@@ -42,8 +42,8 @@ export const HeaderStoreNavItem = styled.li`
   font-weight: 500;
   margin-right: 30px;
   text-transform: uppercase;
-  color: ${props => props.theme.main.textColor};
-  transition: 0.3s ease-in-out;
+  color: ${props => props.theme.header.textColor};
+  transition: ${props => props.theme.header.transition};
   position: relative;
 `;
 
@@ -61,7 +61,7 @@ export const HeaderMenuNavLink = styled(Link)`
   &:hover,
   &:focus,
   &.active {
-    color: #17cf97;
+    color: ${props => props.theme.header.linkColor};
   }
   &:hover::after,
   &:focus::after,
@@ -69,7 +69,7 @@ export const HeaderMenuNavLink = styled(Link)`
     content: '';
     width: 50%;
     height: 2px;
-    background: #17cf97;
+    background: ${props => props.theme.header.linkColor};
     position: absolute;
     bottom: -10px;
     left: 0px;
