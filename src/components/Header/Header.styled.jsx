@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   background-color: ${props => props.theme.header.headerBgColor};
 `;
 
