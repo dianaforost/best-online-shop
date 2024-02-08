@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Swiper } from 'swiper/react';
 import { Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 import {
   Container,
@@ -10,16 +13,22 @@ import {
   Text,
   Title,
 } from './MainSection.styled';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 
-import heroBgFirst from '../../images/Hero/hero-bg-first.jpg';
-import heroBgFirst2x from '../../images/Hero/hero-bg-first@2x.jpg';
-import heroBgSec from '../../images/Hero/hero-bg-sec.jpg';
-import heroBgSec2x from '../../images/Hero/hero-bg-sec@2x.jpg';
-import heroBgThird from '../../images/Hero/hero-bg-third.jpg';
-import heroBgThird2x from '../../images/Hero/hero-bg-third@2x.jpg';
+// import heroBgFirst from '../../images/Hero/hero-bg-first.jpg';
+// import heroBgFirst2x from '../../images/Hero/hero-bg-first@2x.jpg';
+// import heroBgSec from '../../images/Hero/hero-bg-sec.jpg';
+// import heroBgSec2x from '../../images/Hero/hero-bg-sec@2x.jpg';
+// import heroBgThird from '../../images/Hero/hero-bg-third.jpg';
+// import heroBgThird2x from '../../images/Hero/hero-bg-third@2x.jpg';
+
+import {
+  heroBgFirst,
+  heroBgFirst2x,
+  heroBgSec,
+  heroBgSec2x,
+  heroBgThird,
+  heroBgThird2x,
+} from 'images';
 
 export const MainSection = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
