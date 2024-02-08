@@ -11,6 +11,7 @@ import {
   ContactsMenuIcon,
   CapitalizeText,
   CategoryBlock,
+  FooterWrapper,
 } from './Footer.styled';
 import { Icon } from 'components/Icon/Icon';
 import { NavLink } from 'react-router-dom';
@@ -18,7 +19,7 @@ import { NavLink } from 'react-router-dom';
 export const Footer = () => {
   return (
     <>
-      <footer>
+      <FooterWrapper>
         <Container>
           <Logo>
             <LogoText>
@@ -124,7 +125,7 @@ export const Footer = () => {
             </ContactsMenu>
           </FooterNavigation>
         </Container>
-      </footer>
+      </FooterWrapper>
     </>
   );
 };

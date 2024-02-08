@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import forHer from '../../images/for-her.png';
-import forHim from '../../images/for-him.png';
-import novelties from '../../images/novelties.png';
-import all from '../../images/all.png';
+// import forHer from '../../images/for-her.png';
+// import forHim from '../../images/for-him.png';
+// import novelties from '../../images/novelties.png';
+// import all from '../../images/all.png';
+
+import {forHer, forHim, novelties, all} from 'images';
+
 
 export const Section = styled.section`
   width: 100%;
