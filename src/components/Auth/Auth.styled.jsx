@@ -74,16 +74,6 @@ export const Label = styled.label`
 export const InputWrapper = styled.div`
   position: relative;
 `;
-export const Input = styled.input`
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  padding: 15px 32px 15px 8px;
-  width: 100%;
-  max-width: 384px;
-  border: 1px solid #757575;
-  border-color: ${props => (props.$error ? 'red' : 'black')};
-`;
 export const CheckboxWrapper = styled.div`
   position: relative;
   display: flex;
@@ -134,11 +124,7 @@ export const Button = styled.button`
     background: ${props => props.theme.main.textColor};
   }
 `;
-export const ErrorMessage = styled.p`
-  font-size: 16px;
-  line-height: 20px;
-  color: #cd1106;
-`;
+
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
@@ -146,19 +132,20 @@ export const List = styled.ul`
   display: ${p => (p.$isCategoriesShown ? `flex` : `none`)};
 `;
 export const Item = styled.li`
-  padding: 10px 8px;
-  border: 1px solid var(--State-Gray, #757575);
+  padding: 15px 32px 15px 8px;
+  border-bottom: 1px solid #757575;
+  border-left: 1px solid #757575;
+  border-right: 1px solid #757575;
   @media (min-width: 768px) {
     max-width: 387px;
-    padding: 10px 8px;
   }
 `;
-export const SelectButton = styled.input`
+export const SelectButton = styled.button`
   position: relative;
   width: 100%;
   background: transparent;
-  border: 1px solid var(--State-Gray, #757575);
-  padding: 10px 8px;
+  border: 1px solid #757575;
+  padding: 15px 32px 15px 8px;
   font-size: 14px;
   line-height: 20px;
   text-align: start;
@@ -166,7 +153,6 @@ export const SelectButton = styled.input`
   @media (min-width: 768px) {
     font-size: 16px;
     line-height: 22px;
-    padding: 10px 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,23 +171,23 @@ export const Option = styled.button`
 `;
 export const Down = styled.div`
   position: absolute;
-  top: 14px;
-  right: 19px;
+  top: 20px;
+  right: 15px;
   border: solid black;
   border-width: 0 1px 1px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 4px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 `;
 export const Up = styled.div`
   position: absolute;
-  top: 17px;
-  right: 19px;
+  top: 25px;
+  right: 15px;
   border: solid black;
   border-width: 0 1px 1px 0;
   display: inline-block;
-  padding: 3px;
+  padding: 4px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 `;

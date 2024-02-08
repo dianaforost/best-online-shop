@@ -1,3 +1,14 @@
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Fragment, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { selectUser } from '../../redux/auth/selectors';
+import { login, registration } from '../../redux/auth/operations';
+import { loginSchema, registerSchema } from 'utils/yupSchema';
+
+import InputField from './InputField/InputField';
 import {
   AuthLinks,
   AuthNav,
@@ -5,7 +16,6 @@ import {
   FormItemWrapper,
   InputWrapper,
   Label,
-  Input,
   Menu,
   Form,
   Title,
@@ -14,7 +24,6 @@ import {
   CheckboxWrapper,
   Button,
   AuthButtons,
-  ErrorMessage,
   List,
   Down,
   Up,
@@ -23,14 +32,6 @@ import {
   SelectButton,
 } from './Auth.styled';
 import { Icon } from 'components/Icon/Icon';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { loginSchema } from 'utils/yupSchema';
-import { Fragment, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { login, registration } from '../../redux/auth/operations';
-import { selectUser } from '../../redux/auth/selectors';
-import { useNavigate } from 'react-router-dom';
 
 export const Auth = props => {
   const { closeModal } = props;
@@ -41,7 +42,7 @@ export const Auth = props => {
   const options = ['Жінка', 'Чоловік'];
   const [selected, setIsSelected] = useState('Жінка');
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
-
+  const [formStatus, setFormStatus] = useState(null);
   const toggleCategoriesSearch = () => {
     setIsCategoriesShown(!isCategoriesShown);
   };
@@ -55,7 +56,7 @@ export const Auth = props => {
     reset,
   } = useForm({
     mode: 'onSubmit',
-    resolver: yupResolver(loginSchema),
+    resolver: isAuth ? yupResolver(loginSchema) : yupResolver(registerSchema),
   });
   const remember = watch('remember');
 
@@ -68,9 +69,10 @@ export const Auth = props => {
   const onRegistration = async formData => {
     try {
       console.log(formData);
+      console.log(selected);
       if (remember) {
       }
-      dispatch(
+      const result = await dispatch(
         registration({
           address: formData.address,
           firstname: formData.firstname,
@@ -79,12 +81,18 @@ export const Auth = props => {
           password: formData.password,
           repeatPassword: formData.repeatPassword,
           phone: formData.phone,
-          gender: formData.gender === 'Чоловік' ? 'MALE' : 'FEMALE',
+          gender: selected === 'Чоловік' ? 'MALE' : 'FEMALE',
         })
       );
-
+      if (registration.fulfilled.match(result)) {
+        setFormStatus('success');
+      } else {
+        setFormStatus('error');
+      }
+      setFormStatus('success');
       reset();
     } catch (error) {
+      setFormStatus('error');
       console.error(error);
     }
   };
@@ -132,88 +140,28 @@ export const Auth = props => {
               autoComplete="off"
               noValidate
             >
-              <FormItemWrapper>
-                <Label htmlFor="email">E-mail</Label>
-                <InputWrapper>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autoComplete="email"
-                    placeholder="milalitovchenko@gmail.com"
-                    {...register('email')}
-                    $error={errors['email'] ? true : false}
-                  />
-                  {errors['email'] ? (
-                    <Icon
-                      id={'check-wrong'}
-                      width={24}
-                      height={24}
-                      style={{
-                        position: 'absolute',
-                        top: '15px',
-                        right: '8px',
-                        fill: `${errors['email'] ? 'red' : 'black'}`,
-                      }}
-                    />
-                  ) : (
-                    <Icon
-                      id={'check-success'}
-                      width={24}
-                      height={24}
-                      style={{
-                        position: 'absolute',
-                        top: '15px',
-                        right: '8px',
-                        fill: `${errors['email'] ? 'red' : 'black'}`,
-                      }}
-                    />
-                  )}
-                </InputWrapper>
-                {errors['email'] && (
-                  <ErrorMessage>{errors['email'].message}</ErrorMessage>
-                )}
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="password">Пароль</Label>
-                <InputWrapper>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="************************"
-                    {...register('password')}
-                  />
-                  {errors['password'] ? (
-                    <Icon
-                      id={'check-wrong'}
-                      width={24}
-                      height={24}
-                      style={{
-                        position: 'absolute',
-                        top: '15px',
-                        right: '8px',
-                        fill: `${errors['password'] ? 'red' : 'black'}`,
-                      }}
-                    />
-                  ) : (
-                    <Icon
-                      id={'check-success'}
-                      width={24}
-                      height={24}
-                      style={{
-                        position: 'absolute',
-                        top: '15px',
-                        right: '8px',
-                        fill: `${errors['password'] ? 'red' : 'black'}`,
-                      }}
-                    />
-                  )}
-                </InputWrapper>
-                {errors['password'] && (
-                  <ErrorMessage>{errors['password'].message}</ErrorMessage>
-                )}
-              </FormItemWrapper>
+              <InputField
+                type="email"
+                name="email"
+                id="email"
+                autoComplete="email"
+                placeholder="milalitovchenko@gmail.com"
+                register={register}
+                errors={errors}
+                label={'E-mail'}
+                formStatus={formStatus}
+              />
+              <InputField
+                type="password"
+                name="password"
+                id="password"
+                autoComplete="email"
+                placeholder="************************"
+                register={register}
+                errors={errors}
+                label={'Пароль'}
+                formStatus={formStatus}
+              />
               <CheckboxWrapper>
                 <HiddenCheckbox
                   name="remember"
@@ -246,53 +194,38 @@ export const Auth = props => {
           <>
             <Title>Реєстрація</Title>
             <Form onSubmit={handleSubmit(onRegistration)}>
+              <InputField
+                type="text"
+                name="firstName"
+                id="firstName"
+                autoComplete="firstName"
+                placeholder="Мілана"
+                register={register}
+                errors={errors}
+                label={'Ім’я'}
+                formStatus={formStatus}
+              />
+              <InputField
+                type="text"
+                name="lastName"
+                id="lastName"
+                autoComplete="lastName"
+                placeholder="Літовченко"
+                register={register}
+                errors={errors}
+                label={'Прізвище'}
+                formStatus={formStatus}
+              />
               <FormItemWrapper>
-                <Label htmlFor="firstname">Ім’я </Label>
-                <InputWrapper>
-                  <Input
-                    type="firstname"
-                    name="firstname"
-                    id="firstname"
-                    placeholder="Мілана"
-                    {...register('firstname')}
-                    $error={errors['firstname'] ? true : false}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="lastName">Прізвище</Label>
-                <InputWrapper>
-                  <Input
-                    type="lastName"
-                    name="lastName"
-                    id="lastName"
-                    placeholder="Літовченко"
-                    {...register('lastName')}
-                    $error={errors['lastName'] ? true : false}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="firstname">Ім’я </Label>
+                <Label htmlFor="gender"> </Label>
                 <InputWrapper>
                   <SelectButton
+                    id="gender"
                     onClick={() => toggleCategoriesSearch()}
                     $isCategoriesShown={isCategoriesShown}
-                    value={selected}
-                    {...register('gender')}
-                  ></SelectButton>
+                  >
+                    {selected}
+                  </SelectButton>
                   {!isCategoriesShown ? <Down /> : <Up />}
                   <List $isCategoriesShown={isCategoriesShown}>
                     {options.map((option, index) => (
@@ -314,102 +247,61 @@ export const Auth = props => {
                   </List>
                 </InputWrapper>
               </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="address">Адреса</Label>
-                <InputWrapper>
-                  <Input
-                    type="address"
-                    name="address"
-                    id="address"
-                    placeholder="Адреса"
-                    autoComplete="address"
-                    {...register('address')}
-                    $error={errors['address'] ? true : false}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="phone">Номер телефону</Label>
-                <InputWrapper>
-                  <Input
-                    type="phone"
-                    name="phone"
-                    id="phone"
-                    autoComplete="phone"
-                    placeholder="+380950000000"
-                    {...register('phone')}
-                    $error={errors['phone'] ? true : false}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="email">E-mail</Label>
-                <InputWrapper>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="email"
-                    autoComplete="email"
-                    placeholder="milalitovchenko@gmail.com"
-                    {...register('email')}
-                    $error={errors['email'] ? true : false}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="password">Пароль</Label>
-                <InputWrapper>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="************************"
-                    {...register('password')}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
-              <FormItemWrapper>
-                <Label htmlFor="repeatPassword">Повторіть пароль</Label>
-                <InputWrapper>
-                  <Input
-                    type="password"
-                    name="repeatPassword"
-                    id="repeatPassword"
-                    placeholder="************************"
-                    {...register('repeatPassword')}
-                  />
-                  <Icon
-                    id={'check-success'}
-                    width={24}
-                    height={24}
-                    style={{ position: 'absolute', top: '15px', right: '8px' }}
-                  />
-                </InputWrapper>
-              </FormItemWrapper>
+              <InputField
+                type="text"
+                name="address"
+                id="address"
+                autoComplete="address"
+                placeholder="Адреса"
+                register={register}
+                errors={errors}
+                label={'Адреса'}
+                formStatus={formStatus}
+              />
+              <InputField
+                type="tel"
+                name="phone"
+                id="phone"
+                autoComplete="phone"
+                placeholder="+380950000000"
+                register={register}
+                errors={errors}
+                label={'Номер телефону'}
+                formStatus={formStatus}
+              />
+              <InputField
+                type="email"
+                name="email"
+                id="email"
+                autoComplete="email"
+                placeholder="milalitovchenko@gmail.com"
+                register={register}
+                errors={errors}
+                label={'E-mail'}
+                formStatus={formStatus}
+              />
+              <InputField
+                type="password"
+                name="password"
+                id="password"
+                autoComplete="password"
+                placeholder="************************"
+                register={register}
+                errors={errors}
+                label={'Пароль'}
+                formStatus={formStatus}
+              />
+              <InputField
+                type="password"
+                name="repeatPassword"
+                id="repeatPassword"
+                autoComplete="repeatPassword"
+                placeholder="************************"
+                register={register}
+                errors={errors}
+                label={'Повторіть пароль'}
+                formStatus={formStatus}
+              />
               <CheckboxWrapper>
                 <HiddenCheckbox
                   name="remember"
