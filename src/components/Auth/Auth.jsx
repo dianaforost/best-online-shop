@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectUser } from '../../redux/auth/selectors';
@@ -43,10 +43,20 @@ export const Auth = props => {
   const [selected, setIsSelected] = useState('Жінка');
   const [isCategoriesShown, setIsCategoriesShown] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+  const [userData, setUserData] = useState(null);
   const toggleCategoriesSearch = () => {
     setIsCategoriesShown(!isCategoriesShown);
   };
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem('userData');
+    if (storedUserData) {
+      setUserData(JSON.parse(storedUserData));
+      remember(true);
+    }
+  }, []);
   console.log(user);
+  console.log(userData);
 
   const {
     register,
@@ -60,7 +70,6 @@ export const Auth = props => {
   });
   const remember = watch('remember');
 
-  console.log(errors);
   const toggle = () => {
     console.log(isAuth);
     setIsAuth(!isAuth);
@@ -71,6 +80,13 @@ export const Auth = props => {
       console.log(formData);
       console.log(selected);
       if (remember) {
+        localStorage.setItem(
+          'userData',
+          JSON.stringify({
+            formData,
+            gender: selected === 'Чоловік' ? 'MALE' : 'FEMALE',
+          })
+        );
       }
       const result = await dispatch(
         registration({
@@ -101,6 +117,7 @@ export const Auth = props => {
     try {
       console.log(formData);
       if (remember) {
+        localStorage.setItem('userData', JSON.stringify(formData));
       }
       dispatch(login({ email: formData.email, password: formData.password }));
       navigate('/customer');
