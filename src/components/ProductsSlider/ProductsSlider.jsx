@@ -13,13 +13,6 @@ import {
   PrevBtn,
   Title,
 } from './ProductsSlider.styled';
-import { useEffect } from 'react';
-import { getProducts } from '../../redux/products/operations';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectNewProduct,
-  selectNewProducts,
-} from '../../redux/products/selectors';
 
 export const ProductsSlider = ({ type }) => {
   const products = [

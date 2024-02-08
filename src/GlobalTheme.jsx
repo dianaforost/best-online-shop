@@ -28,6 +28,7 @@ const DefaultTheme = {
     colorDarkGray: '#757575',
     colorLightGray: '#6d6d6d',
     transition: 'all 0.7s ease-out',
+    siteWidth: '1440px',
   },
   filteredCatalog: {
     paginationBlack: '#010101',

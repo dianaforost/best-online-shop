@@ -7,7 +7,7 @@ import {
   ProductPrice,
   ProductTitle,
 } from './ProductComponent.styled';
-import image from '../../images/Rectangle.jpg';
+import { image } from 'images';
 import { useLocation } from 'react-router-dom';
 
 export const ProductComponent = ({ item, isCatalogPage, sectionType }) => {

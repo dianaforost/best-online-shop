@@ -12,6 +12,8 @@ import { Icon } from 'components/Icon/Icon';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
+import { PopUp } from 'components/Modal/PopUp';
+import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
   const [isToggled, setIsToggled] = useState(false);
@@ -60,9 +62,9 @@ export const Header = () => {
               <Icon id={'search'} width={'24px'} height={'24px'} />
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <Link to={'/user'}>
-                <Icon id={'user'} width={'24px'} height={'24px'} />
-              </Link>
+              <PopUp data={<Icon id={'user'} width={'24px'} height={'24px'} />}>
+                <Auth />
+              </PopUp>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
               <Link to={'/favorite'}>

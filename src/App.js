@@ -15,6 +15,8 @@ import {
 } from 'pages';
 import { useEffect } from 'react';
 import GlobalStyles from 'GlobalStyle';
+import { Auth } from 'components/Auth/Auth';
+import { CustomerPage } from 'pages/CustomerPage/CustomerPage';
 
 function App() {
   const location = useLocation();
@@ -35,12 +37,14 @@ function App() {
             path="catalog/:category/:productsId"
             element={<ProductDetailsPage />}
           />
+          <Route path="/customer" element={<CustomerPage />} />
           <Route path="deals" element={<DealsPage />} />
           <Route path="deals/:productsId" element={<ProductDetailsPage />} />
           <Route path="information" element={<InformationPage />} />
           <Route path="user" element={<UserPage />} />
           <Route path="favorite" element={<FavoritePage />} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="auth" element={<Auth />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
