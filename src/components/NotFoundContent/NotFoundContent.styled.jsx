@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   width: 100%;
-  padding: 28px 0 50px;
+  padding: 128px 0 50px;
   @media (min-width: 768px) {
-    padding: 56px 0 100px;
+    padding: 156px 0 100px;
   }
 `;
 export const Container = styled.div`
