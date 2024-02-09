@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.header`
   position: absolute;
@@ -89,8 +89,24 @@ export const HeaderIconMenuNav = styled.ul`
 `;
 
 export const HeaderIconMenuItem = styled.li`
-  cursor: pointer;
   &:not(:last-child) {
     margin-right: 24px;
+  }
+`;
+
+export const HeaderIconMenuButton = styled.button`
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  fill: ${props => props.theme.header.textColor};
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    fill: ${props => props.theme.header.linkColor};
+    transform: scale(1.1);
   }
 `;
