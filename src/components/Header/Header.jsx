@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Container,
+  HeaderIconMenuButton,
   HeaderIconMenuItem,
   HeaderIconMenuNav,
   HeaderMenuNavLink,
@@ -16,11 +17,10 @@ import { PopUp } from 'components/Modal/PopUp';
 import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isSearchOpen, setSearchOpen] = useState(false);
 
-  const handleToggle = () => {
-    console.log('Toggle: ', isToggled);
-    setIsToggled(!isToggled);
+  const handleSearchOpen = () => {
+    setSearchOpen(!isSearchOpen);
   };
 
   return (
@@ -58,8 +58,14 @@ export const Header = () => {
         </div>
         <div>
           <HeaderIconMenuNav>
-            <HeaderIconMenuItem onClick={handleToggle} type="button">
-              <Icon id={'search'} width={'24px'} height={'24px'} />
+            <HeaderIconMenuItem>
+              <HeaderIconMenuButton
+                onClick={handleSearchOpen}
+                type="button"
+                aria-label="Search"
+              >
+                <Icon id={'search'} width={'24px'} height={'24px'} />
+              </HeaderIconMenuButton>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
               <PopUp data={<Icon id={'user'} width={'24px'} height={'24px'} />}>
@@ -67,19 +73,19 @@ export const Header = () => {
               </PopUp>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <Link to={'/favorite'}>
+              <HeaderIconMenuButton type="button" aria-label="User favorites">
                 <Icon id={'heart'} width={'24px'} height={'24px'} />
-              </Link>
+              </HeaderIconMenuButton>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <Link to={'/cart'}>
+              <HeaderIconMenuButton type="button" aria-label="Shopping cart">
                 <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
-              </Link>
+              </HeaderIconMenuButton>
             </HeaderIconMenuItem>
           </HeaderIconMenuNav>
         </div>
       </Container>
-      {isToggled && <SearchBarComponent />}
+      {isSearchOpen && <SearchBarComponent />}
     </header>
   );
 };
