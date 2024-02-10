@@ -20,7 +20,8 @@ export const Header = () => {
   const [isSearchOpen, setSearchOpen] = useState(false);
 
   const handleSearchOpen = () => {
-    setSearchOpen(!isSearchOpen);
+    console.log(isSearchOpen);
+    isSearchOpen ? setSearchOpen(false) : setSearchOpen(true);
   };
 
   return (
@@ -85,7 +86,11 @@ export const Header = () => {
           </HeaderIconMenuNav>
         </div>
       </Container>
-      {isSearchOpen && <SearchBarComponent />}
+      {isSearchOpen && (
+        <SearchBarComponent
+          data={<Icon id={'search'} width={'24px'} height={'24px'} />}
+        />
+      )}
     </header>
   );
 };

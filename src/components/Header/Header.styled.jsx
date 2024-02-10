@@ -53,9 +53,7 @@ export const HeaderMenuNavLink = styled(Link)`
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus,
-  &.active {
+  &:hover {
     color: ${props => props.theme.header.linkColor};
   }
 
@@ -76,9 +74,7 @@ export const HeaderMenuNavLink = styled(Link)`
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  &:hover::after,
-  &:focus::after,
-  &.active::after {
+  &:hover::after {
     transform: scaleX(1);
   }
 `;
@@ -104,8 +100,7 @@ export const HeaderIconMenuButton = styled.button`
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
+  &:hover {
     fill: ${props => props.theme.header.linkColor};
     transform: scale(1.1);
   }

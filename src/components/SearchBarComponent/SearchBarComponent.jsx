@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import {
   Container,
+  SearchButton,
+  SearchContainer,
   SearchInput,
-  SearchLabel,
 } from './SearchBarComponent.styled';
 
-export const SearchBarComponent = () => {
+export const SearchBarComponent = ({ data }) => {
   const [inputField, setInputField] = useState('');
 
   const handleInput = e => {
-    console.log(e);
     setInputField(e.target.value);
   };
   return (
     <Container>
-      <SearchLabel for="search">
+      <SearchContainer>
+        <SearchButton>{data}</SearchButton>
         <SearchInput
           type="text"
           name="search"
@@ -22,7 +23,7 @@ export const SearchBarComponent = () => {
           value={inputField}
           onChange={handleInput}
         />
-      </SearchLabel>
+      </SearchContainer>
     </Container>
   );
 };
