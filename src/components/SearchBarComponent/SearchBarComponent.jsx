@@ -21,6 +21,7 @@ export const SearchBarComponent = ({ data }) => {
           name="search"
           placeholder="Пошук"
           value={inputField}
+          autocomplete="off"
           onChange={handleInput}
         />
       </SearchContainer>

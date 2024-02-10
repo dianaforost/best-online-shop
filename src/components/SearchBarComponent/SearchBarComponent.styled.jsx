@@ -14,6 +14,7 @@ export const Container = styled.div`
 `;
 
 export const SearchInput = styled.input`
+  display: block;
   font-family: ${props => props.theme.fonts.firstFontFamily};
   font-size: 16px;
 
@@ -22,7 +23,27 @@ export const SearchInput = styled.input`
   padding: 0px 8px 0px 40px;
   border-radius: 4px;
   border: 1px solid ${props => props.theme.main.textColor};
+  background-clip: padding-box;
+
+  color: ${props => props.theme.header.textColor};
   background-color: transparent;
+
+  &::placeholder {
+    font-family: ${props => props.theme.fonts.firstFontFamily};
+    font-weight: 400;
+    font-size: 16px;
+    color: ${props => props.theme.main.textColor};
+    opacity: 0.8;
+  }
+
+  &:auto-fill {
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    outline: 0;
+  }
 `;
 
 export const SearchContainer = styled.div`
