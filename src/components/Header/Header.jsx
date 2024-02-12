@@ -17,11 +17,10 @@ import { PopUp } from 'components/Modal/PopUp';
 import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
-  const [isSearchOpen, setSearchOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const handleSearchOpen = () => {
-    console.log(isSearchOpen);
-    isSearchOpen ? setSearchOpen(false) : setSearchOpen(true);
+    isSearchOpen ? setIsSearchOpen(false) : setIsSearchOpen(true);
   };
 
   return (
@@ -89,6 +88,8 @@ export const Header = () => {
       {isSearchOpen && (
         <SearchBarComponent
           data={<Icon id={'search'} width={'24px'} height={'24px'} />}
+          isSearchOpen={isSearchOpen}
+          setIsSearchOpen={setIsSearchOpen}
         />
       )}
     </header>
