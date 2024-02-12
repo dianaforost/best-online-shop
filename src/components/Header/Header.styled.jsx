@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.header`
   position: absolute;
-  z-index: 1;
+  z-index: 2;
+  width: 100%;
   background-color: ${props => props.theme.header.headerBgColor};
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  z-index: 2;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  max-width: 1440px;
   max-height: 100px;
-  padding: 38px 120px;
-  background-color: ${props => props.theme.header.headerBgColor};
+  margin: 0 auto;
+  padding: 40px 120px;
 `;
 
 export const LogoText = styled.div`

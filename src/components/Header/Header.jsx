@@ -8,6 +8,7 @@ import {
   HeaderStoreNavItem,
   HeaderStoreNavMenu,
   LogoText,
+  Wrapper,
 } from './Header.styled';
 import { Icon } from 'components/Icon/Icon';
 import { useState } from 'react';
@@ -19,12 +20,12 @@ import { Auth } from 'components/Auth/Auth';
 export const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const handleSearchOpen = () => {
+  const handleIsSearchOpen = () => {
     isSearchOpen ? setIsSearchOpen(false) : setIsSearchOpen(true);
   };
 
   return (
-    <header>
+    <Wrapper>
       <Container>
         <LogoText>
           <Link to={'/'}>SportSvit</Link>
@@ -60,7 +61,7 @@ export const Header = () => {
           <HeaderIconMenuNav>
             <HeaderIconMenuItem>
               <HeaderIconMenuButton
-                onClick={handleSearchOpen}
+                onClick={handleIsSearchOpen}
                 type="button"
                 aria-label="Search"
               >
@@ -82,6 +83,12 @@ export const Header = () => {
                 <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
               </HeaderIconMenuButton>
             </HeaderIconMenuItem>
+            <HeaderIconMenuItem>
+              <HeaderIconMenuButton type="button" aria-label="Language">
+                {/* <Icon id={'shopping-cart'} width={'24px'} height={'24px'} /> */}
+                UA
+              </HeaderIconMenuButton>
+            </HeaderIconMenuItem>
           </HeaderIconMenuNav>
         </div>
       </Container>
@@ -92,6 +99,6 @@ export const Header = () => {
           setIsSearchOpen={setIsSearchOpen}
         />
       )}
-    </header>
+    </Wrapper>
   );
 };
