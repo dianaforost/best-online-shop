@@ -91,7 +91,7 @@ export const Header = () => {
             <HeaderIconMenuItem>
               <HeaderIconMenuButton type="button" aria-label="Language">
                 {/* <Icon id={'shopping-cart'} width={'24px'} height={'24px'} /> */}
-                {`${isOpen}`}
+                UA
               </HeaderIconMenuButton>
             </HeaderIconMenuItem>
           </HeaderIconMenuNav>
