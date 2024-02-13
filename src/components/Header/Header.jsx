@@ -11,22 +11,24 @@ import {
   LogoText,
   Wrapper,
 } from './Header.styled';
+import { useClickAway } from 'react-use';
 import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
 import { Icon } from 'components/Icon/Icon';
 import { PopUp } from 'components/Modal/PopUp';
 import { Auth } from 'components/Auth/Auth';
-import { useClickOutside } from 'components/hooks';
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const searchRef = useRef(null);
 
-  useClickOutside(searchRef, () => {
-    if (isOpen) setIsOpen(false);
+  useClickAway(searchRef, () => {
+    console.log('OUTSIDE CLICKED', new Date());
+    setIsActive(false);
   });
 
-  const handleIsOpen = () => {
-    isOpen ? setIsOpen(false) : setIsOpen(true);
+  const handleIsActive = () => {
+    console.log('Button click');
+    setIsActive(true);
   };
 
   return (
@@ -66,9 +68,10 @@ export const Header = () => {
           <HeaderIconMenuNav>
             <HeaderIconMenuItem>
               <HeaderIconMenuButton
-                onClick={handleIsOpen}
+                onClick={handleIsActive}
                 type="button"
                 aria-label="Search"
+                disabled={isActive}
               >
                 <Icon id={'search'} width={'24px'} height={'24px'} />
               </HeaderIconMenuButton>
@@ -97,12 +100,12 @@ export const Header = () => {
           </HeaderIconMenuNav>
         </div>
       </Container>
-      {isOpen && (
+      {isActive ? (
         <SearchBarComponent
           data={<Icon id={'search'} width={'24px'} height={'24px'} />}
           ref={searchRef}
         />
-      )}
+      ) : null}
     </Wrapper>
   );
 };

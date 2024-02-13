@@ -104,4 +104,9 @@ export const HeaderIconMenuButton = styled.button`
     fill: ${props => props.theme.header.linkColor};
     transform: scale(1.1);
   }
+
+  &:disabled {
+    fill: ${props => props.theme.colors.stateGray};
+    transform: scale(1);
+  }
 `;
