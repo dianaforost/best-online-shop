@@ -4,12 +4,6 @@ export const useClickOutside = (ref, callback) => {
   useEffect(() => {
     const handleClick = e => {
       if (ref.current && !ref.current.contains(e.target)) {
-        console.log('REF: ', ref.current);
-        console.log('TARGET: ', e.target);
-        console.log(
-          'LOGICAL IF: ',
-          ref.current && !ref.current.contains(e.target)
-        );
         callback();
       }
     };
