@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Container,
   HeaderIconMenuButton,
@@ -10,18 +11,22 @@ import {
   LogoText,
   Wrapper,
 } from './Header.styled';
-import { Icon } from 'components/Icon/Icon';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
+import { Icon } from 'components/Icon/Icon';
 import { PopUp } from 'components/Modal/PopUp';
 import { Auth } from 'components/Auth/Auth';
+import { useClickOutside } from 'components/hooks';
 
 export const Header = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const searchRef = useRef(null);
+
+  useClickOutside(searchRef, () => {
+    setIsOpen(false);
+  });
 
   const handleIsSearchOpen = () => {
-    isSearchOpen ? setIsSearchOpen(false) : setIsSearchOpen(true);
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -92,11 +97,10 @@ export const Header = () => {
           </HeaderIconMenuNav>
         </div>
       </Container>
-      {isSearchOpen && (
+      {isOpen && (
         <SearchBarComponent
           data={<Icon id={'search'} width={'24px'} height={'24px'} />}
-          isSearchOpen={isSearchOpen}
-          setIsSearchOpen={setIsSearchOpen}
+          ref={searchRef}
         />
       )}
     </Wrapper>
