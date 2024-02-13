@@ -22,7 +22,7 @@ export const Header = () => {
   const searchRef = useRef(null);
 
   useClickOutside(searchRef, () => {
-    setIsOpen(false);
+    if (isOpen) setIsOpen(false);
   });
 
   const handleIsOpen = () => {
