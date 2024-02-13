@@ -1,49 +1,20 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   position: absolute;
   top: 100px;
   left: 0;
   z-index: 2;
   width: 100%;
-  height: 76px;
   text-align: center;
   background-color: ${props => props.theme.header.headerBgColor};
   border-top: 2px solid ${props => props.theme.header.headerBorderColor};
-  padding: 18px 491px;
 `;
 
-export const SearchInput = styled.input`
-  display: block;
-  font-family: ${props => props.theme.fonts.firstFontFamily};
-  font-size: 16px;
-
-  width: 100%;
-  height: 100%;
-  padding: 0px 8px 0px 40px;
-  border-radius: 4px;
-  border: 1px solid ${props => props.theme.main.textColor};
-  background-clip: padding-box;
-
-  color: ${props => props.theme.header.textColor};
-  background-color: transparent;
-
-  &::placeholder {
-    font-family: ${props => props.theme.fonts.firstFontFamily};
-    font-weight: 400;
-    font-size: 16px;
-    color: ${props => props.theme.main.textColor};
-    opacity: 0.8;
-  }
-
-  &:auto-fill {
-  }
-
-  &:hover,
-  &:focus {
-    background-color: transparent;
-    outline: 0;
-  }
+export const Container = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 18px 491px;
 `;
 
 export const SearchContainer = styled.div`
@@ -67,5 +38,38 @@ export const SearchButton = styled.button`
 
   &:hover {
     fill: ${props => props.theme.header.linkColor};
+  }
+`;
+
+export const SearchInput = styled.input`
+  display: block;
+  font-family: ${props => props.theme.fonts.firstFontFamily};
+  font-size: 16px;
+
+  width: 100%;
+  height: 100%;
+  padding: 10px 8px 10px 40px;
+  border-radius: 4px;
+  border: 1px solid ${props => props.theme.main.textColor};
+  background-clip: padding-box;
+
+  color: ${props => props.theme.header.textColor};
+  background-color: transparent;
+
+  &::placeholder {
+    font-family: ${props => props.theme.fonts.firstFontFamily};
+    font-weight: 400;
+    font-size: 16px;
+    color: ${props => props.theme.main.textColor};
+    opacity: 0.8;
+  }
+
+  &:auto-fill {
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    outline: 0;
   }
 `;
