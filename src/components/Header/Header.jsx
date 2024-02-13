@@ -25,8 +25,8 @@ export const Header = () => {
     setIsOpen(false);
   });
 
-  const handleIsSearchOpen = () => {
-    setIsOpen(!isOpen);
+  const handleIsOpen = () => {
+    isOpen ? setIsOpen(false) : setIsOpen(true);
   };
 
   return (
@@ -66,7 +66,7 @@ export const Header = () => {
           <HeaderIconMenuNav>
             <HeaderIconMenuItem>
               <HeaderIconMenuButton
-                onClick={handleIsSearchOpen}
+                onClick={handleIsOpen}
                 type="button"
                 aria-label="Search"
               >
@@ -91,7 +91,7 @@ export const Header = () => {
             <HeaderIconMenuItem>
               <HeaderIconMenuButton type="button" aria-label="Language">
                 {/* <Icon id={'shopping-cart'} width={'24px'} height={'24px'} /> */}
-                UA
+                {`${isOpen}`}
               </HeaderIconMenuButton>
             </HeaderIconMenuItem>
           </HeaderIconMenuNav>
