@@ -7,12 +7,13 @@ import {
   FooterNavigation,
   InformationMenu,
   StoreMenu,
-  ContactsMenu,
   ContactsMenuIcon,
   CapitalizeText,
   CategoryBlock,
   FooterWrapper,
   NavigationLink,
+  CategoryItemTextContacts,
+  ContactsNavLink,
 } from './Footer.styled';
 import { Icon } from 'components/Icon/Icon';
 
@@ -77,55 +78,51 @@ export const Footer = () => {
                 </CategoryItemText>
               </CategoryBlock>
             </StoreMenu>
-            <ContactsMenu>
+            <>
               <CategoryBlock>
                 <CategoryHeaderText>Контакти</CategoryHeaderText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'phone'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <NavigationLink href="tel:+380994567895">
-                    +38(099)4567895
-                  </NavigationLink>
-                </CategoryItemText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'envelope'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <NavigationLink href="mailto:sportsvit@gmail.com">
-                    sportsvit@gmail.com
-                  </NavigationLink>
-                </CategoryItemText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'facebook-f'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <CapitalizeText>
-                    <NavigationLink
-                      href="https://www.facebook.com/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Facebook
-                    </NavigationLink>
-                  </CapitalizeText>
-                </CategoryItemText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'instagram'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <CapitalizeText>
-                    <NavigationLink
-                      href="https://www.instagram.com/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Instagram
-                    </NavigationLink>
-                  </CapitalizeText>
-                </CategoryItemText>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink href="tel:+380994567895">
+                    <ContactsMenuIcon>
+                      <Icon id={'phone'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>+38(099)4567895</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink href="mailto:sportsvit@gmail.com">
+                    <ContactsMenuIcon>
+                      <Icon id={'envelope'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>sportsvit@gmail.com</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <ContactsMenuIcon>
+                      <Icon id={'facebook-f'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>Facebook</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <ContactsMenuIcon>
+                      <Icon id={'instagram'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>Instagram</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
               </CategoryBlock>
-            </ContactsMenu>
+            </>
           </FooterNavigation>
         </Container>
       </FooterWrapper>

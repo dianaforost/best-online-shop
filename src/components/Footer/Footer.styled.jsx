@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 export const FooterWrapper = styled.footer`
   background-color: ${props => props.theme.footer.footer_bg_color};
 `;
@@ -60,17 +61,21 @@ export const CategoryItemText = styled.li`
 
   @media screen and (min-width: 1200px) {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 `;
 
 export const NavigationLink = styled(NavLink)`
   position: relative;
-  color: ${props => props.theme.main.textColor};
+  display: flex;
+  align-items: center;
   font-size: 16px;
   font-weight: 400;
   font-family: ${props => props.theme.fonts.firstFontFamily};
   cursor: pointer;
-  color: ${props => props.theme.header.textColor};
+  color: ${props => props.theme.main.textColor};
+
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
@@ -129,10 +134,60 @@ export const ContactsMenu = styled.div``;
 export const ContactsMenuIcon = styled.span`
   width: 24px;
   height: 24px;
+  fill: inherit;
   line-height: 0;
   margin-right: 8px;
 `;
 
 export const CapitalizeText = styled.span`
   text-decoration: capitalize;
+`;
+
+// Contacts menu
+
+export const CategoryItemTextContacts = styled(CategoryItemText)`
+  fill: ${props => props.theme.header.textColor};
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    fill: ${props => props.theme.header.linkColor};
+  }
+`;
+
+export const ContactsNavLink = styled.a`
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: ${props => props.theme.fonts.firstFontFamily};
+  cursor: pointer;
+  color: ${props => props.theme.main.textColor};
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: ${props => props.theme.header.linkColor};
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+
+    display: block;
+    width: 50%;
+    height: 2px;
+
+    background: ${props => props.theme.header.linkColor};
+
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
 `;
