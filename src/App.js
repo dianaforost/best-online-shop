@@ -9,6 +9,9 @@ import {
   NotFoundPage,
   MainPage,
   InformationPage,
+  // FavoritePage,
+  // UserPage,
+  // CartPage,
 } from 'pages';
 import { useEffect } from 'react';
 import GlobalStyles from 'GlobalStyle';

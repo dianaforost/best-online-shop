@@ -1,67 +1,111 @@
+import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Container,
+  HeaderIconMenuButton,
   HeaderIconMenuItem,
   HeaderIconMenuNav,
+  HeaderMenuNavLink,
   HeaderStoreNavItem,
   HeaderStoreNavMenu,
   LogoText,
+  Wrapper,
 } from './Header.styled';
-import { NavLink } from 'react-router-dom';
+import { useClickAway } from 'react-use';
+import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
 import { Icon } from 'components/Icon/Icon';
 import { PopUp } from 'components/Modal/PopUp';
 import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
+  const [isActive, setIsActive] = useState(false);
+  const searchRef = useRef(null);
+
+  useClickAway(searchRef, () => {
+    console.log('OUTSIDE CLICKED', new Date());
+    setIsActive(false);
+  });
+
+  const handleIsActive = () => {
+    console.log('Button click');
+    setIsActive(true);
+  };
+
   return (
-    <Container>
-      <LogoText>
-        <NavLink to={'/'}>SportSvit</NavLink>
-      </LogoText>
-      <div>
-        <nav>
-          <HeaderStoreNavMenu>
-            <HeaderStoreNavItem>
-              <NavLink to={'/catalog/novelty'}>Новинки</NavLink>
-            </HeaderStoreNavItem>
-            <HeaderStoreNavItem>
-              <NavLink to={'/catalog'}>Каталог</NavLink>
-            </HeaderStoreNavItem>
-            <HeaderStoreNavItem>
-              <NavLink to={'/catalog/women'}>Жінки</NavLink>
-            </HeaderStoreNavItem>
-            <HeaderStoreNavItem>
-              <NavLink to={'/catalog/man'}>Чоловіки</NavLink>
-            </HeaderStoreNavItem>
-            <HeaderStoreNavItem>
-              <NavLink to={'/deals'}>Знижки</NavLink>
-            </HeaderStoreNavItem>
-          </HeaderStoreNavMenu>
-        </nav>
-      </div>
-      <div>
-        <HeaderIconMenuNav>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <Icon id={'search'} width={'24px'} height={'24px'} />
-            </a>
-          </HeaderIconMenuItem>
-          <HeaderIconMenuItem>
-            <PopUp data={<Icon id={'user'} width={'24px'} height={'24px'} />}>
-              <Auth />
-            </PopUp>
-          </HeaderIconMenuItem>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <Icon id={'heart'} width={'24px'} height={'24px'} />
-            </a>
-          </HeaderIconMenuItem>
-          <HeaderIconMenuItem>
-            <a href="/">
-              <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
-            </a>
-          </HeaderIconMenuItem>
-        </HeaderIconMenuNav>
-      </div>
-    </Container>
+    <Wrapper>
+      <Container>
+        <LogoText>
+          <Link to={'/'}>SportSvit</Link>
+        </LogoText>
+        <div>
+          <nav>
+            <HeaderStoreNavMenu>
+              <HeaderStoreNavItem>
+                <HeaderMenuNavLink to={'/catalog/novelty'}>
+                  Новинки
+                </HeaderMenuNavLink>
+              </HeaderStoreNavItem>
+              <HeaderStoreNavItem>
+                <HeaderMenuNavLink to={'/catalog'}>Каталог</HeaderMenuNavLink>
+              </HeaderStoreNavItem>
+              <HeaderStoreNavItem>
+                <HeaderMenuNavLink to={'/catalog/women'}>
+                  Жінки
+                </HeaderMenuNavLink>
+              </HeaderStoreNavItem>
+              <HeaderStoreNavItem>
+                <HeaderMenuNavLink to={'/catalog/man'}>
+                  Чоловіки
+                </HeaderMenuNavLink>
+              </HeaderStoreNavItem>
+              <HeaderStoreNavItem>
+                <HeaderMenuNavLink to={'/deals'}>Знижки</HeaderMenuNavLink>
+              </HeaderStoreNavItem>
+            </HeaderStoreNavMenu>
+          </nav>
+        </div>
+        <div>
+          <HeaderIconMenuNav>
+            <HeaderIconMenuItem>
+              <HeaderIconMenuButton
+                onClick={handleIsActive}
+                type="button"
+                aria-label="Search"
+                disabled={isActive}
+              >
+                <Icon id={'search'} width={'24px'} height={'24px'} />
+              </HeaderIconMenuButton>
+            </HeaderIconMenuItem>
+            <HeaderIconMenuItem>
+              <PopUp data={<Icon id={'user'} width={'24px'} height={'24px'} />}>
+                <Auth />
+              </PopUp>
+            </HeaderIconMenuItem>
+            <HeaderIconMenuItem>
+              <HeaderIconMenuButton type="button" aria-label="User favorites">
+                <Icon id={'heart'} width={'24px'} height={'24px'} />
+              </HeaderIconMenuButton>
+            </HeaderIconMenuItem>
+            <HeaderIconMenuItem>
+              <HeaderIconMenuButton type="button" aria-label="Shopping cart">
+                <Icon id={'shopping-cart'} width={'24px'} height={'24px'} />
+              </HeaderIconMenuButton>
+            </HeaderIconMenuItem>
+            <HeaderIconMenuItem>
+              <HeaderIconMenuButton type="button" aria-label="Language">
+                {/* <Icon id={'shopping-cart'} width={'24px'} height={'24px'} /> */}
+                UA
+              </HeaderIconMenuButton>
+            </HeaderIconMenuItem>
+          </HeaderIconMenuNav>
+        </div>
+      </Container>
+      {isActive ? (
+        <SearchBarComponent
+          data={<Icon id={'search'} width={'24px'} height={'24px'} />}
+          ref={searchRef}
+        />
+      ) : null}
+    </Wrapper>
   );
 };
