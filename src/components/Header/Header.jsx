@@ -15,20 +15,23 @@ import { useClickAway } from 'react-use';
 import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
 import { Icon } from 'components/Icon/Icon';
 import { PopUp } from 'components/Modal/PopUp';
-import { Auth } from 'components/Auth/Auth';
+// import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const searchRef = useRef(null);
 
   useClickAway(searchRef, () => {
-    console.log('OUTSIDE CLICKED', new Date());
     setIsActive(false);
   });
 
   const handleIsActive = () => {
-    console.log('Button click');
     setIsActive(true);
+  };
+
+  const openPopUp = () => {
+    setIsModalOpen(true);
   };
 
   return (
@@ -77,9 +80,15 @@ export const Header = () => {
               </HeaderIconMenuButton>
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
-              <PopUp data={<Icon id={'user'} width={'24px'} height={'24px'} />}>
-                <Auth />
-              </PopUp>
+              <HeaderIconMenuButton onClick={openPopUp} aria-label="User">
+                <Icon id={'user'} width={'24px'} height={'24px'} />
+              </HeaderIconMenuButton>
+
+              {/* <PopUp
+                data={<Icon id={'user'} width={'24px'} height={'24px'} />}
+              />
+               <Auth />
+              </PopUp> */}
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
               <HeaderIconMenuButton type="button" aria-label="User favorites">
@@ -105,6 +114,9 @@ export const Header = () => {
           data={<Icon id={'search'} width={'24px'} height={'24px'} />}
           ref={searchRef}
         />
+      ) : null}
+      {isModalOpen ? (
+        <PopUp modalIsOpen={isModalOpen} setIsOpen={setIsModalOpen} />
       ) : null}
     </Wrapper>
   );

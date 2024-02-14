@@ -1,13 +1,19 @@
 import { cloneElement, useState } from 'react';
 import { ModalPopUp, OpenButton } from './PopUp.styled';
+import { Auth } from 'components/Auth/Auth';
 // import Modal from 'styled-react-modal';
 
 // Modal.setAppElement('#root');
 
 export const PopUp = props => {
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const { children, data, ariaLabel } = props;
+  console.log('PROPS: ', props);
+  // const [modalIsOpen, setIsOpen] = useState(false);
+  // const { children, data, ariaLabel } = props;
+  const { modalIsOpen, setIsOpen } = props;
   const [opacity, setOpacity] = useState(0);
+  // console.log('CHILDREN: ', children);
+  // console.log('DATA: ', data);
+  // console.log('ARIALABEL: ', ariaLabel);
 
   function openModal() {
     setIsOpen(true);
@@ -17,14 +23,14 @@ export const PopUp = props => {
     setIsOpen(false);
     setOpacity(0);
   }
-  function cloneChildren(child) {
-    return child ? cloneElement(child, { closeModal }) : null;
-  }
+  // function cloneChildren(child) {
+  //   return child ? cloneElement(child, { closeModal }) : null;
+  // }
   return (
     <>
-      <OpenButton onClick={openModal} aria-label={`${ariaLabel}`}>
+      {/* <OpenButton onClick={openModal} aria-label={`${ariaLabel}`}>
         {data}
-      </OpenButton>
+      </OpenButton> */}
       <ModalPopUp
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -35,7 +41,9 @@ export const PopUp = props => {
         contentLabel="modal"
         opacity={opacity}
       >
-        {cloneChildren(children)}
+        <Auth closeModal={closeModal} />
+        {/* {modalIsOpen ? <Auth closeModal={closeModal} /> : null} */}
+        {/* {cloneChildren(children)} */}
       </ModalPopUp>
     </>
   );
