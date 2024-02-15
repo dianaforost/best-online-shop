@@ -14,7 +14,6 @@ import {
 import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
 import { Icon } from 'components/Icon/Icon';
 import { PopUp } from 'components/Modal/PopUp';
-// import { Auth } from 'components/Auth/Auth';
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
