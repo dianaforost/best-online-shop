@@ -1,4 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
 
 export const FooterWrapper = styled.footer`
   background-color: ${props => props.theme.footer.footer_bg_color};
@@ -35,7 +37,9 @@ export const LogoText = styled.span`
 `;
 
 export const CategoryBlock = styled.ul`
-  margin-bottom: 40px;
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
   @media screen and (min-width: 1200px) {
     margin-bottom: 0;
   }
@@ -51,26 +55,58 @@ export const CategoryHeaderText = styled.li`
 `;
 
 export const CategoryItemText = styled.li`
-  color: ${props => props.theme.main.textColor};
-  font-size: 16px;
-  font-weight: 400;
-  font-family: ${props => props.theme.fonts.firstFontFamily};
-  margin-bottom: 16px;
-  cursor: pointer;
-  &:hover {
-    color: #fff;
-    text-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
-      0 0 100px #03e9f4;
-    transform: scale(1.1);
+  &:not(:last-child) {
+    margin-bottom: 16px;
   }
 
   @media screen and (min-width: 1200px) {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+`;
+
+export const NavigationLink = styled(NavLink)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: ${props => props.theme.fonts.firstFontFamily};
+  cursor: pointer;
+  color: ${props => props.theme.main.textColor};
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: ${props => props.theme.header.linkColor};
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+
+    display: block;
+    width: 50%;
+    height: 2px;
+
+    background: ${props => props.theme.header.linkColor};
+
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
   }
 `;
 
 export const FooterNavigation = styled.div`
   display: block;
+
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-evenly;
@@ -96,9 +132,62 @@ export const StoreMenu = styled.div`
 export const ContactsMenu = styled.div``;
 
 export const ContactsMenuIcon = styled.span`
+  width: 24px;
+  height: 24px;
+  fill: inherit;
+  line-height: 0;
   margin-right: 8px;
 `;
 
 export const CapitalizeText = styled.span`
   text-decoration: capitalize;
+`;
+
+// Contacts menu
+
+export const CategoryItemTextContacts = styled(CategoryItemText)`
+  fill: ${props => props.theme.header.textColor};
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    fill: ${props => props.theme.header.linkColor};
+  }
+`;
+
+export const ContactsNavLink = styled.a`
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: ${props => props.theme.fonts.firstFontFamily};
+  cursor: pointer;
+  color: ${props => props.theme.main.textColor};
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: ${props => props.theme.header.linkColor};
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+
+    display: block;
+    width: 50%;
+    height: 2px;
+
+    background: ${props => props.theme.header.linkColor};
+
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
 `;

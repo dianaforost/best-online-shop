@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Container,
   Logo,
@@ -7,14 +8,15 @@ import {
   FooterNavigation,
   InformationMenu,
   StoreMenu,
-  ContactsMenu,
   ContactsMenuIcon,
   CapitalizeText,
   CategoryBlock,
   FooterWrapper,
+  NavigationLink,
+  CategoryItemTextContacts,
+  ContactsNavLink,
 } from './Footer.styled';
 import { Icon } from 'components/Icon/Icon';
-import { NavLink } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -23,7 +25,7 @@ export const Footer = () => {
         <Container>
           <Logo>
             <LogoText>
-              <NavLink to={'/'}>SportSvit</NavLink>
+              <Link to={'/'}>SportSvit</Link>
             </LogoText>
           </Logo>
           <FooterNavigation>
@@ -31,98 +33,97 @@ export const Footer = () => {
               <CategoryBlock>
                 <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
-                  <NavLink to={'/information'}>
+                  <NavigationLink to={'/information'}>
                     <CapitalizeText>Доставка</CapitalizeText> та оплата
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/information'}>
+                  <NavigationLink to={'/information'}>
                     <CapitalizeText>Повернення</CapitalizeText> та обмін
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/information'}>
+                  <NavigationLink to={'/information'}>
                     <CapitalizeText>Угода</CapitalizeText> користувача
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/information'}>
+                  <NavigationLink to={'/information'}>
                     <CapitalizeText>Питання</CapitalizeText> та відповіді
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
               </CategoryBlock>
             </InformationMenu>
             <StoreMenu>
               <CategoryBlock>
                 <CategoryHeaderText>Магазин</CategoryHeaderText>
-
                 <CategoryItemText>
-                  <NavLink to={'/catalog/novelty'}>
+                  <NavigationLink to={'/catalog/novelty'}>
                     <CapitalizeText>Новинки</CapitalizeText>
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/catalog/women'}>
+                  <NavigationLink to={'/catalog/women'}>
                     <CapitalizeText>Жінки</CapitalizeText>
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/catalog/man'}>
+                  <NavigationLink to={'/catalog/man'}>
                     <CapitalizeText>Чоловіки</CapitalizeText>
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
-                  <NavLink to={'/deals'}>
+                  <NavigationLink to={'/deals'}>
                     <CapitalizeText>Знижки</CapitalizeText>
-                  </NavLink>
+                  </NavigationLink>
                 </CategoryItemText>
               </CategoryBlock>
             </StoreMenu>
-            <ContactsMenu>
+            <>
               <CategoryBlock>
                 <CategoryHeaderText>Контакти</CategoryHeaderText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'phone'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <a href="tel:+380994567895">+38(099)4567895</a>
-                </CategoryItemText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'envelope'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <a href="mailto:sportsvit@gmail.com">sportsvit@gmail.com</a>
-                </CategoryItemText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'facebook-f'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <CapitalizeText>
-                    <a
-                      href="https://www.facebook.com/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Facebook
-                    </a>
-                  </CapitalizeText>
-                </CategoryItemText>
-                <CategoryItemText>
-                  <ContactsMenuIcon>
-                    <Icon id={'instagram'} width={24} height={24} />
-                  </ContactsMenuIcon>
-                  <CapitalizeText>
-                    <a
-                      href="https://www.instagram.com/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      Instagram
-                    </a>
-                  </CapitalizeText>
-                </CategoryItemText>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink href="tel:+380994567895">
+                    <ContactsMenuIcon>
+                      <Icon id={'phone'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>+38(099)4567895</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink href="mailto:sportsvit@gmail.com">
+                    <ContactsMenuIcon>
+                      <Icon id={'envelope'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>sportsvit@gmail.com</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <ContactsMenuIcon>
+                      <Icon id={'facebook-f'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>Facebook</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
+                <CategoryItemTextContacts>
+                  <ContactsNavLink
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <ContactsMenuIcon>
+                      <Icon id={'instagram'} width={24} height={24} />
+                    </ContactsMenuIcon>
+                    <CapitalizeText>Instagram</CapitalizeText>
+                  </ContactsNavLink>
+                </CategoryItemTextContacts>
               </CategoryBlock>
-            </ContactsMenu>
+            </>
           </FooterNavigation>
         </Container>
       </FooterWrapper>
