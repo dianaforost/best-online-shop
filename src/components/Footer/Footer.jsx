@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Container,
   Logo,
@@ -24,7 +25,7 @@ export const Footer = () => {
         <Container>
           <Logo>
             <LogoText>
-              <NavigationLink to={'/'}>SportSvit</NavigationLink>
+              <Link to={'/'}>SportSvit</Link>
             </LogoText>
           </Logo>
           <FooterNavigation>
