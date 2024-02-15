@@ -19,7 +19,8 @@ export const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleIsActive = () => {
+  const handleIsActive = e => {
+    e.stopPropagation();
     setIsActive(true);
   };
 

@@ -17,7 +17,11 @@ export const SearchBarComponent = ({ setIsActive }) => {
     setIsActive(false);
   };
 
-  useClickAway(searchRef, handleCloseMenu);
+  useClickAway(searchRef, handleCloseMenu, [
+    'mousedown',
+    'touchstart',
+    'click',
+  ]);
 
   useKeyPressEvent('Escape', handleCloseMenu, handleCloseMenu);
 
