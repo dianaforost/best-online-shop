@@ -7,15 +7,19 @@ import {
   Wrapper,
 } from './SearchBarComponent.styled';
 import { Icon } from 'components/Icon/Icon';
-import { useClickAway } from 'react-use';
+import { useClickAway, useKeyPressEvent } from 'react-use';
 
 export const SearchBarComponent = ({ setIsActive }) => {
   const [inputField, setInputField] = useState('');
   const searchRef = useRef(null);
 
-  useClickAway(searchRef, () => {
+  const handleCloseMenu = () => {
     setIsActive(false);
-  });
+  };
+
+  useClickAway(searchRef, handleCloseMenu);
+
+  useKeyPressEvent('Escape', handleCloseMenu, handleCloseMenu);
 
   const handleInput = e => {
     setInputField(e.target.value);
