@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Container,
@@ -11,7 +11,6 @@ import {
   LogoText,
   Wrapper,
 } from './Header.styled';
-import { useClickAway } from 'react-use';
 import { SearchBarComponent } from 'components/SearchBarComponent/SearchBarComponent';
 import { Icon } from 'components/Icon/Icon';
 import { PopUp } from 'components/Modal/PopUp';
@@ -20,11 +19,6 @@ import { PopUp } from 'components/Modal/PopUp';
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const searchRef = useRef(null);
-
-  useClickAway(searchRef, () => {
-    setIsActive(false);
-  });
 
   const handleIsActive = () => {
     setIsActive(true);
@@ -83,12 +77,6 @@ export const Header = () => {
               <HeaderIconMenuButton onClick={openPopUp} aria-label="User">
                 <Icon id={'user'} width={'24px'} height={'24px'} />
               </HeaderIconMenuButton>
-
-              {/* <PopUp
-                data={<Icon id={'user'} width={'24px'} height={'24px'} />}
-              />
-               <Auth />
-              </PopUp> */}
             </HeaderIconMenuItem>
             <HeaderIconMenuItem>
               <HeaderIconMenuButton type="button" aria-label="User favorites">
@@ -109,12 +97,7 @@ export const Header = () => {
           </HeaderIconMenuNav>
         </div>
       </Container>
-      {isActive ? (
-        <SearchBarComponent
-          data={<Icon id={'search'} width={'24px'} height={'24px'} />}
-          ref={searchRef}
-        />
-      ) : null}
+      {isActive ? <SearchBarComponent setIsActive={setIsActive} /> : null}
       {isModalOpen ? (
         <PopUp modalIsOpen={isModalOpen} setIsOpen={setIsModalOpen} />
       ) : null}

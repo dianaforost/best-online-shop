@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Container,
   SearchButton,
@@ -6,10 +6,16 @@ import {
   SearchInput,
   Wrapper,
 } from './SearchBarComponent.styled';
+import { Icon } from 'components/Icon/Icon';
+import { useClickAway } from 'react-use';
 
-export const SearchBarComponent = forwardRef(function (props, ref) {
+export const SearchBarComponent = ({ setIsActive }) => {
   const [inputField, setInputField] = useState('');
-  const { data } = props;
+  const searchRef = useRef(null);
+
+  useClickAway(searchRef, () => {
+    setIsActive(false);
+  });
 
   const handleInput = e => {
     setInputField(e.target.value);
@@ -18,8 +24,10 @@ export const SearchBarComponent = forwardRef(function (props, ref) {
   return (
     <Wrapper>
       <Container>
-        <SearchContainer ref={ref}>
-          <SearchButton>{data}</SearchButton>
+        <SearchContainer ref={searchRef}>
+          <SearchButton>
+            <Icon id={'search'} width={'24px'} height={'24px'} />
+          </SearchButton>
           <SearchInput
             type="text"
             name="search"
@@ -32,4 +40,4 @@ export const SearchBarComponent = forwardRef(function (props, ref) {
       </Container>
     </Wrapper>
   );
-});
+};
