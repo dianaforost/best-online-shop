@@ -34,22 +34,22 @@ export const Footer = () => {
                 <CategoryHeaderText>Інформація</CategoryHeaderText>
                 <CategoryItemText>
                   <NavigationLink to={'/information'}>
-                    <CapitalizeText>Доставка</CapitalizeText> та оплата
+                    <CapitalizeText>Доставка&nbsp;</CapitalizeText>та оплата
                   </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
                   <NavigationLink to={'/information'}>
-                    <CapitalizeText>Повернення</CapitalizeText> та обмін
+                    <CapitalizeText>Повернення&nbsp;</CapitalizeText>та обмін
                   </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
                   <NavigationLink to={'/information'}>
-                    <CapitalizeText>Угода</CapitalizeText> користувача
+                    <CapitalizeText>Угода&nbsp;</CapitalizeText>користувача
                   </NavigationLink>
                 </CategoryItemText>
                 <CategoryItemText>
                   <NavigationLink to={'/information'}>
-                    <CapitalizeText>Питання</CapitalizeText> та відповіді
+                    <CapitalizeText>Питання&nbsp;</CapitalizeText>та відповіді
                   </NavigationLink>
                 </CategoryItemText>
               </CategoryBlock>
