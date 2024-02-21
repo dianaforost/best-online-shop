@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://d2bywcgpcqt1c7.cloudfront.net';
+axios.defaults.baseURL = 'https://d10lvg3mbdbpo0.cloudfront.net';
 
 const config = {
   headers: {
