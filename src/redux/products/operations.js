@@ -14,7 +14,7 @@ export const getProducts = createAsyncThunk(
   'products/getAll',
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get(`/products`, '', config.headers);
+      const res = await axios.get(``, '', config.headers);
       console.log(res.data);
       return res.data;
     } catch (error) {
