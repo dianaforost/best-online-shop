@@ -19,12 +19,14 @@ export const BackToTopButton = () => {
   };
 
   return (
-    <Container>
+    <>
       {backToTopButton && (
-        <Button type="button" onClick={scrollUp}>
-          TO TOP
-        </Button>
+        <Container>
+          <Button type="button" onClick={scrollUp}>
+            TO TOP
+          </Button>
+        </Container>
       )}
-    </Container>
+    </>
   );
 };
