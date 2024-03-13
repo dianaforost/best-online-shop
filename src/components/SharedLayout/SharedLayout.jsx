@@ -8,8 +8,8 @@ export const SharedLayout = () => {
     <>
       <Header />
       <Outlet />
-      <BackToTopButton />
       <Footer />
+      <BackToTopButton />
     </>
   );
 };
