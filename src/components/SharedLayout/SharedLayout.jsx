@@ -1,6 +1,6 @@
-import { BackToTopButton } from 'components/BackToTopButton/BackToTopButton';
 import { Footer } from 'components/Footer/Footer';
 import { Header } from 'components/Header/Header';
+import { ScrollToTopButton } from 'components/ScrollToTopButton/ScrollToTopButton';
 import { Outlet } from 'react-router-dom';
 
 export const SharedLayout = () => {
@@ -9,7 +9,7 @@ export const SharedLayout = () => {
       <Header />
       <Outlet />
       <Footer />
-      <BackToTopButton />
+      <ScrollToTopButton />
     </>
   );
 };
