@@ -31,7 +31,7 @@ export const BackToTopButton = () => {
             color: 'red',
           }}
         >
-          TOP
+          TO TOP
         </button>
       )}
     </>
