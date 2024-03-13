@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Container } from './ScrollToTopButton.styled';
-import { Icon } from 'components';
+import { useEffect, useState } from 'react';
+import scrollToTopImg from '../../images/scrollToTop.png';
+import { Button } from './ScrollToTopButton.styled';
 
 export const ScrollToTopButton = () => {
   const [backToTopButton, setBackToTopButton] = useState(false);
@@ -22,11 +22,9 @@ export const ScrollToTopButton = () => {
   return (
     <>
       {backToTopButton && (
-        <Container>
-          <Button type="button" onClick={scrollUp}>
-            <Icon />
-          </Button>
-        </Container>
+        <Button type="button" onClick={scrollUp}>
+          <img src={`${scrollToTopImg}`} alt="Scroll to top" />
+        </Button>
       )}
     </>
   );
