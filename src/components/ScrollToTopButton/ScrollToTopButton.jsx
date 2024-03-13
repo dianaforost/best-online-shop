@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Container } from './ScrollToTopButton.styled';
+import { Icon } from 'components';
 
 export const ScrollToTopButton = () => {
   const [backToTopButton, setBackToTopButton] = useState(false);
@@ -23,7 +24,7 @@ export const ScrollToTopButton = () => {
       {backToTopButton && (
         <Container>
           <Button type="button" onClick={scrollUp}>
-            TO TOP BUTTON
+            <Icon />
           </Button>
         </Container>
       )}
