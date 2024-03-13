@@ -23,7 +23,7 @@ export const BackToTopButton = () => {
       {backToTopButton && (
         <Container>
           <Button type="button" onClick={scrollUp}>
-            TO TOP
+            TO TOP BUTTON
           </Button>
         </Container>
       )}
