@@ -18,7 +18,7 @@ export const BackToTopButton = () => {
   };
 
   return (
-    <div>
+    <>
       {backToTopButton && (
         <button
           type="button"
@@ -34,6 +34,7 @@ export const BackToTopButton = () => {
           TOP
         </button>
       )}
-    </div>
+    </>
   );
+
 };
